@@ -1,0 +1,44 @@
+﻿
+/*The MIT License (MIT) 
+
+Copyright (c) 2014 http://www.binarytheme.com*/
+
+body {
+  padding-top: 20px;
+}
+
+.head-style {
+    border-bottom:1px solid #e1e1e1;
+    color:#4A9BDB;
+}
+/*Color options style*/
+
+.box {
+      width: 60px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.blue-box {
+  
+    background:#52b6ec;
+   
+}
+.red-box {
+    
+    background:#EC5264;
+}
+.green-box {
+   
+    background:#49CC38;
+}
+
+.muddy-box {
+     background:#ECAE52;
+}
+
+.light-box {
+     background:#7C7C7C;
+}

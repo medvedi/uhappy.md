@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the uhappy CT feature.
+ */
+
+include_once 'uhappy_ct.features.inc';

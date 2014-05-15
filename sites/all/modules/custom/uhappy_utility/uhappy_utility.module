@@ -1,0 +1,75 @@
+<?php
+/**
+ * @file
+ * Utility functions for the uhappy.md site.
+ */
+
+/* --- HOOKS ---------------------------------------------------------------- */
+
+/**
+ * Implements hook_init().
+ */
+function uhappy_utility_init() {
+  if (arg(0) == 'node') {
+    // Add custom js for price tables.
+    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/jquery-1.10.2.js', 'file');
+    drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/scrollReveal.js', 'file');
+    drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/scripts/pricing.js', 'file');
+    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/respond.min.js', 'file');
+    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/html5shiv.js', 'file');
+    drupal_add_js('window.scrollReveal = new scrollReveal();', array('type' => 'inline', 'scope' => 'footer', 'weight' => 5));
+    // Add custom css for price tables.
+    // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/bootstrap/bootstrap.min.css');
+    // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/main.css');
+    drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/styles/blue.css');
+  }
+}
+
+/**
+* Implements hook_field_group_build_pre_render_alter().
+* @param Array $elements by address.
+*/
+function uhappy_utility_field_group_build_pre_render_alter(& $element) {
+  $element['group_children_settings'] += array(
+    '#states' => array(
+      'visible' => array(
+        '#edit-field-children-und' => array('checked' => TRUE),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements of ctools_plugin_directory().
+ */
+function uhappy_utility_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function uhappy_utility_theme() {
+  $theme['price_table'] = array(
+    'template' => 'templates/price_table',
+    'arguments' => array('content' => NULL),
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function uhappy_utility_views_post_execute(&$view) {
+  // Remove current node from related content.
+  if ($view->name == 'content_list' && $view->current_display == 'block_2') {
+    foreach ($view->result as $key => $results) {
+      if ($results->nid == arg(1)) {
+        unset($view->result[$key]);
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/*The MIT License (MIT) 
+
+Copyright (c) 2014 http://www.binarytheme.com*/
+
+/*Pricing table style GREEN */
+.base {
+    margin-bottom:50px;
+}
+.base .plan {
+  border-radius: 6px;
+  list-style: none;
+  padding: 0 0 20px;
+  margin: 0 0 40px;
+  background: #F1F1F1;
+  text-align: center;
+
+}
+.base .plan li {
+  padding: 10px 15px;
+  border-top: 1px solid #f5f5f5;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+.base .plan li.price {
+  color: #666;
+  padding: 15px 0;
+  font-size: 30px;
+}
+.base .plan li.name {
+  border-radius: 6px 6px 0 0;
+  padding: 15px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  background: #49CC38;
+  margin-bottom: 30px;
+  border-top: 0;
+}
+.base .plan li > strong {
+  color: #49CC38;
+}
+.base .plan li.action {
+  margin-top: 10px;
+  border-top: 0;
+}
+.base .plan.featured {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.base .plan.featured li.name {
+  background: #199B33;
+}
+.below {
+    font-size:20px;
+    line-height:30px;
+
+    background-color: #49CC38;
+    
+}
+.highlighted {
+
+    background-color: #199B33;
+    
+}
+    .below a {
+        color:#fff!important;
+        text-decoration:none;
+    }
+
