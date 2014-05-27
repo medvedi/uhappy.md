@@ -22,6 +22,7 @@ function uhappy_utility_init() {
     // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/bootstrap/bootstrap.min.css');
     // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/main.css');
     drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/styles/blue.css');
+
   }
 }
 
@@ -73,3 +74,135 @@ function uhappy_utility_views_post_execute(&$view) {
     }
   }
 }
+
+
+
+
+
+########### Ctools Modal ############
+
+/**
+ *  Implements of hook_menu()
+ */
+function uhappy_utility_menu() {
+  $items = array();
+
+  $items['order/%ctools_js/%'] = array(
+      'title' => 'Order',
+      'page arguments' => array(1, 2),
+      'page callback' => 'order_modal_page',
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * A modal static page callback.
+ * @param $js
+ *   boolean CTools determination whether the user's browser is javascript enabled.
+ * @param $nid
+ *   string The node ID of passed as an argument from the hook_menu() path
+ * @return
+ *   string The contents of the node, that will fill the modal window.
+ */
+function order_modal_page($js = NULL, $nid = NULL) {
+  global $user;
+  // If people aren't using javascript, then I just boot em. sorry. its 2011.
+
+  if (!$js) return "Upps.. Javascript required";
+
+  // Include your ctools crap here
+  // ctools_include('node.pages', 'node', '');
+  ctools_include('modal');
+  ctools_include('ajax');
+  module_load_include('inc', 'node', 'node.pages');
+
+  // Create a blank node object here. You can also set values for your custom fields here as well.
+  $node = (object) array(
+    'uid' => $user->uid,
+    'name' => (isset($user->name) ? $user->name : ''),
+    'type' => 'order',
+    'language' => LANGUAGE_NONE,
+  );
+
+  $form_state = array(
+    'title' => t('Add my conten type'),
+    'ajax' => TRUE,
+  );
+
+  $form_state['build_info']['args'] = array($node);
+  // change this to your type node form
+  $output = ctools_modal_form_wrapper('order_node_form', $form_state);
+
+  // This means the form has been exectued
+  if (!empty($form_state['executed'])) {
+    $output = array();
+    // Close the modal
+    // $output[] = ctools_modal_command_dismiss();
+
+    $confirm_message = array("#markup" => '<div> '
+      . t('FUCK.')
+      . '</div>');
+    $confirmation['#markup'] = '<div class="popups-confirmation-wrapper">' . drupal_render($confirm_message) . '</div>';
+    // Recreate output
+    $output = array();
+    // Overwrite the form output if it was successful.
+    $output[] = ctools_modal_command_display(t('Tak for din henvendelse'), $confirmation);
+
+  }
+
+  print ajax_render($output);
+  exit;
+}
+
+/**
+ * inside happy.module
+ * Implements hook_views_pre_render()
+ */
+function uhappy_utility_node_view($node) {
+  // // Include the CTools tools that we need.
+  ctools_include('ajax');
+  ctools_include('modal');
+
+  // // Add CTools' javascript to the page.
+  ctools_modal_add_js();
+
+  // // Create our own javascript that will be used to theme a modal.
+  // $order_style = array(
+  //   'order-modal-style' => array(
+  //     'modalSize' => array(
+  //       'type' => 'fixed',
+  //       'width' => 600,
+  //       'height' => 240,
+  //       'addWidth' => 10,
+  //       'addHeight' => 10,
+  //       'contentRight' => 0,
+  //       'contentBottom' => 0,
+  //     ),
+  //     'modalOptions' => array(
+  //       'opacity' => .6,
+  //       'background-color' => '#684C31',
+  //     ),
+  //     'animation' => 'fadeIn',
+  //     'modalTheme' => 'order_modal',
+  //     // Customize the AJAX throbber like so:
+  //     // This function assumes the images are inside the module directory's "images"
+  //     // directory:
+  //     // ctools_image_path($image, $module = 'ctools', $dir = 'images')
+  //     // 'throbber' => theme('image', array('path' => ctools_image_path('ajax-loader.gif', 'happy'), 'alt' => t('Loading...'), 'title' => t('Loading'))),
+  //   //   'closeImage' => theme('image', array('path' => ctools_image_path('modal-close.png', 'happy'), 'alt' => t('Close window'), 'title' => t('Close window'))),
+  //   ),
+  // );
+
+  // // Add the settings array defined above to Drupal 7's JS settings:
+  // drupal_add_js($order_style, 'setting');
+  // // The function below assumes the order.js file resides in [module_dir]/js
+  // // ctools_add_js('order', 'order');
+  // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/js/order.js', 'file');
+  // // The function below assumes the order.css file resides in [module_dir]/css
+  // // ctools_add_css('order', 'order');
+}
+
+########### End Ctools Modal ############
