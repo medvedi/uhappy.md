@@ -41,6 +41,37 @@ function price_table_content_type_render($subtype, $conf, $args, $contexts) {
     $content['price_for_2'] = $node->field_price_for_2_person['und'][0]['value'];
   }
 
+
+
+
+
+
+
+// Include the CTools tools that we need.
+    ctools_include('ajax');
+    ctools_include('modal');
+    // The view has two fields, title (not linked and no styles added), and NID (again,
+    // no style added. They are available here as $vars['fields']->title and
+    // $vars['fields']->nid.
+    $name = $node->title;
+    // Create a path for the url that is like our hook_menu() declaration above.
+    $href = 'order/nojs/' . $node->nid;
+    // Here's the ctools function that generates the trigger inside the link
+    // ctools_modal_text_button($text, $dest, $alt, $class = '')
+    // http://api.drupalize.me/api/drupal/function/ctools_modal_text_button/7
+    // IMPORTANT: Include ctools-modal-[your declared style name] as a class so
+    // Ctools knows what Javascript settings to use in generating the modal:
+    $content['ctools_link'] = ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style');
+
+
+
+
+
+
+
+
+
+
   $block->content = theme('price_table', $content);
 
   return $block;

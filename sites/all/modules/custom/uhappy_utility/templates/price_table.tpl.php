@@ -46,7 +46,7 @@
             <li>Unlimited Email Address</li>
             <li>Forum Support</li>
             <li class="below">
-                <a href="#"><?php print t('Order'); ?></a>
+                <?php print $ctools_link; ?>
             </li>
 
         </ul>
