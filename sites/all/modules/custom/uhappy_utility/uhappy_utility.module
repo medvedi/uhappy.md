@@ -30,14 +30,14 @@ function uhappy_utility_init() {
 * Implements hook_field_group_build_pre_render_alter().
 * @param Array $elements by address.
 */
-function uhappy_utility_field_group_build_pre_render_alter(& $element) {
-  $element['group_children_settings'] += array(
-    '#states' => array(
-      'visible' => array(
-        '#edit-field-children-und' => array('checked' => TRUE),
-      ),
-    ),
-  );
+function uhappy_utility_field_group_build_pre_render_alter(&$element) {
+  // $element['group_children_settings'] += array(
+  //   '#states' => array(
+  //     'visible' => array(
+  //       '#edit-field-children-und' => array('checked' => TRUE),
+  //     ),
+  //   ),
+  // );
 }
 
 /**
@@ -74,10 +74,6 @@ function uhappy_utility_views_post_execute(&$view) {
     }
   }
 }
-
-
-
-
 
 ########### Ctools Modal ############
 
@@ -128,7 +124,7 @@ function order_modal_page($js = NULL, $nid = NULL) {
   );
 
   $form_state = array(
-    'title' => t('Add my conten type'),
+    'title' => t('Order character on holiday'),
     'ajax' => TRUE,
   );
 
@@ -140,16 +136,16 @@ function order_modal_page($js = NULL, $nid = NULL) {
   if (!empty($form_state['executed'])) {
     $output = array();
     // Close the modal
-    // $output[] = ctools_modal_command_dismiss();
+    $output[] = ctools_modal_command_dismiss();
 
-    $confirm_message = array("#markup" => '<div> '
-      . t('FUCK.')
-      . '</div>');
-    $confirmation['#markup'] = '<div class="popups-confirmation-wrapper">' . drupal_render($confirm_message) . '</div>';
-    // Recreate output
-    $output = array();
-    // Overwrite the form output if it was successful.
-    $output[] = ctools_modal_command_display(t('Tak for din henvendelse'), $confirmation);
+    // $confirm_message = array("#markup" => '<div> '
+    //   . t('FUCK.')
+    //   . '</div>');
+    // $confirmation['#markup'] = '<div class="popups-confirmation-wrapper">' . drupal_render($confirm_message) . '</div>';
+    // // Recreate output
+    // $output = array();
+    // // Overwrite the form output if it was successful.
+    // $output[] = ctools_modal_command_display(t('Tak for din henvendelse'), $confirmation);
 
   }
 
@@ -206,3 +202,26 @@ function uhappy_utility_node_view($node) {
 }
 
 ########### End Ctools Modal ############
+
+/**
+ *  Implements of hook_form_alter()
+ */
+function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
+  $nid = arg(2);
+  if (arg(0) == 'order' && $nid) {
+    // Load the parent node from the argument.
+    $scenario_node = node_load($nid);
+    // Set default title and disable field.
+    $form['title']['#default_value'] = $scenario_node->title;
+    $form['title']['#disabled']      = TRUE;
+    // Hide the title field.
+    hide($form['title']);
+
+    // Unset some values from the form.
+    unset($form['field_number_of_children']['und']['#options']['_none']);
+    hide($form['actions']['preview']);
+
+    // Chnage value for submit button.
+    $form['actions']['submit']['#value'] = t('Order');
+  }
+}
