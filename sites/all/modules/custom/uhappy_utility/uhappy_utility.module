@@ -196,8 +196,10 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
  *  Implements of hook_node_presave()
  */
 function uhappy_utility_node_presave($node) {
-  // Define message to send.
-  $message = "New order {" . $node->title . "} was created";
-  // Send the sms message.
-  send_sms("37379142089", $message);
+  if ($node->type == 'order') {
+    // Define message to send.
+    $message = "New order {" . $node->title . "} was created";
+    // Send the sms message.
+    send_sms("37379142089", $message);
+  }
 }

@@ -10,6 +10,7 @@ features[page_manager_handlers][] = term_view_panel_context
 features[page_manager_pages][] = fronpage
 features[rules_config][] = rules_send_e_mail
 features[views_view][] = content_list
+features[views_view][] = slider
 features_exclude[dependencies][entity] = entity
 features_exclude[dependencies][page_manager] = page_manager
 features_exclude[dependencies][views] = views
