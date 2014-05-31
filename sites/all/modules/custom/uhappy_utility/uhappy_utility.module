@@ -4,6 +4,8 @@
  * Utility functions for the uhappy.md site.
  */
 
+include_once 'helpers/smsc.php';
+
 /* --- HOOKS ---------------------------------------------------------------- */
 
 /**
@@ -154,7 +156,6 @@ function order_modal_page($js = NULL, $nid = NULL) {
 }
 
 /**
- * inside happy.module
  * Implements hook_views_pre_render()
  */
 function uhappy_utility_node_view($node) {
@@ -164,41 +165,6 @@ function uhappy_utility_node_view($node) {
 
   // // Add CTools' javascript to the page.
   ctools_modal_add_js();
-
-  // // Create our own javascript that will be used to theme a modal.
-  // $order_style = array(
-  //   'order-modal-style' => array(
-  //     'modalSize' => array(
-  //       'type' => 'fixed',
-  //       'width' => 600,
-  //       'height' => 240,
-  //       'addWidth' => 10,
-  //       'addHeight' => 10,
-  //       'contentRight' => 0,
-  //       'contentBottom' => 0,
-  //     ),
-  //     'modalOptions' => array(
-  //       'opacity' => .6,
-  //       'background-color' => '#684C31',
-  //     ),
-  //     'animation' => 'fadeIn',
-  //     'modalTheme' => 'order_modal',
-  //     // Customize the AJAX throbber like so:
-  //     // This function assumes the images are inside the module directory's "images"
-  //     // directory:
-  //     // ctools_image_path($image, $module = 'ctools', $dir = 'images')
-  //     // 'throbber' => theme('image', array('path' => ctools_image_path('ajax-loader.gif', 'happy'), 'alt' => t('Loading...'), 'title' => t('Loading'))),
-  //   //   'closeImage' => theme('image', array('path' => ctools_image_path('modal-close.png', 'happy'), 'alt' => t('Close window'), 'title' => t('Close window'))),
-  //   ),
-  // );
-
-  // // Add the settings array defined above to Drupal 7's JS settings:
-  // drupal_add_js($order_style, 'setting');
-  // // The function below assumes the order.js file resides in [module_dir]/js
-  // // ctools_add_js('order', 'order');
-  // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/js/order.js', 'file');
-  // // The function below assumes the order.css file resides in [module_dir]/css
-  // // ctools_add_css('order', 'order');
 }
 
 ########### End Ctools Modal ############
@@ -224,4 +190,14 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
     // Chnage value for submit button.
     $form['actions']['submit']['#value'] = t('Order');
   }
+}
+
+/**
+ *  Implements of hook_node_presave()
+ */
+function uhappy_utility_node_presave($node) {
+  // Define message to send.
+  $message = "New order {" . $node->title . "} was created";
+  // Send the sms message.
+  send_sms("37379142089", $message);
 }
