@@ -794,7 +794,7 @@ function uhappy_ct_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'large',
         ),
         'type' => 'image',
