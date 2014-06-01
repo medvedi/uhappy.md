@@ -84,12 +84,12 @@ thead tr th, thead tr td, tbody tr th, tbody tr td { padding: 8px; line-height: 
 
 #header-top { background-color: #fcfcfc; border-bottom: 1px dashed #eaeaea; position: relative; z-index: 12; min-height: 50px; }
 
-#header { background-color: #fcfcfc; border-bottom: 1px solid #eaeaea; position: relative; z-index: 5; padding: 10px 0; text-align: center; }
+#header { background-color: #fcfcfc; border-bottom: 1px solid #eaeaea; position: relative; z-index: 5; padding: 40px 0; text-align: center; min-height: 130px; }
 
 #main-navigation { background-color: #fcfcfc; position: relative; z-index: 11; -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.075), 0 10px 0 rgba(0,0,0,0.01);
 -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.075), 0 10px 0 rgba(0,0,0,0.01); box-shadow: 0 2px 4px rgba(0,0,0,0.075), 0 10px 0 rgba(0,0,0,0.01); }
 
-#banner-inside { padding-top: 20px; margin-bottom: 40px; }
+#banner-inside { padding-top: 60px; margin-bottom: 40px; }
 
 #slideshow { padding: 10px; background-color: #fcfcfc; border: 1px solid #eaeaea; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;
 display: none; }
@@ -236,7 +236,7 @@ position: absolute; top: 20px; right: 17px; font-size: 11px; font-weight: 400; }
 
 #site-name a:hover { text-decoration: none; opacity: 0.8; filter: alpha(opacity=80); }
 
-#site-slogan { color: #6aa3c6; font-size: 13px; font-weight: 300; line-height: 150%; margin:10px 0 10px 0; }
+#site-slogan { color: #999; font-size: 13px; font-weight: 300; line-height: 150%; margin:10px 0 10px 0; }
 
 /*node*/
 .node.node-teaser, .page-node- #content-wrapper, .page-contact #content-wrapper { background-color: #fcfcfc; border: 1px solid #eaeaea; margin-bottom: 30px;
@@ -313,7 +313,7 @@ th.active img { margin: -4px 0 0 5px; }
 input:focus, input[type="button"], input[type="reset"], input[type="submit"] { -webkit-transition: all 0.3s ease-in-out;
 -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 
-input.form-text, textarea.form-textarea, select { background-color: #fcfcfc; border: 1px solid #eaeaea; color: #999999; font-size: 14px; padding: 14px; width: 100%;
+input.form-text, textarea.form-textarea, select { background-color: #fcfcfc; border: 2px solid #eaeaea; color: #999999; font-size: 14px; padding: 14px; width: 100%;
 min-height: 50px; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
 
 input.form-text:focus, textarea.form-textarea:focus { background-color: #fff; outline: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
@@ -331,7 +331,7 @@ legend { border-bottom: none; font-size: 14px; width: auto; margin: 0;}
 input[type="radio"], input[type="checkbox"] { margin: 0px 0 3px; }
 
 /*buttons*/
-input[type="submit"], input[type="reset"], input[type="button"] { margin: 5px 5px 10px 0; background-color: #418bca; border: none; box-shadow: none;
+input[type="submit"], input[type="reset"], input[type="button"] { margin: 5px 5px 10px 0; background-color: #444; border: none; box-shadow: none;
 color: #fff; padding: 15px 24px; text-transform: uppercase; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color: #ffffff; }
 
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .highlighted-block .btn:hover,.highlighted-block .btn:focus { color: #ffffff; }
@@ -429,7 +429,7 @@ color: #000; position: relative; z-index: 1; height: 52px; margin: 0; padding: 1
 
 .highlighted-block-inside { padding:0 25px 25px 25px;  text-align:center;}
 
-.highlighted-block .btn { background-color: #6aa3c6; color: #fff; display: block; padding: 15px 25px; margin: 20px 0 0; text-align: center; -webkit-border-radius: 4px;
+.highlighted-block .btn { background-color: #444; color: #fff; display: block; padding: 15px 25px; margin: 20px 0 0; text-align: center; -webkit-border-radius: 4px;
 -moz-border-radius: 4px; border-radius: 4px; }
 
 .highlighted-block.nopadding { padding: 0; }
@@ -564,14 +564,3 @@ ul.primary, ul.primary li a, ul.primary li.active a { border-color:#eaeaea; } ul
 .not-logged-in .block-forum .contextual-links-wrapper { display: none; }
 
 a.contextual-links-trigger, #toolbar a, textarea { -webkit-transition: none; -moz-transition: none; -o-transition: none; -ms-transition: none; transition: none; }
-
-
-/* ----- */
-
-.block-superfish{
-  padding: 15px 0;
-}
-
-.form-item input.error, .form-item textarea.error, .form-item select.error {
-border: 1px solid red;
-}

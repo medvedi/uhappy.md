@@ -1,15 +1,95 @@
-<?php //if (theme_get_setting('scrolltop_display')): ?>
-<!--<div id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></div>-->
-<?php //endif; ?>
+<?php if (theme_get_setting('scrolltop_display')): ?>
+<div id="toTop"><span class="glyphicon glyphicon-chevron-up"></span></div>
+<?php endif; ?>
+
+<?php if ($page['pre_header_first'] || $page['pre_header_second'] || $page['pre_header_third']) :?>
+<!-- #pre-header -->
+<div id="pre-header" class="clearfix">
+    <div class="container">
+
+        <!-- #pre-header-inside -->
+        <div id="pre-header-inside" class="clearfix">
+            <div class="row">
+                <div class="col-md-4">
+                    <?php if ($page['pre_header_first']):?>
+                    <div class="pre-header-area">
+                    <?php print render($page['pre_header_first']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-4">
+                    <?php if ($page['pre_header_second']):?>
+                    <div class="pre-header-area">
+                    <?php print render($page['pre_header_second']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-4">
+                    <?php if ($page['pre_header_third']):?>
+                    <div class="pre-header-area">
+                    <?php print render($page['pre_header_third']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <!-- EOF: #pre-header-inside -->
+
+    </div>
+    <div class="toggle-control"><a href="javascript:showPreHeader()"><span class="glyphicon glyphicon-plus"></span></a></div>
+</div>
+<!-- EOF: #pre-header -->
+<?php endif; ?>
+
+
+<?php if ($page['header_top_left'] || $page['header_top_right']) :?>
+<!-- #header-top -->
+<div id="header-top" class="clearfix">
+    <div class="container">
+
+        <!-- #header-top-inside -->
+        <div id="header-top-inside" class="clearfix">
+            <div class="row">
+
+            <?php if ($page['header_top_left']) :?>
+            <div class="<?php print $header_top_left_grid_class; ?>">
+                <!-- #header-top-left -->
+                <div id="header-top-left" class="clearfix">
+                    <?php print render($page['header_top_left']); ?>
+                </div>
+                <!-- EOF:#header-top-left -->
+            </div>
+            <?php endif; ?>
+
+            <?php if ($page['header_top_right']) :?>
+            <div class="<?php print $header_top_right_grid_class; ?>">
+                <!-- #header-top-right -->
+                <div id="header-top-right" class="clearfix">
+                    <?php print render($page['header_top_right']); ?>
+                </div>
+                <!-- EOF:#header-top-right -->
+            </div>
+            <?php endif; ?>
+
+            </div>
+        </div>
+        <!-- EOF: #header-top-inside -->
+
+    </div>
+</div>
+<!-- EOF: #header-top -->
+<?php endif; ?>
 
 <!-- header -->
-<header id="header" role="banner" class="clearfix header">
+<header id="header" role="banner" class="clearfix">
     <div class="container">
 
         <!-- #header-inside -->
         <div id="header-inside" class="clearfix">
             <div class="row">
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="col-md-12">
 
                 <?php if ($logo):?>
                 <div id="logo">
@@ -35,9 +115,22 @@
 
 
                 </div>
+            </div>
+        </div>
+        <!-- EOF: #header-inside -->
 
+    </div>
+</header>
+<!-- EOF: #header -->
 
-                <div class="col-md-6 col-sm-8 col-xs-12">
+<!-- #main-navigation -->
+<div id="main-navigation" class="clearfix">
+    <div class="container">
+
+        <!-- #main-navigation-inside -->
+        <div id="main-navigation-inside" class="clearfix">
+            <div class="row">
+                <div class="col-md-12">
                     <nav role="navigation">
                         <?php if ($page['navigation']) :?>
                         <?php print drupal_render($page['navigation']); ?>
@@ -48,21 +141,13 @@
                         <?php endif; ?>
                     </nav>
                 </div>
-
-
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                    <nav role="header-phone">
-                        <h2>86 868 9698</h2>
-                    </nav>
-                </div>
-
             </div>
         </div>
-        <!-- EOF: #header-inside -->
+        <!-- EOF: #main-navigation-inside -->
 
     </div>
-</header>
-<!-- EOF: #header -->
+</div>
+<!-- EOF: #main-navigation -->
 
 <?php if ($page['banner']) : ?>
 <!-- #banner -->
@@ -240,13 +325,76 @@
 </div>
 <!-- EOF:#page -->
 
-<footer id="footer" class="clearfix footer">
+<?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third'] || $page['footer_fourth']):?>
+<!-- #footer -->
+<footer id="footer" class="clearfix">
     <div class="container">
-      <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('menu', 'secondary-menu', 'links', 'clearfix')))); ?>
 
-      <?php if ($page['footer']):?>
-        <?php print render($page['footer']); ?>
-      <?php endif; ?>
+        <!-- #footer-inside -->
+        <div id="footer-inside" class="clearfix">
+            <div class="row">
+                <div class="col-md-3">
+                    <?php if ($page['footer_first']):?>
+                    <div class="footer-area">
+                    <?php print render($page['footer_first']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-3">
+                    <?php if ($page['footer_second']):?>
+                    <div class="footer-area">
+                    <?php print render($page['footer_second']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-3">
+                    <?php if ($page['footer_third']):?>
+                    <div class="footer-area">
+                    <?php print render($page['footer_third']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-3">
+                    <?php if ($page['footer_fourth']):?>
+                    <div class="footer-area">
+                    <?php print render($page['footer_fourth']); ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <!-- EOF: #footer-inside -->
+
+    </div>
+</footer>
+<!-- EOF #footer -->
+<?php endif; ?>
+
+<footer id="subfooter" class="clearfix">
+    <div class="container">
+
+        <!-- #subfooter-inside -->
+        <div id="subfooter-inside" class="clearfix">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- #subfooter-left -->
+                    <div class="subfooter-area">
+                    <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('menu', 'secondary-menu', 'links', 'clearfix')))); ?>
+
+                    <?php if ($page['footer']):?>
+                    <?php print render($page['footer']); ?>
+                    <?php endif; ?>
+
+                    </div>
+                    <!-- EOF: #subfooter-left -->
+                </div>
+            </div>
+        </div>
+        <!-- EOF: #subfooter-inside -->
+
     </div>
 </footer>
 <!-- EOF:#subfooter -->

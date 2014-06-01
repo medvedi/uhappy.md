@@ -5,8 +5,8 @@ version = VERSION
 core = 7.x
 
 stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = css/main.css
-;stylesheets[all][] = color/colors.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = color/colors.css
 stylesheets[all][] = css/local.css
 
 regions[pre_header_first] = Pre Header First
