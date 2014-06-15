@@ -1,0 +1,394 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,greek);
+@font-face {
+  font-family: 'latohairline';
+  src: url("../fonts/lato-hai-webfont.eot");
+  src: url("../fonts/lato-hai-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-hai-webfont.woff") format("woff"), url("../fonts/lato-hai-webfont.ttf") format("truetype"), url("../fonts/lato-hai-webfont.svg#latohairline") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latohairline_italic';
+  src: url("../fonts/lato-haiita-webfont.eot");
+  src: url("../fonts/lato-haiita-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-haiita-webfont.woff") format("woff"), url("../fonts/lato-haiita-webfont.ttf") format("truetype"), url("../fonts/lato-haiita-webfont.svg#latohairline_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'latoregular';
+  src: url("../fonts/lato-reg-webfont.eot");
+  src: url("../fonts/lato-reg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-reg-webfont.woff") format("woff"), url("../fonts/lato-reg-webfont.ttf") format("truetype"), url("../fonts/lato-reg-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Colors*/
+/* breakpoints */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-weight: normal;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto !important;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+div.messages {
+  background: #f2fbf6;
+  padding: 15px;
+  border: 1px solid #be7;
+  background-image: none;
+  margin: 10px 0;
+  clear: both;
+}
+div.messages.error {
+  background: #fef5f1;
+  border-color: #ed541d;
+}
+
+.form-type-bef-link,
+.page-products .series-tabs .menu li,
+.page-products .try-it-now-btn .pane-content,
+.pane-pane-messages .tabs ul.primary {
+  float: left;
+  font-size: 13px;
+}
+.form-type-bef-link a,
+.page-products .series-tabs .menu li a,
+.page-products .try-it-now-btn .pane-content a,
+.pane-pane-messages .tabs ul.primary a {
+  color: #558800;
+  padding: 5px 13px 0;
+  display: block;
+  height: 22px;
+  background: transparent url("../images/tab.png") no-repeat 0 0;
+  border: none;
+  border-right: 1px solid #b8d590;
+}
+.form-type-bef-link a.active,
+.page-products .series-tabs .menu li a.active,
+.page-products .try-it-now-btn .pane-content a.active,
+.pane-pane-messages .tabs ul.primary a.active {
+  background: transparent url("../images/tab-active.png") no-repeat 0 0;
+  color: #0077aa;
+  border-right: 1px solid #2BA6CB;
+}
+
+.pane-pane-messages .tabs ul.primary {
+  border: none;
+}
+.pane-pane-messages .tabs ul.primary li {
+  border: none;
+  margin: 0;
+}
+
+th {
+  background-color: transparent;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.item-list ul li {
+  padding: 15px 0;
+}
+
+.breadcrumb {
+  padding: 14px 20px;
+}
+
+.block-superfish ul.sf-menu > li > ul {
+  top: 100%;
+}
+
+.carousel ol.carousel-indicators li {
+  background-color: #d1d1d1;
+}
+
+.carousel .carousel-caption {
+  background-color: #000000;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.carousel-control .icon-prev, .carousel-control .icon-next {
+  font-size: 50px;
+  width: 100%;
+  height: 100%;
+  top: -5px;
+  left: 0;
+  margin: 0;
+  line-height: 100%;
+}
+
+body {
+  color: #444;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  margin: 0 0 15px;
+  padding: 0;
+}
+
+a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #47bab5;
+}
+a:hover {
+  text-decoration: underline;
+  color: #47bab5;
+}
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+li a.active {
+  color: #47bab5;
+}
+
+blockquote {
+  margin: 40px 40px 24px;
+  border-left: none;
+  padding: 0;
+  position: relative;
+  color: #999;
+}
+blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 30px;
+  left: -20px;
+  top: 5px;
+  position: absolute;
+}
+blockquote p {
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/*Heading*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 120%;
+  padding: 0;
+  margin: 20px 0 10px 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #444;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+h1.page-title {
+  font-size: 32px;
+}
+
+/* Drupal status messages */
+div.messages {
+  padding: 15px 15px 15px 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-position: 13px 15px;
+}
+div.messages a {
+  font-weight: bold;
+}
+div.messages.status {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+div.messages.status a {
+  color: #356635;
+}
+div.messages.error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+div.messages.error a {
+  color: #953b39;
+}
+div.messages.warning {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+div.messages.warning a {
+  color: #a47e3c;
+}
+
+/* Header */
+.page-header {
+  background: #495054;
+  padding: 15px 0 0;
+}
+.page-header h2 {
+  margin: 0;
+}
+.page-header .site-name {
+  display: none;
+}
+.page-header .sf-menu {
+  font-size: 16px;
+  margin-top: 35px;
+}
+.page-header .sf-menu li {
+  margin-left: 15px;
+}
+.page-header .sf-menu li:first-child {
+  margin-left: 0;
+}
+.page-header .sf-menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 42px;
+}
+.page-header .sf-menu a:hover, .page-header .sf-menu a.active {
+  padding-bottom: 33px;
+  border-bottom: 9px solid #47bab5;
+}
+
+.footer {
+  background: #495054;
+  color: #fff;
+  font-size: 12px;
+  color: #666;
+}
+.footer .footer-menu {
+  padding: 15px 0 5px;
+}
+.footer .footer-menu li {
+  float: left;
+  margin: 0;
+  font-size: 14px;
+  margin-left: 25px;
+}
+.footer .footer-menu li:first-child {
+  margin-left: 0;
+}
+.footer .footer-menu li a {
+  color: #999;
+}
+
+/* General styles */
+.page-wrapper {
+  width: 100%;
+  margin: auto;
+}
+.page-wrapper > * > .inner {
+  max-width: 1170px;
+  margin: auto;
+}
+.front .page-wrapper .main-wrapper > .inner {
+  max-width: 100%;
+}
+
+/*
+
+.content{
+  .left{
+    float: left;
+    width: 50%;
+    margin-right: 4%;
+  }
+  .right{
+    float: right;
+    width: 46%;
+  }
+  .field-name-field-image-list .field-item{
+    float: left;
+    width: 30%;
+    margin: 15px 5% 10px 0;
+    &:nth-child(3n+3){
+      margin-right: 0;
+    }
+  }
+}
+
+*/

@@ -1,0 +1,29 @@
+.form-type-bef-link,
+.page-products .series-tabs .menu li,
+.page-products .try-it-now-btn .pane-content,
+.pane-pane-messages .tabs ul.primary{
+  float: left;
+  font-size: 13px;
+  a{
+    color: #558800;
+    padding: 5px 13px 0;
+    display: block;
+    height: 22px;
+    background: transparent url('../images/tab.png') no-repeat 0 0;
+    border: none;
+    border-right: 1px solid #b8d590;
+    &.active{
+      background: transparent url('../images/tab-active.png') no-repeat 0 0;
+      color: #0077aa;
+      border-right: 1px solid #2BA6CB;
+    }
+  }
+ }
+
+.pane-pane-messages .tabs ul.primary{
+  border: none;
+  li{
+    border: none;
+    margin: 0;
+  }
+}
