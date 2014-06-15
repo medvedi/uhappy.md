@@ -72,6 +72,19 @@ function uhappy_theme_preprocess_html(&$variables) {
       array('type' => 'inline', 'scope' => 'header'));
   }
   //EOF:Javascript
+
+  // Add fredSel on all pages.
+  $carouFredSel_path = libraries_get_path('carouFredSel');
+  if (!empty($carouFredSel_path)) {
+    drupal_add_js($carouFredSel_path . '/jquery.carouFredSel-6.2.1-packed.js');
+  }
+
+  // Add fredSel on all pages.
+  $touchSwipe_path = libraries_get_path('touchSwipe');
+  if (!empty($touchSwipe_path)) {
+    drupal_add_js($touchSwipe_path . '/jquery.touchSwipe.js');
+  }
+
 }
 
 /**

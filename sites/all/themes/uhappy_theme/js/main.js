@@ -5,10 +5,72 @@
   /**
    * A simple Drupal behavior example.
    */
-  Drupal.behaviors.cirlceThemeExample = {
+
+  Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
-      // Your code goes here.
+      $('<div class="slider-navigation"><div class="nav-left"></div><div class="pager"></div><div class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
+      $('<div class="carousel-navigation"><div class="nav-left"></div><div class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items, .carousel');
     }
   };
+
+  Drupal.behaviors.carouFredSelInit = {
+    attach: function (context) {
+      // Using custom configuration
+      var $elementCarousel = $('.field-name-field-image-list .field-items, .carousel');
+      var $elementSlider = $('.slider-wrapper ul, .slider');
+
+      if($elementCarousel.length !== 0){
+//        $elementSlider.imagesLoaded( function() {
+          $elementCarousel.carouFredSel({
+            direction : "left",
+            responsive: true,
+            height: 'variable',
+            width :'variable',
+            scroll : {
+              items           : 1,
+              easing          : "elastic",
+              duration        : 1000,
+              pauseOnHover    : true
+            },
+            items : {
+              visible : {
+                min : 1,
+                max : 6
+              },
+              height: 'variable'
+            },
+            swipe       : {
+              onTouch     : true
+            }
+          });
+//        });
+      }
+
+      if($elementSlider.length !== 0){
+//        $elementSlider.imagesLoaded( function() {
+          $elementSlider.carouFredSel({
+            direction           : "left",
+            responsive          : true,
+            width: '100%',
+            height: 'variable',
+            items: {
+              height: 'variable',
+              visible: 1
+            },
+            pagination: ".pager",
+            prev                : ".nav-left",
+            next                : ".nav-right",
+            scroll : {
+              items           : 1,
+              fx          : "fade",
+              duration        : 1000,
+              pauseOnHover    : false
+            }
+          });
+//        });
+      }
+
+    }
+  }
 
 })(jQuery);
