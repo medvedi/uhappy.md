@@ -141,6 +141,8 @@ div.messages {
 .page-header{
   background: #495054;
   padding: 15px 0 0;
+  margin: 0;
+  border: none;
   h2{
     margin: 0;
   }
@@ -163,7 +165,7 @@ div.messages {
       &:hover,
       &.active{
         padding-bottom: 33px;
-        border-bottom: 9px solid #47bab5;
+        border-bottom: 9px solid $light-blue;
       }
     }
   }
@@ -203,11 +205,299 @@ div.messages {
   .front & .main-wrapper > .inner{
     max-width: 100%;
   }
+  .main-wrapper{
+    padding: 0 10px;
+  }
 }
 
-/*
+.slider-wrapper{
+  margin-bottom: 30px;
+  ul{
+    li{
+      max-height: 500px;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+  img{
+    width: 100%;
+  }
+}
 
-.content{
+.slider-navigation{
+  text-align: center;
+  margin-top: -29px;
+  position: relative;
+  bottom: 20px;
+  > div{
+    margin: 0;
+    line-height: 25px;
+    display: inline-block;
+  }
+  .nav-left,
+  .nav-right{
+    background: url('../images/slider-controls.png') no-repeat -138px 2px;
+    width: 20px;
+    height: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  .nav-left{
+    background-position: 3px 2px;
+  }
+  .pager{
+    a{
+      padding: 0 5px;
+      margin: 0 5px;
+      float: left;
+      overflow: hidden;
+      height: 25px;
+      background: url('../images/slider-controls.png') no-repeat -96px 2px;
+      text-indent: -100px;
+      width: 18px;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -ms-transition: none;
+      -o-transition: none;
+      transition: none;
+      &.selected{
+        background-position: -45px 2px;
+      }
+    }
+  }
+}
+
+.field-name-field-image-list{
+  position: relative;
+  .carousel-navigation{
+    display: none;
+    .nav-left,
+    .nav-right{
+      background: url('../images/slider-controls.png') no-repeat -135px center;
+      width: 20px;
+      height: 100%;
+      cursor: pointer;
+      margin: 0 5px;
+      position: absolute;
+      top: 0;
+      margin: 0;
+      width: 25px;
+      z-index: 1;
+    }
+    .nav-left{
+      background-position: 6px center;
+      left: 0;
+    }
+    .nav-right{
+      right: 0;
+    }
+  }
+  &:hover{
+    .carousel-navigation{
+      display: block;
+    }
+  }
+}
+
+
+
+
+
+
+
+.front-three-col-block .highlighted-block{
+  text-align: center;
+  font-size: 17px;
+  color: #555;
+  position: relative;
+  h6{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background: #47bab5;
+    min-width: 64%;
+    float: left;
+    text-align: right;
+    line-height: 36px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    font-size: 24px;
+    border: none;
+    a{
+      color: #fff;
+      padding: 0 15px;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.front-three-col-block .row > div{
+  text-align: center;
+  font-size: 17px;
+  color: #555;
+  position: relative;
+  .title{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    background: #47bab5;
+    min-width: 64%;
+    float: left;
+    text-align: right;
+    line-height: 36px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    font-size: 24px;
+    border: none;
+    a{
+      color: #fff;
+      padding: 0 15px;
+      display: block;
+      text-decoration: none;
+    }
+  }
+  .content{
+    margin-top: 20px;
+  }
+}
+
+.highlighted-block{
+  border: 1px solid #dedede;
+  overflow: hidden;
+  margin-bottom: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #555;
+  -webkit-box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  -ms-box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.2);
+  .highlighted-block-inside{
+    padding: 0 23px 30px;
+  }
+  h6{
+    color: #555;
+    font-size: 22px;
+    margin-bottom: 15px
+  }
+  .field-name-body,
+  .read-more{
+    display: inline;
+    *{
+      display: inline;
+    }
+  }
+}
+
+#modalBackdrop{
+  background: rgba(0,0,0,0.8) !important;
+}
+
+
+.html{
+  .ctools-modal-content{
+    border: none;
+    background: #f3f3f3;
+    height: auto !important;
+    .modal-header{
+      background: transparent;
+      border: none;
+      padding-right: 0;
+      .modal-title{
+        color: #495054;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      .close{
+        opacity: 1;
+        background: url('/sites/all/themes/uhappy_theme/images/close-btn.png') no-repeat 4px 3px;
+        width: 28px;
+        height: 28px;
+        padding-top: 27px;
+        margin: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: 0;
+        -ms-transition: 0;
+        -o-transition: 0;
+        transition: 0;
+        &:hover{
+          background-position: 4px -54px;
+        }
+      }
+    }
+    .modal-content{
+      background: transparent;
+      height: auto !important;
+      border: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      width: 100% !important;
+      padding: 20px;
+    }
+  }
+}
+
+///* Front scenario list */
+//
+///*
+// *
+// * TO BE MODIFIED
+// *
+// */
+//
+//.pane-content-list{
+//  .views-row{
+//    border-top: 1px dashed #cfcfcf;
+//    padding: 50px 0;
+//    color: #555;
+//    &:first-child{
+//      border-top: none;
+//    }
+//    h2{
+//      margin: -9px 0 15px;
+//      line-height: 1;
+//      a{
+//        color: #555;
+//        font-size: 24px;
+//        font-weight: bold;
+//      }
+//    }
+//    .field-type-image{
+//      float: left;
+//      width: 25%;
+//      margin: 0 3% 15px 0;
+//      img{
+//        max-width: 100%;
+//        height: auto;
+//      }
+//    }
+//    .field-type-text-with-summary,
+//    .links{
+//      display: inline;
+//      line-height: 24px;
+//      font-size: 18px;
+//      *{
+//        display: inline;
+//      }
+//    }
+//  }
+//}
+
+.node-scenario{
   .left{
     float: left;
     width: 50%;
@@ -219,12 +509,5 @@ div.messages {
   }
   .field-name-field-image-list .field-item{
     float: left;
-    width: 30%;
-    margin: 15px 5% 10px 0;
-    &:nth-child(3n+3){
-      margin-right: 0;
-    }
   }
 }
-
-*/

@@ -11,6 +11,7 @@ scripts[] = js/main.js
 
 regions[header] = Header
 regions[navigation] = Navigation
+regions[slider] = Slider
 regions[content] = Main Content
 regions[footer] = Footer
 
