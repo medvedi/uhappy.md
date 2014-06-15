@@ -1,1 +1,0 @@
-window.CKEDITOR_BASEPATH = '/uhappy_theme/sites/all/libraries/ckeditor/';
