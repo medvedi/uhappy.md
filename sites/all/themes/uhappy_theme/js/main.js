@@ -73,4 +73,22 @@
     }
   }
 
+  Drupal.behaviors.chosenInit = {
+    attach: function () {
+      var $chosenElements = $(".ctools-modal-content select");
+      $chosenElements.chosen();
+    }
+  };
+
+  Drupal.behaviors.childrenRadioActive = {
+    attach: function () {
+      $('.field-name-field-number-of-children .form-type-radio label').click(function(){
+        if (!$(this).parent().hasClass('active')){
+          $(this).parent().addClass('active')
+          $(this).parent().siblings().removeClass('active');
+        }
+      })
+    }
+  };
+
 })(jQuery);
