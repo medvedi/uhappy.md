@@ -80,36 +80,33 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> base-two-col-nodes blog-inner clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> base-two-col-nodes clearfix"<?php print $attributes; ?>>
 
   <div class="row">
-    <div class="col-sm-12 col-xs-12">
+    <div class="left col-sm-4 col-xs-12">
+      <?php print render($content['field_image']); ?>
+    </div>
+    <div class="right col-sm-8 col-xs-12">
+      <header>
+        <?php print render($title_prefix); ?>
+        <?php if (!$page): ?>
+          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+        <?php endif; ?>
+        <?php print render($title_suffix); ?>
 
-      <div class="left">
-        <?php print render($content['field_image']); ?>
-      </div>
-      <div class="right">
-        <header>
-          <?php print render($title_prefix); ?>
-          <?php if (!$page): ?>
-            <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-
-          <?php if ($display_submitted): ?>
-            <div class="submitted">
-              <?php print $submitted; ?>
-            </div>
-          <?php endif; ?>
-        </header>
-        <?php
-        // We hide the comments and links now so that we can render them later.
-        hide($content['comments']);
-        hide($content['links']);
-        print render($content);
-        ?>
-        <?php print render($content['links']); ?>
-      </div>
+        <?php if ($display_submitted): ?>
+          <div class="submitted">
+            <?php print $submitted; ?>
+          </div>
+        <?php endif; ?>
+      </header>
+      <?php
+      // We hide the comments and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
+      ?>
+      <?php print render($content['links']); ?>
     </div>
   </div>
 
