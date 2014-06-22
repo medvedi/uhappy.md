@@ -196,6 +196,20 @@ div.messages {
   .name-and-slogan{
     display: none;
   }
+  .block-superfish{
+    float: left;
+  }
+  .block-locale{
+    margin-top: 35px;
+    float: right;
+    li{
+      float: left;
+      margin-left: 15px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
   .sf-menu{
     font-size: 16px;
     margin-top: 35px;
