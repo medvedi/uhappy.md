@@ -37,17 +37,17 @@
   hide($content['field_main_image']);
   hide($content['field_image_list']);
   ?>
-  <div class="container">
-    <div class="row">
-      <div class="left">
-        <?php print render($content['field_main_image']); ?>
-        <?php print render($content['field_image_list']); ?>
-      </div>
-      <div class="right"><?php print render($content); ?></div>
+  <div class="row">
+    <div class="left col-md-6 col-sm-4 col-xs-12">
+      <?php print render($content['field_main_image']); ?>
+      <?php print render($content['field_image_list']); ?>
+    </div>
+    <div class="right col-md-6 col-sm-8 col-xs-12">
+      <?php print render($content); ?>
+      <?php print render($content['links']); ?>
     </div>
   </div>
 
-  <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
 

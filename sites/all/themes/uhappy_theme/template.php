@@ -91,6 +91,12 @@ function uhappy_theme_preprocess_html(&$variables) {
     drupal_add_js($chosen_path . '/chosen.jquery.js');
   }
 
+  // Add imagesloaded on all pages.
+  $imagesloaded_path = libraries_get_path('imagesloaded');
+  if (!empty($imagesloaded_path)) {
+    drupal_add_js($imagesloaded_path . '/imagesloaded.pkgd.js');
+  }
+
 }
 
 /**

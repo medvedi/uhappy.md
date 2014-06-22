@@ -58,13 +58,44 @@ img {
   max-width: 100%;
 }
 
-.form-text {
+.form-text,
+textarea{
   @extend .form-control;
+  resize: none;
+}
+
+.grippie{
+  display: none;
 }
 
 .form-submit{
   @extend .btn;
   @extend .btn-primary;
+}
+
+.region-content .links{
+  li{
+    a{
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+  .page-blog & li{
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.form-type-select,
+.form-type-textfield,
+.form-type-textarea,
+.form-type-checkbox,
+.field-type-list-float{
+  margin-bottom: 15px;
+}
+
+label{
+  margin-bottom: 3px;
 }
 
 /*Heading*/
@@ -148,14 +179,14 @@ div.messages {
 /* Header */
 
 .page-header{
-  background: #495054;
+  background: transparent;
   padding: 15px 0 0;
   margin: 0;
   border: none;
   h2{
     margin: 0;
   }
-  .site-name{
+  .name-and-slogan{
     display: none;
   }
   .sf-menu{
@@ -296,10 +327,10 @@ div.messages {
     }
     .nav-left{
       background-position: 6px center;
-      left: 0;
+      left: 5px;
     }
     .nav-right{
-      right: 0;
+      right: 5px;
     }
   }
   &:hover{
@@ -308,12 +339,6 @@ div.messages {
     }
   }
 }
-
-
-
-
-
-
 
 .front-three-col-block .highlighted-block{
   text-align: center;
@@ -324,7 +349,7 @@ div.messages {
     position: absolute;
     top: 90px;
     left: 0;
-    background: #47bab5;
+    background: $light-blue;
     min-width: 64%;
     float: left;
     text-align: right;
@@ -350,11 +375,14 @@ div.messages {
   font-size: 17px;
   color: #555;
   position: relative;
+  .image{
+    position: relative;
+  }
   .title{
     position: absolute;
-    top: 90px;
+    bottom: 20px;
     left: 0;
-    background: #47bab5;
+    background: rgba(62, 139, 202, 0.8);
     min-width: 64%;
     float: left;
     text-align: right;
@@ -473,13 +501,9 @@ div.messages {
     padding: 20px 0;
   }
   .form-wrapper{
-    margin-bottom: 15px;
     @extend .clearfix;
     .form-wrapper{
       margin: 0;
-    }
-    &.form-actions{
-      padding-top: 15px;
     }
   }
   .form-submit{
@@ -488,9 +512,6 @@ div.messages {
     @extend .col-sm-8;
     @extend .col-md-offset-2;
     @extend .col-xs-12;
-  }
-  label{
-    margin-bottom: 3px;
   }
 }
 
@@ -600,79 +621,34 @@ div.messages {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///* Front scenario list */
-//
-///*
-// *
-// * TO BE MODIFIED
-// *
-// */
-//
-//.pane-content-list{
-//  .views-row{
-//    border-top: 1px dashed #cfcfcf;
-//    padding: 50px 0;
-//    color: #555;
-//    &:first-child{
-//      border-top: none;
-//    }
-//    h2{
-//      margin: -9px 0 15px;
-//      line-height: 1;
-//      a{
-//        color: #555;
-//        font-size: 24px;
-//        font-weight: bold;
-//      }
-//    }
-//    .field-type-image{
-//      float: left;
-//      width: 25%;
-//      margin: 0 3% 15px 0;
-//      img{
-//        max-width: 100%;
-//        height: auto;
-//      }
-//    }
-//    .field-type-text-with-summary,
-//    .links{
-//      display: inline;
-//      line-height: 24px;
-//      font-size: 18px;
-//      *{
-//        display: inline;
-//      }
-//    }
-//  }
-//}
-
 .node-scenario{
-  .left{
-    float: left;
-    width: 50%;
-    margin-right: 4%;
-  }
   .right{
-    float: right;
-    width: 46%;
   }
-  .field-name-field-image-list .field-item{
-    float: left;
+  .field-name-field-main-image{
+    img{
+      -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      -ms-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    }
   }
+  .field-name-field-image-list{
+    position: relative;
+    margin: 5px -5px 0;
+    .field-item{
+      float: left;
+    }
+    a {
+      display: block;
+      margin: 5px;
+      -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      -ms-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+#map-canvas{
+  margin-top: 0 !important;
 }
