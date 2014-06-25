@@ -72,6 +72,13 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'scenario' => 'scenario',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Taxonomy page */
   $handler = $view->new_display('block', 'Taxonomy page', 'block');
@@ -125,6 +132,26 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
+  $translatables['content_list'] = array(
+    t('Master'),
+    t('Taxonomy page'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('All'),
+    t('Front page'),
+    t('Related content'),
+  );
   $export['content_list'] = $view;
 
   $view = new view();
@@ -184,6 +211,17 @@ function uhappy_views_pages_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['slider'] = array(
+    t('Master'),
+    t('Slider'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Block'),
+  );
   $export['slider'] = $view;
 
   return $export;
