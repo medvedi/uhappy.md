@@ -7030,7 +7030,7 @@ div.messages.warning a {
   float: left;
 }
 .page-header .block-locale {
-  margin-top: 35px;
+  margin-top: 25px;
   float: right;
 }
 .page-header .block-locale li {
@@ -7039,6 +7039,19 @@ div.messages.warning a {
 }
 .page-header .block-locale li:first-child {
   margin-left: 0;
+}
+.page-header .block-locale li a {
+  width: 32px;
+  height: 32px;
+  padding-top: 31px;
+  overflow: hidden;
+  display: block;
+}
+.page-header .block-locale .ro {
+  background: url("../images/md.png") no-repeat 0 0;
+}
+.page-header .block-locale .ru {
+  background: url("../images/ru.png") no-repeat 0 0;
 }
 .page-header .sf-menu {
   font-size: 16px;

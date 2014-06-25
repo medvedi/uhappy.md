@@ -200,7 +200,7 @@ div.messages {
     float: left;
   }
   .block-locale{
-    margin-top: 35px;
+    margin-top: 25px;
     float: right;
     li{
       float: left;
@@ -208,6 +208,19 @@ div.messages {
       &:first-child{
         margin-left: 0;
       }
+      a{
+        width: 32px;
+        height: 32px;
+        padding-top: 31px;
+        overflow: hidden;
+        display: block;
+      }
+    }
+    .ro{
+      background: url('../images/md.png') no-repeat 0 0;
+    }
+    .ru{
+      background: url('../images/ru.png') no-repeat 0 0;
     }
   }
   .sf-menu{

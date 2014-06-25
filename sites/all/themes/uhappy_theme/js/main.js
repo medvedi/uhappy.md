@@ -102,8 +102,18 @@
 
   Drupal.behaviors.chosenInit = {
     attach: function () {
-      var $chosenElements = $(".ctools-modal-content select, .block-superfish select");
+      var $chosenElements = $(".ctools-modal-content select");
+
       $chosenElements.chosen();
+
+//      $(".block-superfish select").chosen();
+//      $(window).resize(function(){
+//        if ($(".block-superfish select").length != 0 ){
+//          $(".block-superfish select").chosen();
+//          console.log(11);
+//        }
+//      });
+
     }
   };
 
