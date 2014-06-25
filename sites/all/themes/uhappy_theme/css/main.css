@@ -7114,7 +7114,6 @@ div.messages.warning a {
 .slider-navigation {
   text-align: center;
   margin-top: -29px;
-  position: relative;
   bottom: 20px;
 }
 .slider-navigation > div {
@@ -7122,16 +7121,9 @@ div.messages.warning a {
   line-height: 25px;
   display: inline-block;
 }
-.slider-navigation .nav-left,
-.slider-navigation .nav-right {
-  background: url("../images/slider-controls.png") no-repeat -138px 2px;
-  width: 20px;
-  height: 25px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-.slider-navigation .nav-left {
-  background-position: 3px 2px;
+.slider-navigation .pager {
+  position: relative;
+  bottom: 15px;
 }
 .slider-navigation .pager a {
   padding: 0 5px;
@@ -7151,6 +7143,49 @@ div.messages.warning a {
 .slider-navigation .pager a.selected {
   background-position: -45px 2px;
 }
+.slider-navigation .nav-left,
+.slider-navigation .nav-right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 15%;
+  max-width: 135px;
+  margin: 0;
+  cursor: pointer;
+}
+.slider-navigation .nav-left:hover,
+.slider-navigation .nav-right:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.slider-navigation .nav-left:after,
+.slider-navigation .nav-right:after {
+  content: '';
+  width: 54px;
+  height: 102px;
+  background: url("../images/slider-arrows.png") no-repeat 0 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -51px 0 0 -32px;
+}
+.slider-navigation .nav-left {
+  left: 0;
+}
+.slider-navigation .nav-left:after {
+  background-position: 0 0;
+}
+.slider-navigation .nav-left:hover:after {
+  background-position: -135px 0;
+}
+.slider-navigation .nav-right {
+  right: 0;
+}
+.slider-navigation .nav-right:after {
+  background-position: -69px 0;
+}
+.slider-navigation .nav-right:hover:after {
+  background-position: -202px 0;
+}
 
 .field-name-field-image-list {
   position: relative;
@@ -7160,7 +7195,7 @@ div.messages.warning a {
 }
 .field-name-field-image-list .carousel-navigation .nav-left,
 .field-name-field-image-list .carousel-navigation .nav-right {
-  background: url("../images/slider-controls.png") no-repeat -135px center;
+  background: url("../images/slider-controls-dark.png") no-repeat -135px center;
   width: 20px;
   height: 100%;
   cursor: pointer;
@@ -7395,8 +7430,14 @@ div.messages.warning a {
   visibility: hidden;
 }
 .field-name-field-number-of-children .form-type-radio.active label {
-  background: #eaedf2;
-  color: #666;
+  color: #fff;
+  background: #428bca;
+  border-color: #357ebd;
+}
+.field-name-field-number-of-children .form-type-radio:hover label {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
 }
 
 /* Chosen selects */

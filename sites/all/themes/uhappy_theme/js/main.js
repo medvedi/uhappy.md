@@ -6,6 +6,20 @@
    * A simple Drupal behavior example.
    */
 
+  var modalPositionRecalculate = function(){
+    var modalHeight = $('#modalContent').height();
+    var winHeight = $(window).height();
+    var wt = self.pageYOffset;
+    if(modalHeight < winHeight){
+      var mdcTop = Math.max(wt + ( winHeight / 2 ) - ($('#modalContent').outerHeight() / 2),20);
+      $('#modalContent').css('top',mdcTop);
+    }
+    else{
+      var mdcTop = Math.max(wt + 20,20);
+      $('#modalContent').css('top',mdcTop);
+    }
+  };
+
   Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
       $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
@@ -88,18 +102,31 @@
 
   Drupal.behaviors.chosenInit = {
     attach: function () {
-      var $chosenElements = $(".ctools-modal-content select");
+      var $chosenElements = $(".ctools-modal-content select, .block-superfish select");
       $chosenElements.chosen();
     }
   };
 
   Drupal.behaviors.childrenRadioActive = {
     attach: function () {
-      $('.field-name-field-number-of-children .form-type-radio label').click(function(){
+      var $formRadio = $('.field-name-field-number-of-children .form-type-radio');
+      $formRadio.find('input:checked').parent('.form-type-radio').addClass('active');
+      $formRadio.find('label').click(function(){
         if (!$(this).parent().hasClass('active')){
           $(this).parent().addClass('active')
           $(this).parent().siblings().removeClass('active');
         }
+      })
+    }
+  };
+
+  Drupal.behaviors.modalPositionRecalculate = {
+    attach: function () {
+      $('#modalContent').ready(function(){
+        modalPositionRecalculate();
+        $(window).resize(function(){
+          modalPositionRecalculate();
+        })
       })
     }
   };

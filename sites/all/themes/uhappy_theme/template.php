@@ -163,3 +163,16 @@ function uhappy_theme_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
   }
 }
+
+function uhappy_theme_js_alter(&$javascript) {
+  // Swap out ctools modal ks to use a local version.
+  $jsPath = '/sites/all/themes/uhappy_theme/js/modal.js';
+  $javascript['sites/all/modules/contrib/ctools/js/modal.js']['data'] = $jsPath;
+}
+
+drupal_add_js('/sites/all/themes/uhappy_theme/js/main.js');
+
+//function uhappy_theme_js_alter(&$javascript) {
+//  // Swap out jQuery to use an updated version of the library.
+//  $javascript['sites/all/modules/contrib/ctools/js/modal.js'] = array();
+//}

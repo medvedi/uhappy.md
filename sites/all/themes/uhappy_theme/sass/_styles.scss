@@ -289,25 +289,15 @@ div.messages {
 .slider-navigation{
   text-align: center;
   margin-top: -29px;
-  position: relative;
   bottom: 20px;
   > div{
     margin: 0;
     line-height: 25px;
     display: inline-block;
   }
-  .nav-left,
-  .nav-right{
-    background: url('../images/slider-controls.png') no-repeat -138px 2px;
-    width: 20px;
-    height: 25px;
-    cursor: pointer;
-    margin: 0 5px;
-  }
-  .nav-left{
-    background-position: 3px 2px;
-  }
   .pager{
+    position: relative;
+    bottom: 15px;
     a{
       padding: 0 5px;
       margin: 0 5px;
@@ -327,6 +317,51 @@ div.messages {
       }
     }
   }
+  .nav-left,
+  .nav-right{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    max-width: 135px;
+    margin: 0;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(0,0,0,0.2);
+    }
+    &:after{
+      content: '';
+      width: 54px;
+      height: 102px;
+      background: url('../images/slider-arrows.png') no-repeat 0 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -51px 0 0 -32px;
+    }
+  }
+  .nav-left{
+    left: 0;
+    &:after{
+      background-position: 0 0;
+    }
+    &:hover{
+      &:after{
+        background-position: -135px 0;
+      }
+    }
+  }
+  .nav-right{
+    right: 0;
+    &:after{
+      background-position: -69px 0;
+    }
+    &:hover{
+      &:after{
+        background-position: -202px 0;
+      }
+    }
+  }
 }
 
 .field-name-field-image-list{
@@ -335,7 +370,7 @@ div.messages {
     display: none;
     .nav-left,
     .nav-right{
-      background: url('../images/slider-controls.png') no-repeat -135px center;
+      background: url('../images/slider-controls-dark.png') no-repeat -135px center;
       width: 20px;
       height: 100%;
       cursor: pointer;
@@ -588,8 +623,14 @@ div.messages {
       visibility: hidden;
     }
     &.active label{
-      background: #eaedf2;
-      color: #666;
+      color: #fff;
+      background: #428bca;
+      border-color: #357ebd;
+    }
+    &:hover label{
+      color: #fff;
+      background-color: #3276b1;
+      border-color: #285e8e;
     }
   }
 }
@@ -760,7 +801,7 @@ div.messages {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     &:hover,
     &.selected{
-      background: #428bca;
+      background: $light-blue;
       text-decoration: none;
       color: #fff;
     }
