@@ -301,7 +301,7 @@ function uhappy_ct_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'related_content' => array(
         'label' => 'hidden',
@@ -339,55 +339,7 @@ function uhappy_ct_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-scenario-field_adults'
-  $field_instances['node-scenario-field_adults'] = array(
-    'bundle' => 'scenario',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'related_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_adults',
-    'label' => 'Adults',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 2,
     ),
   );
 
@@ -400,9 +352,13 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
+        'module' => 'range',
+        'settings' => array(
+          'range_combine' => FALSE,
+          'range_separator' => '-',
+        ),
+        'type' => 'range_unformatted',
+        'weight' => 13,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -452,9 +408,10 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -481,7 +438,7 @@ function uhappy_ct_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -494,9 +451,10 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 10,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -523,55 +481,7 @@ function uhappy_ct_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-scenario-field_children'
-  $field_instances['node-scenario-field_children'] = array(
-    'bundle' => 'scenario',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'related_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_children',
-    'label' => 'Children',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -587,7 +497,7 @@ function uhappy_ct_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 5,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -626,11 +536,11 @@ function uhappy_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 6,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -660,7 +570,7 @@ function uhappy_ct_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 12,
     ),
   );
 
@@ -683,7 +593,7 @@ function uhappy_ct_field_default_field_instances() {
           'colorbox_node_style' => 'medium',
         ),
         'type' => 'colorbox',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -721,7 +631,7 @@ function uhappy_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -767,7 +677,7 @@ function uhappy_ct_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -790,7 +700,7 @@ function uhappy_ct_field_default_field_instances() {
           'colorbox_node_style' => 'large',
         ),
         'type' => 'colorbox',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'related_content' => array(
         'label' => 'hidden',
@@ -836,7 +746,7 @@ function uhappy_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -849,9 +759,10 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'number',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'type' => 'number_unformatted',
+        'weight' => 8,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -882,7 +793,7 @@ function uhappy_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -895,9 +806,10 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'number',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'type' => 'number_unformatted',
+        'weight' => 9,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -928,7 +840,7 @@ function uhappy_ct_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 13,
+      'weight' => 11,
     ),
   );
 
@@ -941,9 +853,14 @@ function uhappy_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 14,
       ),
       'related_content' => array(
         'label' => 'above',
@@ -972,7 +889,7 @@ function uhappy_ct_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -1034,12 +951,10 @@ function uhappy_ct_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Adults');
   t('Age range');
   t('Categories');
   t('Character');
   t('Character name');
-  t('Children');
   t('Children categories');
   t('Custom html');
   t('Description');

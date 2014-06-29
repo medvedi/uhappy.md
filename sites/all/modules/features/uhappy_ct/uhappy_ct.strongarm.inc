@@ -117,10 +117,20 @@ function uhappy_ct_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '1',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__scenario'] = $strongarm;

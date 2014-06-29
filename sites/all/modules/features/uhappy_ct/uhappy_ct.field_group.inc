@@ -21,19 +21,20 @@ function uhappy_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Children settings',
-    'weight' => '7',
+    'weight' => '5',
     'children' => array(
       0 => 'field_age_range',
       1 => 'field_children_categories',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Children settings',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-children-settings field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'group-children-settings field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_children_settings|node|scenario|form'] = $field_group;
