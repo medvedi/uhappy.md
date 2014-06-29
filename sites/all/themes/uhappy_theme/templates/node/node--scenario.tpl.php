@@ -43,8 +43,35 @@
           <?php endif; ?>
         </header>
       <?php endif; ?>
-      <?php print render($content); ?>
-      <?php print render($content['links']); ?>
+
+      <?php if (!empty($field_custom_html)): ?>
+        <?php print render($content['field_custom_html']); ?>
+      <?php else: ?>
+        <?php print render($content['field_categories']); ?>
+
+        <?php if (!empty($field_children_categories)): ?>
+          <?php print render($content['field_children_categories']); ?>
+        <?php endif; ?>
+
+        <?php if (!empty($field_age_range)): ?>
+          <?php print render($content['field_age_range']); ?>
+        <?php endif; ?>
+
+        <?php print render($content['body']); ?>
+
+        <?php if (!empty($field_list_of_games_and_competit)): ?>
+          <?php print render($content['field_list_of_games_and_competit']); ?>
+        <?php endif; ?>
+
+        <?php if (!empty($field_price_for_1_person)): ?>
+          <?php print t('Price') . ' ' . render($content['field_price_for_1_person']); ?>
+        <?php endif; ?>
+
+        <?php if (!empty($field_price_for_2_person)): ?>
+          <?php print render($content['field_price_for_2_person']); ?>
+        <?php endif; ?>
+      <?php endif; ?>
+
     </div>
   </div>
 
