@@ -16,16 +16,17 @@ $node_url = ltrim($node_url, '/');
 // $node_url = str_replace($base_path, '', $node_url);
 ?>
 
-<div class="col-md-4 col-sm-6 col-xs-12" data-scrollreveal="enter bottom and move 40px over 0.8s">
-  <div class="highlighted-block">
+<div class="hover-content-block col-md-4 col-sm-4 col-xs-12">
+  <a class="hover-link" href="<?php print  'node/' . $node->nid; ?>"></a>
+  <div class="hover-content-block-inner">
     <?php if($content['field_main_image']['#items'][0]['uri']): ?>
       <?php print render($content['field_main_image']); ?>
     <?php endif; ?>
-
-    <div class="highlighted-block-inside">
-      <h6><?php print $title; ?></h6>
-      <?php print render($content['body']); ?>
-      <a class="read-more" href="<?php print  'node/' . $node->nid; ?>"><?php print t("Learn More"); ?></a>
-    </div>
+    <span class="content">
+      <span class="title"><?php print $title; ?></span>
+      <span class="text">
+        <?php print render($content['body']); ?>
+      </span>
+    </span>
   </div>
 </div>
