@@ -68,6 +68,9 @@ function uhappy_ct_strongarm() {
       'related_content' => array(
         'custom_settings' => FALSE,
       ),
+      'main_display' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -107,6 +110,9 @@ function uhappy_ct_strongarm() {
       'related_content' => array(
         'custom_settings' => TRUE,
       ),
+      'main_display' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -124,7 +130,11 @@ function uhappy_ct_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__slider';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'main_display' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

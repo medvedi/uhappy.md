@@ -29,6 +29,18 @@ function uhappy_ct_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'main_display' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
       'related_content' => array(
         'label' => 'hidden',
         'module' => 'entityreference',

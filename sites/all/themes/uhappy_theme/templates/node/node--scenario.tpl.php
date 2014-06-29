@@ -15,8 +15,6 @@
   hide($content['links']);
   hide($content['field_main_image']);
   hide($content['field_image_list']);
-  dpm($content);
-  dpm($variables);
   ?>
 
   <div class="row">
@@ -51,5 +49,6 @@
   </div>
 
   <?php print render($content['comments']); ?>
+  <?php print $order_link ?>
 
 </article>

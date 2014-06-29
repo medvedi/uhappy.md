@@ -176,3 +176,13 @@ function uhappy_theme_js_alter(&$javascript) {
 }
 
 drupal_add_js('/sites/all/themes/uhappy_theme/js/main.js');
+
+function uhappy_theme_preprocess_node(&$variables) {
+  if ($variables['view_mode'] == 'full') {
+
+    $name = t('Order');
+    // Create a path for the url that is like our hook_menu() declaration above.
+    $href = 'order/nojs/' . $variables['nid'];
+    $variables['order_link'] = ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style');
+  }
+}
