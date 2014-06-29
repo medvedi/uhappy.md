@@ -172,7 +172,8 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -189,6 +190,12 @@ function uhappy_views_pages_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_images']['multi_type'] = 'ul';
+  /* Field: Content: Custom html */
+  $handler->display->display_options['fields']['field_custom_html']['id'] = 'field_custom_html';
+  $handler->display->display_options['fields']['field_custom_html']['table'] = 'field_data_field_custom_html';
+  $handler->display->display_options['fields']['field_custom_html']['field'] = 'field_custom_html';
+  $handler->display->display_options['fields']['field_custom_html']['label'] = '';
+  $handler->display->display_options['fields']['field_custom_html']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
