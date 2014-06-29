@@ -76,6 +76,18 @@
   </div>
 
   <?php print render($content['comments']); ?>
+
+  <!-- Order popup link -->
   <?php print $order_link ?>
+
+  <!-- Site phone description -->
+  <?php if (isset($site_phone_description)): ?>
+    <?php print $site_phone_description ?>
+  <?php endif; ?>
+
+  <!-- Site phone -->
+  <?php if (isset($site_phone)): ?>
+    <?php print $site_phone ?>
+  <?php endif; ?>
 
 </article>
