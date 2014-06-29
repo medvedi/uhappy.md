@@ -177,14 +177,17 @@ function uhappy_utility_node_view($node) {
  */
 function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
   $nid = arg(2);
+  // Hide the title field.
+  hide($form['title']);
+
   if (arg(0) == 'order' && $nid) {
     // Load the parent node from the argument.
     $scenario_node = node_load($nid);
     // Set default title and disable field.
     $form['title']['#default_value'] = $scenario_node->title;
     $form['title']['#disabled']      = TRUE;
-    // Hide the title field.
-    hide($form['title']);
+
+    $form['field_character_name']['und']['#default_value'] = $scenario_node->field_character_name['und'][0]['tid'];
 
     // Unset some values from the form.
     unset($form['field_number_of_children']['und']['#options']['_none']);
@@ -223,6 +226,7 @@ function uhappy_utility_form_alter(&$form, &$form_state, $form_id) {
  */
 function uhappy_utility_node_presave($node) {
   if ($node->type == 'order') {
+    $node->title = $node->title . ':' . $node->field_name['und'][0]['value'] . ':' . date('Y-m-d H:i:s', $node->created);
     // Define message to send.
     $message = "New order {" . $node->title . "} was created";
     // Send the sms message.

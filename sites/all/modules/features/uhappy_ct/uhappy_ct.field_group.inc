@@ -70,6 +70,34 @@ function uhappy_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_custom|node|slider|form';
+  $field_group->group_name = 'group_custom';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'slider';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Custom',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_custom_html',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Custom',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-custom field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_custom|node|slider|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_personal_data|node|order|form';
   $field_group->group_name = 'group_personal_data';
   $field_group->entity_type = 'node';
