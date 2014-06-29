@@ -18,11 +18,11 @@
   ?>
 
   <div class="row">
-    <div class="left col-sm-4 col-xs-12">
+    <div class="left col-sm-6 col-xs-12">
       <?php print render($content['field_main_image']); ?>
       <?php print render($content['field_image_list']); ?>
     </div>
-    <div class="right col-sm-8 col-xs-12">
+    <div class="right col-sm-6 col-xs-12">
       <?php if ($title_prefix || $title_suffix || $display_submitted || !$page && $title): ?>
         <header>
           <?php print render($title_prefix); ?>
@@ -49,6 +49,7 @@
       <?php else: ?>
         <?php print render($content['field_categories']); ?>
 
+        <div class="btn btn-primary btn-category">
         <?php if (!empty($field_children_categories)): ?>
           <?php print render($content['field_children_categories']); ?>
         <?php endif; ?>
@@ -56,6 +57,7 @@
         <?php if (!empty($field_age_range)): ?>
           <?php print render($content['field_age_range']); ?>
         <?php endif; ?>
+        </div>
 
         <?php print render($content['body']); ?>
 
@@ -64,30 +66,37 @@
         <?php endif; ?>
 
         <?php if (!empty($field_price_for_1_person)): ?>
-          <?php print t('Price') . ' ' . render($content['field_price_for_1_person']); ?>
+          <div class="price"><?php print t('Price') . '</div><div class="btn btn-primary price-btn"> '
+          . render($content['field_price_for_1_person']); ?></div>
         <?php endif; ?>
 
+
         <?php if (!empty($field_price_for_2_person)): ?>
-          <?php print render($content['field_price_for_2_person']); ?>
+          <div class="btn btn-primary price-btn"><?php print render($content['field_price_for_2_person']); ?></div>
         <?php endif; ?>
+
+        <div class="order">
+          <?php print $order_link ?>
+        </div>
       <?php endif; ?>
+
+      <!-- Site phone description -->
+      <div class="content-phone-description">
+        <?php if (isset($site_phone_description)): ?>
+          <?php print $site_phone_description ?>
+        <?php endif; ?>
+      </div>
+
+      <!-- Site phone -->
+      <div class="content-phone">
+        <?php if (isset($site_phone)): ?>
+          <?php print $site_phone ?>
+        <?php endif; ?>
+      </div>
 
     </div>
   </div>
 
   <?php print render($content['comments']); ?>
-
-  <!-- Order popup link -->
-  <?php print $order_link ?>
-
-  <!-- Site phone description -->
-  <?php if (isset($site_phone_description)): ?>
-    <?php print $site_phone_description ?>
-  <?php endif; ?>
-
-  <!-- Site phone -->
-  <?php if (isset($site_phone)): ?>
-    <?php print $site_phone ?>
-  <?php endif; ?>
 
 </article>
