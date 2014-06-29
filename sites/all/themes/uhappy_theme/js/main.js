@@ -6,10 +6,24 @@
    * A simple Drupal behavior example.
    */
 
+  var modalPositionRecalculate = function(){
+    var modalHeight = $('#modalContent').height();
+    var winHeight = $(window).height();
+    var wt = self.pageYOffset;
+    if(modalHeight < winHeight){
+      var mdcTop = Math.max(wt + ( winHeight / 2 ) - ($('#modalContent').outerHeight() / 2),20);
+      $('#modalContent').css('top',mdcTop);
+    }
+    else{
+      var mdcTop = Math.max(wt + 20,20);
+      $('#modalContent').css('top',mdcTop);
+    }
+  };
+
   Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
-      $('<div class="slider-navigation"><div class="nav-left"></div><div class="pager"></div><div class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
-      $('<div class="carousel-navigation"><div class="nav-left"></div><div class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items, .carousel');
+      $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
+      $('<div class="carousel-navigation"><div id="carousel-left" class="nav-left"></div><div id="carousel-right" class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items, .carousel');
     }
   };
 
@@ -20,7 +34,7 @@
       var $elementSlider = $('.slider-wrapper ul, .slider');
 
       if($elementCarousel.length !== 0){
-//        $elementSlider.imagesLoaded( function() {
+        $elementCarousel.imagesLoaded( function() {
           $elementCarousel.carouFredSel({
             direction : "left",
             responsive: true,
@@ -40,14 +54,27 @@
               height: 'variable'
             },
             swipe       : {
-              onTouch     : true
+              onTouch     : true,
+              onMouse     : false
+            },
+            prev                : "#carousel-left",
+            next                : "#carousel-right"
+          });
+
+          $elementCarousel.swipe({
+            excludedElements: "button, input, select, textarea, .noSwipe",
+            swipeLeft: function() {
+              $elementCarousel.trigger('next', 1);
+            },
+            swipeRight: function() {
+              $elementCarousel.trigger('prev', 1);
             }
           });
-//        });
+        });
       }
 
       if($elementSlider.length !== 0){
-//        $elementSlider.imagesLoaded( function() {
+        $elementSlider.imagesLoaded( function() {
           $elementSlider.carouFredSel({
             direction           : "left",
             responsive          : true,
@@ -58,8 +85,8 @@
               visible: 1
             },
             pagination: ".pager",
-            prev                : ".nav-left",
-            next                : ".nav-right",
+            prev                : "#slider-left",
+            next                : "#slider-right",
             scroll : {
               items           : 1,
               fx          : "fade",
@@ -67,10 +94,51 @@
               pauseOnHover    : false
             }
           });
-//        });
+        });
       }
 
     }
   }
+
+  Drupal.behaviors.chosenInit = {
+    attach: function () {
+      var $chosenElements = $(".ctools-modal-content select");
+
+      $chosenElements.chosen();
+
+//      $(".block-superfish select").chosen();
+//      $(window).resize(function(){
+//        if ($(".block-superfish select").length != 0 ){
+//          $(".block-superfish select").chosen();
+//          console.log(11);
+//        }
+//      });
+
+    }
+  };
+
+  Drupal.behaviors.childrenRadioActive = {
+    attach: function () {
+      var $formRadio = $('.field-name-field-number-of-children .form-type-radio');
+      $formRadio.find('input:checked').parent('.form-type-radio').addClass('active');
+      $formRadio.find('label').click(function(){
+        if (!$(this).parent().hasClass('active')){
+          $(this).parent().addClass('active')
+          $(this).parent().siblings().removeClass('active');
+        }
+      })
+    }
+  };
+
+  Drupal.behaviors.modalPositionRecalculate = {
+    attach: function () {
+      $('#modalContent').ready(function(){
+        modalPositionRecalculate();
+        $(window).resize(function(){
+          modalPositionRecalculate();
+        })
+      })
+    }
+  };
 
 })(jQuery);

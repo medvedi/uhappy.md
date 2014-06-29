@@ -41,7 +41,7 @@
           <?php endif; ?>
           <?php print render($page['header']); ?>
         </div>
-        <div class="header-right col-xs-12 col-sm-8 col-md-9">
+        <div class="header-right col-xs-12 col-sm-12 col-md-9">
           <?php print render($page['navigation']); ?>
         </div>
       </div>

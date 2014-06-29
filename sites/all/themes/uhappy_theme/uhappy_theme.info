@@ -7,7 +7,8 @@ base theme	= circle
 stylesheets[all][] = css/main.css
 
 ; Theme scripts
-scripts[] = js/main.js
+;scripts[] = js/modal.js
+;scripts[] = js/main.js
 
 regions[header] = Header
 regions[navigation] = Navigation

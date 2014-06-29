@@ -79,10 +79,22 @@ function uhappy_theme_preprocess_html(&$variables) {
     drupal_add_js($carouFredSel_path . '/jquery.carouFredSel-6.2.1-packed.js');
   }
 
-  // Add fredSel on all pages.
+  // Add touchSwipe on all pages.
   $touchSwipe_path = libraries_get_path('touchSwipe');
   if (!empty($touchSwipe_path)) {
     drupal_add_js($touchSwipe_path . '/jquery.touchSwipe.js');
+  }
+
+  // Add chosen on all pages.
+  $chosen_path = libraries_get_path('chosen');
+  if (!empty($chosen_path)) {
+    drupal_add_js($chosen_path . '/chosen.jquery.js');
+  }
+
+  // Add imagesloaded on all pages.
+  $imagesloaded_path = libraries_get_path('imagesloaded');
+  if (!empty($imagesloaded_path)) {
+    drupal_add_js($imagesloaded_path . '/imagesloaded.pkgd.js');
   }
 
 }
@@ -151,3 +163,16 @@ function uhappy_theme_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
   }
 }
+
+function uhappy_theme_js_alter(&$javascript) {
+  // Swap out ctools modal ks to use a local version.
+  $jsPath = '/sites/all/themes/uhappy_theme/js/modal.js';
+  $javascript['sites/all/modules/contrib/ctools/js/modal.js']['data'] = $jsPath;
+}
+
+drupal_add_js('/sites/all/themes/uhappy_theme/js/main.js');
+
+//function uhappy_theme_js_alter(&$javascript) {
+//  // Swap out jQuery to use an updated version of the library.
+//  $javascript['sites/all/modules/contrib/ctools/js/modal.js'] = array();
+//}
