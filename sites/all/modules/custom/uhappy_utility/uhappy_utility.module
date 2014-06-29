@@ -134,6 +134,9 @@ function order_modal_page($js = NULL, $nid = NULL) {
   // change this to your type node form
   $output = ctools_modal_form_wrapper('order_node_form', $form_state);
 
+  $output[0]['output'] .= '<br />' . variable_get('site_phone_description', '');
+  $output[0]['output'] .= '<br />' . variable_get('site_phone', '');
+
   // This means the form has been exectued
   if (!empty($form_state['executed'])) {
     $output = array();
