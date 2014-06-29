@@ -190,12 +190,6 @@ function uhappy_views_pages_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_images']['multi_type'] = 'ul';
-  /* Field: Content: Custom html */
-  $handler->display->display_options['fields']['field_custom_html']['id'] = 'field_custom_html';
-  $handler->display->display_options['fields']['field_custom_html']['table'] = 'field_data_field_custom_html';
-  $handler->display->display_options['fields']['field_custom_html']['field'] = 'field_custom_html';
-  $handler->display->display_options['fields']['field_custom_html']['label'] = '';
-  $handler->display->display_options['fields']['field_custom_html']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

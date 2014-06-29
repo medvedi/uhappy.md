@@ -65,7 +65,6 @@ features[field_instance][] = node-scenario-field_main_image
 features[field_instance][] = node-scenario-field_price_for_1_person
 features[field_instance][] = node-scenario-field_price_for_2_person
 features[field_instance][] = node-scenario-field_youtube_video
-features[field_instance][] = node-slider-field_custom_html
 features[field_instance][] = node-slider-field_images
 features[node][] = order
 features[node][] = scenario
