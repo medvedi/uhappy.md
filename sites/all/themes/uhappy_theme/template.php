@@ -117,6 +117,11 @@ function uhappy_theme_process_page(&$variables) {
   if (module_exists('color')) {
     _color_page_alter($variables);
   }
+
+  // Define new variables for site_phone && site_phone_description.
+  $site_phone = variable_get('site_phone', '');
+  $site_phone_description = variable_get('site_phone_description', '');
+  $variables['page']['navigation']['site_phone']['#markup'] = '<div class="site-phone"> <span class="phone">' . $site_phone . '</span><span class="description">' . $site_phone_description . '</span></div>';
 }
 
 /**
@@ -165,14 +170,9 @@ function uhappy_theme_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function uhappy_theme_js_alter(&$javascript) {
-  // Swap out ctools modal ks to use a local version.
+  // Swap out ctools modal js to use a local version.
   $jsPath = '/sites/all/themes/uhappy_theme/js/modal.js';
   $javascript['sites/all/modules/contrib/ctools/js/modal.js']['data'] = $jsPath;
 }
 
 drupal_add_js('/sites/all/themes/uhappy_theme/js/main.js');
-
-//function uhappy_theme_js_alter(&$javascript) {
-//  // Swap out jQuery to use an updated version of the library.
-//  $javascript['sites/all/modules/contrib/ctools/js/modal.js'] = array();
-//}

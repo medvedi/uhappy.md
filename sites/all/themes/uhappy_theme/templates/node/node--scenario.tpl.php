@@ -15,7 +15,10 @@
   hide($content['links']);
   hide($content['field_main_image']);
   hide($content['field_image_list']);
+  dpm($content);
+  dpm($variables);
   ?>
+
   <div class="row">
     <div class="left col-sm-4 col-xs-12">
       <?php print render($content['field_main_image']); ?>
