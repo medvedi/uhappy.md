@@ -209,7 +209,11 @@ function uhappy_ct_field_default_field_instances() {
   // Exported field_instance: 'node-order-field_number_of_children'
   $field_instances['node-order-field_number_of_children'] = array(
     'bundle' => 'order',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
