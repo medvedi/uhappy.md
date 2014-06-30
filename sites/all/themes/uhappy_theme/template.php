@@ -173,9 +173,10 @@ function uhappy_theme_js_alter(&$javascript) {
   // Swap out ctools modal js to use a local version.
   $jsPath = '/sites/all/themes/uhappy_theme/js/modal.js';
   $javascript['sites/all/modules/contrib/ctools/js/modal.js']['data'] = $jsPath;
-}
 
-drupal_add_js('/sites/all/themes/uhappy_theme/js/main.js');
+}
+  drupal_add_js(drupal_get_path('theme', 'uhappy_theme') . '/js/main.js');
+
 
 function uhappy_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full') {

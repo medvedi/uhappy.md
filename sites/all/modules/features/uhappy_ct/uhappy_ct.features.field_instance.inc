@@ -1029,52 +1029,6 @@ function uhappy_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slider-field_custom_html'
-  $field_instances['node-slider-field_custom_html'] = array(
-    'bundle' => 'slider',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'related_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_custom_html',
-    'label' => 'Custom html',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => -2,
-    ),
-  );
-
   // Exported field_instance: 'node-slider-field_images'
   $field_instances['node-slider-field_images'] = array(
     'bundle' => 'slider',
