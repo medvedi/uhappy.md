@@ -328,7 +328,7 @@ th {
 
 html {
   font-size: 62.5%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -2704,7 +2704,7 @@ fieldset[disabled] .page-content .links li a.active,
 }
 
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .form-submit, .page-content .action-links li .btn-group-lg > a,
-.page-content .links li .btn-group-lg > a, .field-name-field-related-scenario .btn-group-lg > a, .right .order .btn-group-lg > a {
+.page-content .links li .btn-group-lg > a, .field-name-field-related-scenario .btn-group-lg > a, .right .order a {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -3903,7 +3903,7 @@ input[type="button"].btn-block {
 }
 
 .btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .form-submit + .dropdown-toggle, .page-content .action-links li .btn-group-lg.btn-group > a + .dropdown-toggle,
-.page-content .links li .btn-group-lg.btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group-lg.btn-group > a + .dropdown-toggle, .right .order .btn-group-lg.btn-group > a + .dropdown-toggle {
+.page-content .links li .btn-group-lg.btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group-lg.btn-group > a + .dropdown-toggle, .right .order .btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3923,14 +3923,14 @@ input[type="button"].btn-block {
 }
 
 .btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .form-submit .caret, .page-content .action-links li .btn-group-lg > a .caret,
-.page-content .links li .btn-group-lg > a .caret, .field-name-field-related-scenario .btn-group-lg > a .caret, .right .order .btn-group-lg > a .caret {
+.page-content .links li .btn-group-lg > a .caret, .field-name-field-related-scenario .btn-group-lg > a .caret, .right .order a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 .dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .form-submit .caret, .dropup .page-content .action-links li .btn-group-lg > a .caret, .page-content .action-links li .dropup .btn-group-lg > a .caret,
 .dropup .page-content .links li .btn-group-lg > a .caret,
-.page-content .links li .dropup .btn-group-lg > a .caret, .dropup .field-name-field-related-scenario .btn-group-lg > a .caret, .field-name-field-related-scenario .dropup .btn-group-lg > a .caret, .dropup .right .order .btn-group-lg > a .caret, .right .order .dropup .btn-group-lg > a .caret {
+.page-content .links li .dropup .btn-group-lg > a .caret, .dropup .field-name-field-related-scenario .btn-group-lg > a .caret, .field-name-field-related-scenario .dropup .btn-group-lg > a .caret, .dropup .right .order a .caret, .right .order .dropup a .caret {
   border-width: 0 5px 5px;
 }
 
@@ -5025,7 +5025,7 @@ input[type="button"].btn-block {
   background-color: #999999;
 }
 .label-default[href]:hover, .label-default[href]:focus {
-  background-color: gray;
+  background-color: grey;
 }
 
 .label-primary {
@@ -5299,7 +5299,7 @@ a.thumbnail.active {
 
 .progress-striped .progress-bar {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-size: 40px 40px;
 }
 
@@ -5313,7 +5313,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-info {
@@ -5321,7 +5321,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-warning {
@@ -5329,7 +5329,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .progress-bar-danger {
@@ -5337,7 +5337,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
 }
 
 .media,
@@ -6394,7 +6394,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 .carousel-indicators .active {
   margin: 0;
@@ -7074,6 +7074,7 @@ div.messages.warning a {
   float: right;
   text-align: center;
   min-width: 186px;
+  clear: right;
 }
 .page-header .site-phone span {
   clear: both;
@@ -7764,12 +7765,15 @@ div.messages.warning a {
   border: none;
   margin: 0 0 15px;
   width: 100%;
-  max-width: 300px;
-  cursor: default;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
+  max-width: 287px;
+  font-size: 14px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  color: #fff;
+}
+.right .btn-category div {
+  font-weight: bold;
 }
 .right .price,
 .right .field-name-field-price-for-1-person,
@@ -7777,8 +7781,8 @@ div.messages.warning a {
   float: left;
 }
 .right .price {
-  font-size: 20px;
-  margin-right: 15px;
+  font-size: 30px;
+  margin-right: 8px;
 }
 .right .price-btn {
   cursor: default;
@@ -7788,6 +7792,12 @@ div.messages.warning a {
   -moz-box-shadow: none;
   -ms-box-shadow: none;
   box-shadow: none;
+  margin-top: 5px;
+  font-size: 24px;
+  padding: 2px 12px;
+}
+.right .price-btn div {
+  font-weight: bold;
 }
 .right .order {
   clear: both;
@@ -7796,10 +7806,11 @@ div.messages.warning a {
 }
 .right .order a {
   color: #fff;
-  max-width: 250px;
+  max-width: 358px;
   width: 100%;
   display: block;
   margin: auto;
+  font-weight: bold;
 }
 .right .order a:hover {
   text-decoration: none;

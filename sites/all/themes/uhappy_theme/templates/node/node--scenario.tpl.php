@@ -22,7 +22,7 @@
       <?php print render($content['field_main_image']); ?>
       <?php print render($content['field_image_list']); ?>
     </div>
-    <div class="right col-sm-6 col-xs-12">
+    <div class="right col-sm-5 col-xs-12">
       <?php if ($title_prefix || $title_suffix || $display_submitted || !$page && $title): ?>
         <header>
           <?php print render($title_prefix); ?>
@@ -49,29 +49,25 @@
       <?php else: ?>
         <?php print render($content['field_categories']); ?>
 
-        <div class="btn btn-primary btn-category">
-        <?php if (!empty($field_children_categories)): ?>
-          <?php print render($content['field_children_categories']); ?>
+        <?php if (!empty($content['field_children_categories']) || !empty($content['field_age_range'])): ?>
+          <div class="btn-category">
+            <?php print render($content['field_children_categories']); ?>
+            <?php print render($content['field_age_range']); ?>
+          </div>
         <?php endif; ?>
-
-        <?php if (!empty($field_age_range)): ?>
-          <?php print render($content['field_age_range']); ?>
-        <?php endif; ?>
-        </div>
 
         <?php print render($content['body']); ?>
 
-        <?php if (!empty($field_list_of_games_and_competit)): ?>
+        <?php if (!empty($content['field_list_of_games_and_competit'])): ?>
           <?php print render($content['field_list_of_games_and_competit']); ?>
         <?php endif; ?>
 
-        <?php if (!empty($field_price_for_1_person)): ?>
+        <?php if (!empty($content['field_price_for_1_person'])): ?>
           <div class="price"><?php print t('Price') . '</div><div class="btn btn-primary price-btn"> '
           . render($content['field_price_for_1_person']); ?></div>
         <?php endif; ?>
 
-
-        <?php if (!empty($field_price_for_2_person)): ?>
+        <?php if (!empty($content['field_price_for_2_person'])): ?>
           <div class="btn btn-primary price-btn"><?php print render($content['field_price_for_2_person']); ?></div>
         <?php endif; ?>
 
