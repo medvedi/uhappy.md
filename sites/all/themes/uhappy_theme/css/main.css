@@ -7507,6 +7507,9 @@ div.messages.warning a {
 .ctools-modal-content .form-wrapper .form-wrapper {
   margin: 0;
 }
+.ctools-modal-content .form-submit {
+  margin-bottom: 20px;
+}
 
 .container-inline-date .date-padding {
   padding: 0;
@@ -7772,7 +7775,14 @@ div.messages.warning a {
   text-align: center;
   color: #fff;
 }
-.right .btn-category div {
+.right .btn-category > div {
+  display: inline-block;
+}
+.right .btn-category > div div {
+  font-weight: bold;
+}
+.right .btn-category a {
+  color: #fff;
   font-weight: bold;
 }
 .right .price,
@@ -7815,12 +7825,14 @@ div.messages.warning a {
 .right .order a:hover {
   text-decoration: none;
 }
-.right .content-phone-description,
-.right .content-phone {
+
+.content-phone-description,
+.content-phone {
   text-align: center;
   font-size: 14px;
   margin: 5px;
 }
-.right .content-phone {
+
+.content-phone {
   font-size: 24px;
 }

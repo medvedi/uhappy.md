@@ -676,6 +676,7 @@ div.messages {
     @extend .col-sm-8;
     @extend .col-md-offset-2;
     @extend .col-xs-12;
+    margin-bottom: 20px;
   }
 }
 
@@ -934,20 +935,6 @@ div.messages {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .right{
   font-size: 13px;
   color: #333;
@@ -970,7 +957,14 @@ div.messages {
     line-height: 38px;
     text-align: center;
     color: #fff;
-    div{
+    > div{
+      display: inline-block;
+      div{
+        font-weight: bold;
+      }
+    }
+    a{
+      color: #fff;
       font-weight: bold;
     }
   }
@@ -1017,13 +1011,14 @@ div.messages {
       }
     }
   }
-  .content-phone-description,
-  .content-phone{
-    text-align: center;
-    font-size: 14px;
-    margin: 5px;
-  }
-  .content-phone{
-    font-size: 24px;
-  }
+}
+
+.content-phone-description,
+.content-phone{
+  text-align: center;
+  font-size: 14px;
+  margin: 5px;
+}
+.content-phone{
+  font-size: 24px;
 }
