@@ -47,6 +47,7 @@
       <?php if (!empty($field_custom_html)): ?>
         <?php print render($content['field_custom_html']); ?>
       <?php else: ?>
+        <h2><?php print $title; ?></h2>
         <?php print render($content['field_categories']); ?>
 
         <?php if (!empty($content['field_children_categories']) || !empty($content['field_age_range'])): ?>
