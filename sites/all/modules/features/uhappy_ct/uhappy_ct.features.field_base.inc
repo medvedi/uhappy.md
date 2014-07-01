@@ -452,22 +452,6 @@ function uhappy_ct_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_price_for_2_person'
-  $field_bases['field_price_for_2_person'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_price_for_2_person',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
   // Exported field_base: 'field_related_scenario'
   $field_bases['field_related_scenario'] = array(
     'active' => 1,
@@ -509,6 +493,22 @@ function uhappy_ct_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_sale'
+  $field_bases['field_sale'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sale',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_scenario'

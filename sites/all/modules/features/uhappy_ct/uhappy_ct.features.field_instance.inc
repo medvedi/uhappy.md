@@ -933,36 +933,41 @@ function uhappy_ct_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-scenario-field_price_for_2_person'
-  $field_instances['node-scenario-field_price_for_2_person'] = array(
+  // Exported field_instance: 'node-scenario-field_sale'
+  $field_instances['node-scenario-field_sale'] = array(
     'bundle' => 'scenario',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'number',
-        'settings' => array(),
-        'type' => 'number_unformatted',
-        'weight' => 9,
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 15,
       ),
       'related_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_price_for_2_person',
-    'label' => 'Price for 2 person',
+    'field_name' => 'field_sale',
+    'label' => 'Sale',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -1105,7 +1110,7 @@ function uhappy_ct_field_default_field_instances() {
   t('Number of children');
   t('Phone number');
   t('Price for 1 person');
-  t('Price for 2 person');
+  t('Sale');
   t('Scenario');
   t('Youtube video');
 
