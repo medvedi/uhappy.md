@@ -107,7 +107,7 @@ function uhappy_utility_menu() {
  */
 function order_modal_page($js = NULL, $nid = NULL) {
   global $user;
-  // If people aren't using javascript, then I just boot em. sorry. its 2011.
+  // If people aren't using javascript, then I just boot em. sorry.
 
   if (!$js) return "Upps.. Javascript required";
 
@@ -232,4 +232,106 @@ function uhappy_utility_node_presave($node) {
     // Send the sms message.
     send_sms("37379142089", $message);
   }
+}
+
+################## Custom Block View ############################
+
+/**
+* Implements hook_block_info().
+*/
+function uhappy_utility_block_info() {
+  $blocks = array();
+  $blocks['slider_block'] = array(
+    'info' => t('Slider block'),
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_configure().
+*/
+function uhappy_utility_block_configure($delta='') {
+  $form = array();
+
+  switch($delta) {
+    case 'slider_block' :
+      // Text field form element
+      $form['block_custom_html'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Enter your custom html'),
+        '#default_value' => variable_get('block_custom_html', ''),
+      );
+      break;
+  }
+  return $form;
+}
+
+/**
+* Implements hook_block_save().
+*/
+function uhappy_utility_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'slider_block' :
+      // Saving the WYSIWYG text
+      variable_set('block_custom_html', $edit['block_custom_html']['value']);
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $block = block_load('slider_block', $delta);
+      break;
+  }
+}
+
+/**
+* Implements hook_block_view().
+*/
+function uhappy_utility_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'slider_block' :
+      $block['content'] = _uhappy_block_view();
+    break;
+  }
+
+  return $block;
+}
+
+/**
+* Custom function to assemble renderable array for block content.
+* Returns a renderable array with the block content.
+* @return
+* returns a renderable array of block content.
+*/
+function _uhappy_block_view() {
+  $block = array();
+  // Capture WYSIWYG text from the variable
+  $text = variable_get('block_custom_html', '');
+  if (!empty($text)) {
+    // Include the CTools tools that we need.
+    ctools_include('ajax');
+    ctools_include('modal');
+    // Add CTools' javascript to the page.
+    ctools_modal_add_js();
+    // Set title.
+    $name = t('Order');
+    // Get nid.
+    $result = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('type', 'order')
+      ->execute()
+      ->fetchAssoc();
+    // Create a path for the url that is like our hook_menu() declaration above.
+    $href = 'order/nojs/' . $result['nid'];
+    $text .= '<div class="order">' . ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style') . '</div>';
+  }
+
+  // Block output in HTML with div wrapper
+  $block = array(
+    'message' => array(
+      '#type' => 'markup',
+      '#markup' => $text,
+      '#suffix' => '',
+    ),
+  );
+  return $block;
 }

@@ -67,8 +67,8 @@
           . render($content['field_price_for_1_person']); ?></div>
         <?php endif; ?>
 
-        <?php if (!empty($content['field_price_for_2_person'])): ?>
-          <div class="btn btn-primary price-btn"><?php print render($content['field_price_for_2_person']); ?></div>
+        <?php if (!empty($content['field_sale'])): ?>
+          <div class="btn btn-primary price-btn"><?php print t('Sale') . ' ' . render($content['field_sale']); ?></div>
         <?php endif; ?>
 
         <div class="order">
