@@ -201,8 +201,11 @@ div.messages {
   }
   .block-locale{
     float: right;
+    width: 100%;
+    max-width: 186px;
+    text-align: center;
     li{
-      float: left;
+      display: inline-block;
       margin-left: 15px;
       &:first-child{
         margin-left: 0;
@@ -262,7 +265,7 @@ div.messages {
     }
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 767px){
     .block-superfish{
       select{
         display: none;

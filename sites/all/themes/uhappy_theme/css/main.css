@@ -7085,9 +7085,12 @@ div.messages.warning a {
 }
 .page-header .block-locale {
   float: right;
+  width: 100%;
+  max-width: 186px;
+  text-align: center;
 }
 .page-header .block-locale li {
-  float: left;
+  display: inline-block;
   margin-left: 15px;
 }
 .page-header .block-locale li:first-child {
@@ -7133,7 +7136,7 @@ div.messages.warning a {
     color: #000;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .page-header .block-superfish select {
     display: none;
   }
@@ -7852,12 +7855,6 @@ div.messages.warning a {
 .right .field-name-field-price-for-2-person {
   float: left;
 }
-.right .sale-wrapper {
-  float: right;
-}
-.right .sale-wrapper .price-btn {
-  background: #e48684;
-}
 .right .price {
   font-size: 30px;
   margin-right: 8px;
@@ -7876,6 +7873,12 @@ div.messages.warning a {
 }
 .right .price-btn div {
   font-weight: bold;
+}
+.right .sale-wrapper {
+  float: right;
+}
+.right .sale-wrapper .price-btn {
+  background: #e48684;
 }
 .right .order {
   clear: both;
