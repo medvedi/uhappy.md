@@ -62,16 +62,17 @@
         <?php if (!empty($content['field_list_of_games_and_competit'])): ?>
           <?php print render($content['field_list_of_games_and_competit']); ?>
         <?php endif; ?>
-
-        <?php if (!empty($content['field_price_for_1_person'])): ?>
-          <div class="price"><?php print t('Price') . '</div><div class="btn btn-primary price-btn"> '
-          . render($content['field_price_for_1_person']); ?></div>
-        <?php endif; ?>
-
-        <?php if (!empty($content['field_sale'])): ?>
-          <div class="btn btn-primary price-btn"><?php print t('Sale') . ' ' . render($content['field_sale']); ?></div>
-        <?php endif; ?>
-
+        <div class="price-wrapper">
+          <?php if (!empty($content['field_price_for_1_person'])): ?>
+            <div class="price"><?php print t('Price') . '</div><div class="btn btn-primary price-btn"> '
+            . render($content['field_price_for_1_person']); ?></div>
+          <?php endif; ?>
+        </div>
+        <div class="sale-wrapper">
+          <?php if (!empty($content['field_sale'])): ?>
+            <div class="price"><?php print t('Sale') . '</div><div class="btn btn-primary price-btn"> ' . render($content['field_sale']); ?></div>
+          <?php endif; ?>
+        </div>
         <div class="order">
           <?php print $order_link ?>
         </div>

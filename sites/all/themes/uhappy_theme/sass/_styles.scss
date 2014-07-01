@@ -317,6 +317,33 @@ div.messages {
   }
 }
 
+.block-uhappy-utility{
+  padding: 20px 10px;
+  text-align: center;
+  @media (min-width: 890px){
+    max-width: 1480px;
+    margin: auto;
+    height: 500px;
+    margin-top: -500px;
+    padding: 100px 155px 0;
+    > *{
+       padding-left: 60%;
+    }
+    .order{
+      margin-top: 70px;
+    }
+  }
+  .order{
+    a{
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .btn-lg;
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
 .slider-wrapper{
   margin-bottom: 30px;
   position: relative;
@@ -850,6 +877,18 @@ div.messages {
       box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     }
   }
+  .right{
+    & > h2{
+      margin: -7px 15px 10px 0;
+    }
+    .field-name-field-categories{
+      font-size: 16px;
+      margin-bottom: 15px;
+      a{
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .field-name-field-related-scenario{
@@ -968,6 +1007,7 @@ div.messages {
       font-weight: bold;
     }
   }
+  .price-wrapper,
   .price,
   .field-name-field-price-for-1-person,
   .field-name-field-price-for-2-person{
@@ -992,9 +1032,15 @@ div.messages {
       font-weight: bold;
     }
   }
+  .sale-wrapper{
+    float: right;
+    .price-btn{
+      background: #e48684;
+    }
+  }
   .order{
     clear: both;
-    margin-top: 30px;
+    padding-top: 30px;
     margin-bottom: 20px;
     a{
       color: #fff;
