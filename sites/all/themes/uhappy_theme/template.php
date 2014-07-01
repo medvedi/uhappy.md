@@ -180,7 +180,18 @@ function uhappy_theme_js_alter(&$javascript) {
 
 function uhappy_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full') {
+    // Get node title.
+    $nid = $variables['nid'];
+    $result = db_select('node', 'n')
+      ->fields('n', array('title'))
+      ->condition('nid', $nid)
+      ->execute()
+      ->fetchAssoc();
 
+    if ($result) {
+      $variables['title'] = $result['title'];
+    }
+    // Create order link
     $name = t('Order');
     // Create a path for the url that is like our hook_menu() declaration above.
     $href = 'order/nojs/' . $variables['nid'];
