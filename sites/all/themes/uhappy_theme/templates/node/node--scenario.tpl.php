@@ -23,31 +23,16 @@
       <?php print render($content['field_image_list']); ?>
     </div>
     <div class="right col-sm-5 col-xs-12">
-      <?php if ($title_prefix || $title_suffix || $display_submitted || !$page && $title): ?>
+      <?php if ($title): ?>
         <header>
           <?php print render($title_prefix); ?>
-          <?php if (!$page && $title): ?>
-            <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-
-          <?php if ($display_submitted): ?>
-            <p class="submitted">
-              <?php print $user_picture; ?>
-              <?php print $submitted; ?>
-            </p>
-          <?php endif; ?>
-
-          <?php if ($unpublished): ?>
-            <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-          <?php endif; ?>
+            <h2><?php print $title; ?></h2>
         </header>
       <?php endif; ?>
 
       <?php if (!empty($field_custom_html)): ?>
         <?php print render($content['field_custom_html']); ?>
       <?php else: ?>
-        <h2><?php print $title; ?></h2>
         <?php print render($content['field_categories']); ?>
 
         <?php if (!empty($content['field_children_categories']) || !empty($content['field_age_range'])): ?>
@@ -97,4 +82,8 @@
 
   <?php print render($content['comments']); ?>
 
+  <!-- Read more -->
+  <?php if (arg(0) != 'node' && !is_integer(arg(1))): ?>
+    <span class="readmore"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></span>
+  <?php endif; ?>
 </article>

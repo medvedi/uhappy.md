@@ -145,7 +145,7 @@ function uhappy_theme_breadcrumb($variables) {
 
     $count = count($breadcrumb) - 1;
     foreach ($breadcrumb as $key => $value) {
-      $breadcrumbs .= '<li>' . $value . '</li>';
+      $breadcrumbs .= '<li>' . t($value) . '</li>';
     }
     $breadcrumbs .= '</ol>';
 

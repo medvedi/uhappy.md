@@ -109,7 +109,7 @@ function uhappy_views_pages_default_page_manager_handlers() {
     $pane->uuid = '50128e6d-9d01-43bd-9e9d-8e288744e599';
     $display->content['new-50128e6d-9d01-43bd-9e9d-8e288744e599'] = $pane;
     $display->panels['middle'][1] = 'new-50128e6d-9d01-43bd-9e9d-8e288744e599';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;
