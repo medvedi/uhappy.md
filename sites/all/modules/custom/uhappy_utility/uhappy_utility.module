@@ -109,7 +109,7 @@ function order_modal_page($js = NULL, $nid = NULL) {
   global $user;
   // If people aren't using javascript, then I just boot em. sorry.
 
-  // if (!$js) return "Upps.. Javascript required";
+  if (!$js) return "Upps.. Javascript required";
 
   // Include your ctools crap here
   // ctools_include('node.pages', 'node', '');
