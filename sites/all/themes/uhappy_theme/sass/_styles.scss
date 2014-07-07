@@ -981,11 +981,16 @@ div.messages {
   font-size: 13px;
   color: #333;
   ul{
-    list-style: disc;
-    padding-left: 40px;
-    margin :0 0 15px;
     li{
-      padding-left: 10px;
+      padding: 0;
+    }
+    &:not('.links'){
+      list-style: disc;
+      padding-left: 40px;
+      margin :0 0 15px;
+      li{
+        padding-left: 10px;
+      }
     }
   }
   .btn-category{

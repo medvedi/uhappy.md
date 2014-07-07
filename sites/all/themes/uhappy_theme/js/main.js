@@ -20,6 +20,18 @@
     }
   };
 
+
+  Drupal.behaviors.sliderVideosAdd = {
+    attach: function (context) {
+      var $wrapper = $('.slider-wrapper ul', context);
+      var $video = $('.views-field-field-youtube-video');
+      $video.each(function(){
+        $wrapper.prepend($video);
+        $wrapper.find($video).wrap('<li class="video"></li>')
+      })
+    }
+  };
+
   Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
       $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');

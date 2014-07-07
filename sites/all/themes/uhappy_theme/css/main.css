@@ -7819,12 +7819,15 @@ div.messages.warning a {
   font-size: 13px;
   color: #333;
 }
-.right ul {
+.right ul li {
+  padding: 0;
+}
+.right ul:not('.links') {
   list-style: disc;
   padding-left: 40px;
   margin: 0 0 15px;
 }
-.right ul li {
+.right ul:not('.links') li {
   padding-left: 10px;
 }
 .right .btn-category {
