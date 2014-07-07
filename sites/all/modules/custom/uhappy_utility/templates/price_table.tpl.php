@@ -46,7 +46,7 @@
             <li>Unlimited Email Address</li>
             <li>Forum Support</li>
             <li class="below">
-                <?php print $ctools_link; ?>
+                <?php print l('Test popin', 'order/nojs/22'); ?>
             </li>
 
         </ul>
