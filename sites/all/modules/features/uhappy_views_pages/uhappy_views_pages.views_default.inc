@@ -190,6 +190,24 @@ function uhappy_views_pages_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_images']['multi_type'] = 'ul';
+  /* Field: Content: Youtube video */
+  $handler->display->display_options['fields']['field_youtube_video']['id'] = 'field_youtube_video';
+  $handler->display->display_options['fields']['field_youtube_video']['table'] = 'field_data_field_youtube_video';
+  $handler->display->display_options['fields']['field_youtube_video']['field'] = 'field_youtube_video';
+  $handler->display->display_options['fields']['field_youtube_video']['label'] = '';
+  $handler->display->display_options['fields']['field_youtube_video']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_youtube_video']['alter']['text'] = '[field_images]
+[field_youtube_video]
+[field_youtube_video-video_url]
+[field_youtube_video-thumbnail_path]
+[field_youtube_video-video_data]
+[field_youtube_video-embed_code]';
+  $handler->display->display_options['fields']['field_youtube_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_youtube_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_youtube_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  $handler->display->display_options['fields']['field_youtube_video']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -221,6 +239,12 @@ function uhappy_views_pages_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('[field_images]
+[field_youtube_video]
+[field_youtube_video-video_url]
+[field_youtube_video-thumbnail_path]
+[field_youtube_video-video_data]
+[field_youtube_video-embed_code]'),
     t('Block'),
   );
   $export['slider'] = $view;
