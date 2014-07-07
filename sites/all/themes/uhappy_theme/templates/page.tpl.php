@@ -77,13 +77,13 @@
             <?php endif; ?>
             <a id="main-content"></a>
             <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
+<!--             <?php if ($title): ?>
               <header class="page-content-header">
                 <h1 class="page-title" id="page-title">
                   <?php print $title; ?>
                 </h1>
               </header>
-            <?php endif; ?>
+            <?php endif; ?> -->
             <?php print render($title_suffix); ?>
             <?php if ($tabs): ?>
               <div class="tabs" role="tablist">
