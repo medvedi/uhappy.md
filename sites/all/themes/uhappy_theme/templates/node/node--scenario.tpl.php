@@ -58,9 +58,11 @@
             <div class="price"><?php print t('Sale') . '</div><div class="btn btn-primary price-btn"> ' . render($content['field_sale']); ?></div>
           <?php endif; ?>
         </div>
-        <div class="order">
-          <?php print $order_link ?>
-        </div>
+        <?php if (!empty($order_link)): ?>
+          <div class="order">
+            <?php print $order_link ?>
+          </div>
+        <?php endif; ?>
       <?php endif; ?>
 
       <!-- Site phone description -->
@@ -76,14 +78,14 @@
           <?php print $site_phone ?>
         <?php endif; ?>
       </div>
+      <!-- Read more -->
+      <?php if (arg(0) != 'node' && !is_integer(arg(1))): ?>
+        <span class="readmore"><a class="btn btn-primary" href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></span>
+      <?php endif; ?>
 
     </div>
   </div>
 
   <?php print render($content['comments']); ?>
 
-  <!-- Read more -->
-  <?php if (arg(0) != 'node' && !is_integer(arg(1))): ?>
-    <span class="readmore"><a href="<?php print $node_url; ?>"><?php print t('Read more'); ?></a></span>
-  <?php endif; ?>
 </article>
