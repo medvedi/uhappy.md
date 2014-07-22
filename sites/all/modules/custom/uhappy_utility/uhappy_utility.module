@@ -59,7 +59,10 @@ function uhappy_utility_theme() {
     'template' => 'templates/price_table',
     'arguments' => array('content' => NULL),
   );
-
+  $theme['slider'] = array(
+    'template' => 'templates/slider',
+    'arguments' => array('content' => NULL),
+  );
   return $theme;
 }
 
@@ -244,6 +247,9 @@ function uhappy_utility_block_info() {
   $blocks['slider_block'] = array(
     'info' => t('Slider block'),
   );
+  $blocks['slider'] = array(
+    'info' => t('Slider'),
+  );
 
   return $blocks;
 }
@@ -290,6 +296,9 @@ function uhappy_utility_block_view($delta = '') {
   switch($delta) {
     case 'slider_block' :
       $block['content'] = _uhappy_block_view();
+    break;
+    case 'slider' :
+      $block['content'] = theme('slider', '');
     break;
   }
 
