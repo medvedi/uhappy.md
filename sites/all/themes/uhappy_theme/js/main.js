@@ -34,17 +34,23 @@
 
   Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
-      $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="slider-pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
-      $('<div class="carousel-navigation"><div id="carousel-left" class="nav-left"></div><div id="carousel-right" class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items, .carousel');
+      $('<div class="carousel-navigation"><div id="carousel-left" class="nav-left"></div><div id="carousel-right" class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items');
     }
   };
 
   Drupal.behaviors.carouFredSelInit = {
     attach: function (context) {
       // Using custom configuration
-      var $elementCarousel = $('.field-name-field-image-list .field-items, .carousel');
-      var $elementSlider = $('.slider-wrapper ul, .slider');
 
+      $(function(){
+        $('#uhappyCarousel').carousel({
+          interval: 5000
+        });
+
+      });
+      var $elementCarousel = $('.field-name-field-image-list .field-items');
+//      var $elementSlider = $('.slider-wrapper ul, .slider');
+//
       if($elementCarousel.length !== 0){
         $elementCarousel.imagesLoaded( function() {
           $elementCarousel.carouFredSel({
@@ -85,29 +91,29 @@
         });
       }
 
-      if($elementSlider.length !== 0){
-        $elementSlider.imagesLoaded( function() {
-          $elementSlider.carouFredSel({
-            direction           : "left",
-            responsive          : true,
-            width: '100%',
-            height: 'variable',
-            items: {
-              height: 'variable',
-              visible: 1
-            },
-            pagination: ".slider-pager",
-            prev                : "#slider-left",
-            next                : "#slider-right",
-            scroll : {
-              items           : 1,
-              fx          : "fade",
-              duration        : 1000,
-              pauseOnHover    : false
-            }
-          });
-        });
-      }
+//      if($elementSlider.length !== 0){
+//        $elementSlider.imagesLoaded( function() {
+//          $elementSlider.carouFredSel({
+//            direction           : "left",
+//            responsive          : true,
+//            width: '100%',
+//            height: 'variable',
+//            items: {
+//              height: 'variable',
+//              visible: 1
+//            },
+//            pagination: ".slider-pager",
+//            prev                : "#slider-left",
+//            next                : "#slider-right",
+//            scroll : {
+//              items           : 1,
+//              fx          : "fade",
+//              duration        : 1000,
+//              pauseOnHover    : false
+//            }
+//          });
+//        });
+//      }
 
     }
   }
