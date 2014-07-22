@@ -44,19 +44,19 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Câmp: Conţinut: Titlu */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Conţinut: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Conţinut: Has taxonomy term ID */
+  /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -67,21 +67,21 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Conţinut: Publicat */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Conţinut: Tip */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'scenario' => 'scenario',
   );
-  /* Filter criterion: Conţinut: Limba */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -124,12 +124,12 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'related_content';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Global: Aleator */
+  /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Conţinut: Has taxonomy term ID */
+  /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -163,6 +163,7 @@ function uhappy_views_pages_views_default_views() {
     t('următor ›'),
     t('ultima »'),
     t('Toate'),
+    t('more'),
     t('Front page'),
     t('Prima pagină'),
     t('Related content'),
@@ -183,20 +184,16 @@ function uhappy_views_pages_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Slider';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'mai multe';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Aplicare';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Resetează';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortare după';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Câmp: Conţinut: Images */
+  /* Field: Content: Images */
   $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
   $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
   $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
@@ -209,11 +206,12 @@ function uhappy_views_pages_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_images']['multi_type'] = 'ul';
-  /* Câmp: Conţinut: Youtube video */
+  /* Field: Content: Youtube video */
   $handler->display->display_options['fields']['field_youtube_video']['id'] = 'field_youtube_video';
   $handler->display->display_options['fields']['field_youtube_video']['table'] = 'field_data_field_youtube_video';
   $handler->display->display_options['fields']['field_youtube_video']['field'] = 'field_youtube_video';
   $handler->display->display_options['fields']['field_youtube_video']['label'] = '';
+  $handler->display->display_options['fields']['field_youtube_video']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_youtube_video']['alter']['text'] = '[field_images]
 [field_youtube_video]
 [field_youtube_video-video_url]
@@ -226,19 +224,19 @@ function uhappy_views_pages_views_default_views() {
     'video_style' => 'normal',
   );
   $handler->display->display_options['fields']['field_youtube_video']['delta_offset'] = '0';
-  /* Sort criterion: Conţinut: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Conţinut: Publicat */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Conţinut: Tip */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -251,10 +249,10 @@ function uhappy_views_pages_views_default_views() {
   $translatables['slider'] = array(
     t('Master'),
     t('Slider'),
-    t('mai multe'),
-    t('Aplicare'),
-    t('Resetează'),
-    t('Sortare după'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
     t('Asc'),
     t('Desc'),
     t('[field_images]
