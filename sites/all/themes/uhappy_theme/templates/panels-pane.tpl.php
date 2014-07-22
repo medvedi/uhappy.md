@@ -24,7 +24,10 @@
   <?php if ($admin_links): ?>
     <?php print $admin_links; ?>
   <?php endif; ?>
-
+  <header>
+      <?php print render($title_prefix); ?>
+      <h2><?php print $title; ?></h2>
+    </header>
   <?php if ($feeds): ?>
     <div class="feed">
       <?php print $feeds; ?>
