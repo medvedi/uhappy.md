@@ -24,7 +24,7 @@
   Drupal.behaviors.sliderVideosAdd = {
     attach: function (context) {
       var $wrapper = $('.slider-wrapper ul', context);
-      var $video = $('.views-field-field-youtube-video');
+      var $video = $('.embedded-video');
       $video.each(function(){
         $wrapper.prepend($video);
         $wrapper.find($video).wrap('<li class="video"></li>')
@@ -34,7 +34,7 @@
 
   Drupal.behaviors.carouselNavigation = {
     attach: function (context) {
-      $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
+      $('<div class="slider-navigation"><div id="slider-left" class="nav-left"></div><div class="slider-pager"></div><div id="slider-right" class="nav-right"></div></div>').insertAfter('.slider-wrapper ul, .slider');
       $('<div class="carousel-navigation"><div id="carousel-left" class="nav-left"></div><div id="carousel-right" class="nav-right"></div></div>').insertAfter('.field-name-field-image-list .field-items, .carousel');
     }
   };
@@ -96,7 +96,7 @@
               height: 'variable',
               visible: 1
             },
-            pagination: ".pager",
+            pagination: ".slider-pager",
             prev                : "#slider-left",
             next                : "#slider-right",
             scroll : {
@@ -150,6 +150,20 @@
           modalPositionRecalculate();
         })
       })
+    }
+  };
+
+  Drupal.behaviors.throbberReplce = {
+    attach: function () {
+      $('.order')
+        .ajaxStart(function(){
+          $('#modalContent').hide();
+          $('.main-throbber').show();
+        })
+        .ajaxStop(function(){
+          $('#modalContent').show();
+          $('.main-throbber').hide();
+        });
     }
   };
 

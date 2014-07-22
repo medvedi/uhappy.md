@@ -183,6 +183,23 @@ div.messages {
   }
 }
 
+.main-throbber{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  background: #f00;
+  z-index: 999;
+  background: rgba(255,255,255,1) url('../images/throbber.gif') no-repeat center center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+}
+
 /* Header */
 
 .page-header{
@@ -372,7 +389,7 @@ div.messages {
     line-height: 25px;
     display: inline-block;
   }
-  .pager{
+  .slider-pager{
     position: relative;
     bottom: 15px;
     a{
@@ -941,30 +958,61 @@ div.messages {
   }
 }
 
+
+
 .region-content .pager{
-  a{
+  li{
     display: inline-block;
-    width: 20px;
     height: 20px;
     line-height: 20px;
+    padding: 0;
+    margin: 0 5px;
+    overflow: hidden;
+    font-size: 11px;
+    text-align: center;
+    a{
+      display: block;
+      padding: 0;
+      margin: 0;
+      color: #666;
+      background: transparent;
+      border: none;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -ms-transition: none;
+      -o-transition: none;
+      transition: none;
+      &:hover{
+        background: transparent;
+      }
+    }
+  }
+
+  .pager-item,
+  .pager-current{
+    width: 20px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%;
     background: #F0F0F0;
-    text-align: center;
-    font-size: 11px;
-    margin: 0 5px;
-    color: #666;
     -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     -ms-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover,
-    &.selected{
+    &.pager-current{
       background: $light-blue;
       text-decoration: none;
       color: #fff;
+      a{
+        color: #fff;
+      }
     }
   }
 }
@@ -1039,6 +1087,9 @@ div.messages {
     div{
       font-weight: bold;
     }
+    .field-label{
+      display: none;
+    }
   }
   .sale-wrapper{
     float: right;
@@ -1064,6 +1115,12 @@ div.messages {
         text-decoration: none;
       }
     }
+  }
+}
+
+.order{
+  .ajax-progress{
+    display: none;
   }
 }
 
