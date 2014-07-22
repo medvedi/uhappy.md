@@ -129,7 +129,7 @@ function uhappy_views_pages_default_page_manager_handlers() {
     $pane->uuid = '3a11dda7-8018-41a3-b50c-0c16f407b7fe';
     $display->content['new-3a11dda7-8018-41a3-b50c-0c16f407b7fe'] = $pane;
     $display->panels['two'][2] = 'new-3a11dda7-8018-41a3-b50c-0c16f407b7fe';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['blog_panel_context'] = $handler;
@@ -169,10 +169,10 @@ function uhappy_views_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-cae9b465-c790-48b3-acec-8a6f3cfbd62c';
+    $pane->pid = 'new-3763ae30-a64b-487a-b575-d2b7ee763a94';
     $pane->panel = 'one';
     $pane->type = 'views_panes';
-    $pane->subtype = 'content_list-panel_pane_2';
+    $pane->subtype = 'search_api_views-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -184,11 +184,77 @@ function uhappy_views_pages_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'cae9b465-c790-48b3-acec-8a6f3cfbd62c';
-    $display->content['new-cae9b465-c790-48b3-acec-8a6f3cfbd62c'] = $pane;
-    $display->panels['one'][0] = 'new-cae9b465-c790-48b3-acec-8a6f3cfbd62c';
+    $pane->uuid = '3763ae30-a64b-487a-b575-d2b7ee763a94';
+    $display->content['new-3763ae30-a64b-487a-b575-d2b7ee763a94'] = $pane;
+    $display->panels['one'][0] = 'new-3763ae30-a64b-487a-b575-d2b7ee763a94';
+    $pane = new stdClass();
+    $pane->pid = 'new-151ae278-b71e-4da5-b356-af40e2a3e87d';
+    $pane->panel = 'two';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-u9JuTvOWug0UlH84myHDETD5bBYN0v9U';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Scenario',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '151ae278-b71e-4da5-b356-af40e2a3e87d';
+    $display->content['new-151ae278-b71e-4da5-b356-af40e2a3e87d'] = $pane;
+    $display->panels['two'][0] = 'new-151ae278-b71e-4da5-b356-af40e2a3e87d';
+    $pane = new stdClass();
+    $pane->pid = 'new-43664140-23ab-4821-86e3-0a8fdf4b416c';
+    $pane->panel = 'two';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-IPaCM7H1dF7Clj1WBtiZQw516MCvTYka';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Categories',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '43664140-23ab-4821-86e3-0a8fdf4b416c';
+    $display->content['new-43664140-23ab-4821-86e3-0a8fdf4b416c'] = $pane;
+    $display->panels['two'][1] = 'new-43664140-23ab-4821-86e3-0a8fdf4b416c';
+    $pane = new stdClass();
+    $pane->pid = 'new-7869355c-1726-44b8-a384-074cd90a198e';
+    $pane->panel = 'two';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-006i2ydH3VyJuB1m9c18xr81tXcAwDVN';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Archive',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '7869355c-1726-44b8-a384-074cd90a198e';
+    $display->content['new-7869355c-1726-44b8-a384-074cd90a198e'] = $pane;
+    $display->panels['two'][2] = 'new-7869355c-1726-44b8-a384-074cd90a198e';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-cae9b465-c790-48b3-acec-8a6f3cfbd62c';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['blog_user_panel_context'] = $handler;
 
