@@ -23,6 +23,7 @@ function uhappy_views_pages_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Taxonomy page';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mai multe';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -33,7 +34,7 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Resetează';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortare după';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -146,6 +147,75 @@ function uhappy_views_pages_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
+
+  /* Display: Blog */
+  $handler = $view->new_display('panel_pane', 'Blog', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Blog';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+
+  /* Display: User blog */
+  $handler = $view->new_display('panel_pane', 'User blog', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'User blog';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $translatables['content_list'] = array(
     t('Master'),
     t('Taxonomy page'),
@@ -167,8 +237,105 @@ function uhappy_views_pages_views_default_views() {
     t('Front page'),
     t('Prima pagină'),
     t('Related content'),
+    t('Blog'),
+    t('View panes'),
+    t('User blog'),
+    t('All'),
   );
   $export['content_list'] = $view;
+
+  $view = new view();
+  $view->name = 'search_api_views';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_default_node_index';
+  $view->human_name = 'Search api views';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Filter criterion: Indexed Node: Item language */
+  $handler->display->display_options['filters']['search_api_language']['id'] = 'search_api_language';
+  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['filters']['search_api_language']['field'] = 'search_api_language';
+  $handler->display->display_options['filters']['search_api_language']['value'] = array(
+    'current' => 'current',
+  );
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: Indexed Node: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Blog listing */
+  $handler = $view->new_display('panel_pane', 'Blog listing', 'panel_pane_1');
+
+  /* Display: User blog */
+  $handler = $view->new_display('panel_pane', 'User blog', 'panel_pane_2');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Indexed Node: Author */
+  $handler->display->display_options['arguments']['author']['id'] = 'author';
+  $handler->display->display_options['arguments']['author']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['arguments']['author']['field'] = 'author';
+  $handler->display->display_options['arguments']['author']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['author']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['author']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['author']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['author']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['author']['not'] = 0;
+  $translatables['search_api_views'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Node ID'),
+    t('.'),
+    t(','),
+    t('Blog listing'),
+    t('View panes'),
+    t('User blog'),
+    t('All'),
+  );
+  $export['search_api_views'] = $view;
 
   $view = new view();
   $view->name = 'slider';

@@ -22,7 +22,7 @@ function uhappy_ct_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'main_display' => array(
         'label' => 'hidden',
@@ -87,7 +87,7 @@ function uhappy_ct_field_default_field_instances() {
           'colorbox_node_style' => 'large',
         ),
         'type' => 'colorbox',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'main_display' => array(
         'label' => 'hidden',
@@ -166,7 +166,7 @@ function uhappy_ct_field_default_field_instances() {
           'colorbox_node_style' => 'medium',
         ),
         'type' => 'colorbox',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'main_display' => array(
         'label' => 'above',
@@ -228,7 +228,7 @@ function uhappy_ct_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'main_display' => array(
         'label' => 'hidden',
@@ -274,6 +274,58 @@ function uhappy_ct_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog-field_tags'
+  $field_instances['node-blog-field_tags'] = array(
+    'bundle' => 'blog',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'main_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -1181,6 +1233,7 @@ function uhappy_ct_field_default_field_instances() {
   t('Price for 1 person');
   t('Sale');
   t('Scenario');
+  t('Tags');
   t('Youtube video');
 
   return $field_instances;
