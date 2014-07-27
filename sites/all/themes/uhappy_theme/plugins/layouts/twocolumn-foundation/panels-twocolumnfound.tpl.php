@@ -17,10 +17,14 @@
   <?php if ($content['one'] OR $content['two']): ?>
   <div class="row">
       <?php if (isset($content['one']) && $content['one']): ?>
-        <?php print $content['one']; ?>
+        <div class="col-first col-md-9 col-sm-8 col-xs-12">
+          <?php print $content['one']; ?>
+        </div>
       <?php endif; ?>
       <?php if (isset($content['two']) && $content['two']): ?>
-        <?php print $content['two']; ?>
+        <div class="col-second col-md-3 col-sm-4 col-xs-12">
+          <?php print $content['two']; ?>
+        </div>
       <?php endif; ?>
   </div>
   <?php endif; ?>

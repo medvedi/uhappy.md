@@ -290,12 +290,13 @@ th {
   }
 
   .btn > .caret, .form-submit > .caret, .page-content .action-links li a > .caret,
-  .page-content .links li a > .caret, .field-name-field-related-scenario a > .caret, .right .order a > .caret,
+  .page-content .links li a > .caret, .field-name-field-related-scenario a > .caret, .blog-inner .field-name-field-tags .field-item a > .caret, .right .order a > .caret,
   .dropup > .btn > .caret,
   .dropup > .form-submit > .caret,
   .page-content .action-links li .dropup > a > .caret,
   .page-content .links li .dropup > a > .caret,
   .field-name-field-related-scenario .dropup > a > .caret,
+  .blog-inner .field-name-field-tags .field-item .dropup > a > .caret,
   .right .order .dropup > a > .caret {
     border-top-color: #000 !important;
   }
@@ -2149,6 +2150,7 @@ input[type="checkbox"],
 .page-content .action-links li .input-group-sm > .input-group-btn > a,
 .page-content .links li .input-group-sm > .input-group-btn > a,
 .field-name-field-related-scenario .input-group-sm > .input-group-btn > a,
+.blog-inner .field-name-field-tags .field-item .input-group-sm > .input-group-btn > a,
 .right .order .input-group-sm > .input-group-btn > a {
   height: 30px;
   padding: 5px 10px;
@@ -2187,6 +2189,7 @@ select[multiple].input-sm,
 .page-content .action-links li .input-group-lg > .input-group-btn > a,
 .page-content .links li .input-group-lg > .input-group-btn > a,
 .field-name-field-related-scenario .input-group-lg > .input-group-btn > a,
+.blog-inner .field-name-field-tags .field-item .input-group-lg > .input-group-btn > a,
 .right .order .input-group-lg > .input-group-btn > a {
   height: 46px;
   padding: 10px 16px;
@@ -2413,7 +2416,7 @@ select[multiple].input-lg,
 }
 
 .btn, .form-submit, .page-content .action-links li a,
-.page-content .links li a, .field-name-field-related-scenario a, .right .order a {
+.page-content .links li a, .field-name-field-related-scenario a, .blog-inner .field-name-field-tags .field-item a, .right .order a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2433,32 +2436,32 @@ select[multiple].input-lg,
   user-select: none;
 }
 .btn:focus, .form-submit:focus, .page-content .action-links li a:focus,
-.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .right .order a:focus, .btn:active:focus, .form-submit:active:focus, .page-content .action-links li a:active:focus,
-.page-content .links li a:active:focus, .field-name-field-related-scenario a:active:focus, .right .order a:active:focus, .btn.active:focus, .active.form-submit:focus, .page-content .action-links li a.active:focus,
-.page-content .links li a.active:focus, .field-name-field-related-scenario a.active:focus, .right .order a.active:focus {
+.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .blog-inner .field-name-field-tags .field-item a:focus, .right .order a:focus, .btn:active:focus, .form-submit:active:focus, .page-content .action-links li a:active:focus,
+.page-content .links li a:active:focus, .field-name-field-related-scenario a:active:focus, .blog-inner .field-name-field-tags .field-item a:active:focus, .right .order a:active:focus, .btn.active:focus, .active.form-submit:focus, .page-content .action-links li a.active:focus,
+.page-content .links li a.active:focus, .field-name-field-related-scenario a.active:focus, .blog-inner .field-name-field-tags .field-item a.active:focus, .right .order a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 .btn:hover, .form-submit:hover, .page-content .action-links li a:hover,
-.page-content .links li a:hover, .field-name-field-related-scenario a:hover, .right .order a:hover, .btn:focus, .form-submit:focus, .page-content .action-links li a:focus,
-.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .right .order a:focus {
+.page-content .links li a:hover, .field-name-field-related-scenario a:hover, .blog-inner .field-name-field-tags .field-item a:hover, .right .order a:hover, .btn:focus, .form-submit:focus, .page-content .action-links li a:focus,
+.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .blog-inner .field-name-field-tags .field-item a:focus, .right .order a:focus {
   color: #333333;
   text-decoration: none;
 }
 .btn:active, .form-submit:active, .page-content .action-links li a:active,
-.page-content .links li a:active, .field-name-field-related-scenario a:active, .right .order a:active, .btn.active, .active.form-submit, .page-content .action-links li a.active,
-.page-content .links li a.active, .field-name-field-related-scenario a.active, .right .order a.active {
+.page-content .links li a:active, .field-name-field-related-scenario a:active, .blog-inner .field-name-field-tags .field-item a:active, .right .order a:active, .btn.active, .active.form-submit, .page-content .action-links li a.active,
+.page-content .links li a.active, .field-name-field-related-scenario a.active, .blog-inner .field-name-field-tags .field-item a.active, .right .order a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn.disabled, .disabled.form-submit, .page-content .action-links li a.disabled,
-.page-content .links li a.disabled, .field-name-field-related-scenario a.disabled, .right .order a.disabled, .btn[disabled], [disabled].form-submit, .page-content .action-links li a[disabled],
-.page-content .links li a[disabled], .field-name-field-related-scenario a[disabled], .right .order a[disabled], fieldset[disabled] .btn, fieldset[disabled] .form-submit, fieldset[disabled] .page-content .action-links li a, .page-content .action-links li fieldset[disabled] a,
+.page-content .links li a.disabled, .field-name-field-related-scenario a.disabled, .blog-inner .field-name-field-tags .field-item a.disabled, .right .order a.disabled, .btn[disabled], [disabled].form-submit, .page-content .action-links li a[disabled],
+.page-content .links li a[disabled], .field-name-field-related-scenario a[disabled], .blog-inner .field-name-field-tags .field-item a[disabled], .right .order a[disabled], fieldset[disabled] .btn, fieldset[disabled] .form-submit, fieldset[disabled] .page-content .action-links li a, .page-content .action-links li fieldset[disabled] a,
 fieldset[disabled] .page-content .links li a,
-.page-content .links li fieldset[disabled] a, fieldset[disabled] .field-name-field-related-scenario a, .field-name-field-related-scenario fieldset[disabled] a, fieldset[disabled] .right .order a, .right .order fieldset[disabled] a {
+.page-content .links li fieldset[disabled] a, fieldset[disabled] .field-name-field-related-scenario a, .field-name-field-related-scenario fieldset[disabled] a, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a, fieldset[disabled] .right .order a, .right .order fieldset[disabled] a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -2498,63 +2501,63 @@ fieldset[disabled] .page-content .links li a,
 }
 
 .btn-primary, .form-submit, .page-content .action-links li a,
-.page-content .links li a, .field-name-field-related-scenario a, .right .order a {
+.page-content .links li a, .field-name-field-related-scenario a, .blog-inner .field-name-field-tags .field-item a, .right .order a {
   color: white;
   background-color: #428bca;
   border-color: #357ebd;
 }
 .btn-primary:hover, .form-submit:hover, .page-content .action-links li a:hover,
-.page-content .links li a:hover, .field-name-field-related-scenario a:hover, .right .order a:hover, .btn-primary:focus, .form-submit:focus, .page-content .action-links li a:focus,
-.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .right .order a:focus, .btn-primary:active, .form-submit:active, .page-content .action-links li a:active,
-.page-content .links li a:active, .field-name-field-related-scenario a:active, .right .order a:active, .btn-primary.active, .active.form-submit, .page-content .action-links li a.active,
-.page-content .links li a.active, .field-name-field-related-scenario a.active, .right .order a.active {
+.page-content .links li a:hover, .field-name-field-related-scenario a:hover, .blog-inner .field-name-field-tags .field-item a:hover, .right .order a:hover, .btn-primary:focus, .form-submit:focus, .page-content .action-links li a:focus,
+.page-content .links li a:focus, .field-name-field-related-scenario a:focus, .blog-inner .field-name-field-tags .field-item a:focus, .right .order a:focus, .btn-primary:active, .form-submit:active, .page-content .action-links li a:active,
+.page-content .links li a:active, .field-name-field-related-scenario a:active, .blog-inner .field-name-field-tags .field-item a:active, .right .order a:active, .btn-primary.active, .active.form-submit, .page-content .action-links li a.active,
+.page-content .links li a.active, .field-name-field-related-scenario a.active, .blog-inner .field-name-field-tags .field-item a.active, .right .order a.active {
   color: white;
   background-color: #3276b1;
   border-color: #285e8e;
 }
 .open .btn-primary.dropdown-toggle, .open .dropdown-toggle.form-submit, .open .page-content .action-links li a.dropdown-toggle, .page-content .action-links li .open a.dropdown-toggle,
 .open .page-content .links li a.dropdown-toggle,
-.page-content .links li .open a.dropdown-toggle, .open .field-name-field-related-scenario a.dropdown-toggle, .field-name-field-related-scenario .open a.dropdown-toggle, .open .right .order a.dropdown-toggle, .right .order .open a.dropdown-toggle {
+.page-content .links li .open a.dropdown-toggle, .open .field-name-field-related-scenario a.dropdown-toggle, .field-name-field-related-scenario .open a.dropdown-toggle, .open .blog-inner .field-name-field-tags .field-item a.dropdown-toggle, .blog-inner .field-name-field-tags .field-item .open a.dropdown-toggle, .open .right .order a.dropdown-toggle, .right .order .open a.dropdown-toggle {
   color: white;
   background-color: #3276b1;
   border-color: #285e8e;
 }
 .btn-primary:active, .form-submit:active, .page-content .action-links li a:active,
-.page-content .links li a:active, .field-name-field-related-scenario a:active, .right .order a:active, .btn-primary.active, .active.form-submit, .page-content .action-links li a.active,
-.page-content .links li a.active, .field-name-field-related-scenario a.active, .right .order a.active {
+.page-content .links li a:active, .field-name-field-related-scenario a:active, .blog-inner .field-name-field-tags .field-item a:active, .right .order a:active, .btn-primary.active, .active.form-submit, .page-content .action-links li a.active,
+.page-content .links li a.active, .field-name-field-related-scenario a.active, .blog-inner .field-name-field-tags .field-item a.active, .right .order a.active {
   background-image: none;
 }
 .open .btn-primary.dropdown-toggle, .open .dropdown-toggle.form-submit, .open .page-content .action-links li a.dropdown-toggle, .page-content .action-links li .open a.dropdown-toggle,
 .open .page-content .links li a.dropdown-toggle,
-.page-content .links li .open a.dropdown-toggle, .open .field-name-field-related-scenario a.dropdown-toggle, .field-name-field-related-scenario .open a.dropdown-toggle, .open .right .order a.dropdown-toggle, .right .order .open a.dropdown-toggle {
+.page-content .links li .open a.dropdown-toggle, .open .field-name-field-related-scenario a.dropdown-toggle, .field-name-field-related-scenario .open a.dropdown-toggle, .open .blog-inner .field-name-field-tags .field-item a.dropdown-toggle, .blog-inner .field-name-field-tags .field-item .open a.dropdown-toggle, .open .right .order a.dropdown-toggle, .right .order .open a.dropdown-toggle {
   background-image: none;
 }
 .btn-primary.disabled, .disabled.form-submit, .page-content .action-links li a.disabled,
-.page-content .links li a.disabled, .field-name-field-related-scenario a.disabled, .right .order a.disabled, .btn-primary.disabled:hover, .disabled.form-submit:hover, .page-content .action-links li a.disabled:hover,
-.page-content .links li a.disabled:hover, .field-name-field-related-scenario a.disabled:hover, .right .order a.disabled:hover, .btn-primary.disabled:focus, .disabled.form-submit:focus, .page-content .action-links li a.disabled:focus,
-.page-content .links li a.disabled:focus, .field-name-field-related-scenario a.disabled:focus, .right .order a.disabled:focus, .btn-primary.disabled:active, .disabled.form-submit:active, .page-content .action-links li a.disabled:active,
-.page-content .links li a.disabled:active, .field-name-field-related-scenario a.disabled:active, .right .order a.disabled:active, .btn-primary.disabled.active, .disabled.active.form-submit, .page-content .action-links li a.disabled.active,
-.page-content .links li a.disabled.active, .field-name-field-related-scenario a.disabled.active, .right .order a.disabled.active, .btn-primary[disabled], [disabled].form-submit, .page-content .action-links li a[disabled],
-.page-content .links li a[disabled], .field-name-field-related-scenario a[disabled], .right .order a[disabled], .btn-primary[disabled]:hover, [disabled].form-submit:hover, .page-content .action-links li a[disabled]:hover,
-.page-content .links li a[disabled]:hover, .field-name-field-related-scenario a[disabled]:hover, .right .order a[disabled]:hover, .btn-primary[disabled]:focus, [disabled].form-submit:focus, .page-content .action-links li a[disabled]:focus,
-.page-content .links li a[disabled]:focus, .field-name-field-related-scenario a[disabled]:focus, .right .order a[disabled]:focus, .btn-primary[disabled]:active, [disabled].form-submit:active, .page-content .action-links li a[disabled]:active,
-.page-content .links li a[disabled]:active, .field-name-field-related-scenario a[disabled]:active, .right .order a[disabled]:active, .btn-primary[disabled].active, [disabled].active.form-submit, .page-content .action-links li a[disabled].active,
-.page-content .links li a[disabled].active, .field-name-field-related-scenario a[disabled].active, .right .order a[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .form-submit, fieldset[disabled] .page-content .action-links li a, .page-content .action-links li fieldset[disabled] a,
+.page-content .links li a.disabled, .field-name-field-related-scenario a.disabled, .blog-inner .field-name-field-tags .field-item a.disabled, .right .order a.disabled, .btn-primary.disabled:hover, .disabled.form-submit:hover, .page-content .action-links li a.disabled:hover,
+.page-content .links li a.disabled:hover, .field-name-field-related-scenario a.disabled:hover, .blog-inner .field-name-field-tags .field-item a.disabled:hover, .right .order a.disabled:hover, .btn-primary.disabled:focus, .disabled.form-submit:focus, .page-content .action-links li a.disabled:focus,
+.page-content .links li a.disabled:focus, .field-name-field-related-scenario a.disabled:focus, .blog-inner .field-name-field-tags .field-item a.disabled:focus, .right .order a.disabled:focus, .btn-primary.disabled:active, .disabled.form-submit:active, .page-content .action-links li a.disabled:active,
+.page-content .links li a.disabled:active, .field-name-field-related-scenario a.disabled:active, .blog-inner .field-name-field-tags .field-item a.disabled:active, .right .order a.disabled:active, .btn-primary.disabled.active, .disabled.active.form-submit, .page-content .action-links li a.disabled.active,
+.page-content .links li a.disabled.active, .field-name-field-related-scenario a.disabled.active, .blog-inner .field-name-field-tags .field-item a.disabled.active, .right .order a.disabled.active, .btn-primary[disabled], [disabled].form-submit, .page-content .action-links li a[disabled],
+.page-content .links li a[disabled], .field-name-field-related-scenario a[disabled], .blog-inner .field-name-field-tags .field-item a[disabled], .right .order a[disabled], .btn-primary[disabled]:hover, [disabled].form-submit:hover, .page-content .action-links li a[disabled]:hover,
+.page-content .links li a[disabled]:hover, .field-name-field-related-scenario a[disabled]:hover, .blog-inner .field-name-field-tags .field-item a[disabled]:hover, .right .order a[disabled]:hover, .btn-primary[disabled]:focus, [disabled].form-submit:focus, .page-content .action-links li a[disabled]:focus,
+.page-content .links li a[disabled]:focus, .field-name-field-related-scenario a[disabled]:focus, .blog-inner .field-name-field-tags .field-item a[disabled]:focus, .right .order a[disabled]:focus, .btn-primary[disabled]:active, [disabled].form-submit:active, .page-content .action-links li a[disabled]:active,
+.page-content .links li a[disabled]:active, .field-name-field-related-scenario a[disabled]:active, .blog-inner .field-name-field-tags .field-item a[disabled]:active, .right .order a[disabled]:active, .btn-primary[disabled].active, [disabled].active.form-submit, .page-content .action-links li a[disabled].active,
+.page-content .links li a[disabled].active, .field-name-field-related-scenario a[disabled].active, .blog-inner .field-name-field-tags .field-item a[disabled].active, .right .order a[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .form-submit, fieldset[disabled] .page-content .action-links li a, .page-content .action-links li fieldset[disabled] a,
 fieldset[disabled] .page-content .links li a,
-.page-content .links li fieldset[disabled] a, fieldset[disabled] .field-name-field-related-scenario a, .field-name-field-related-scenario fieldset[disabled] a, fieldset[disabled] .right .order a, .right .order fieldset[disabled] a, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .form-submit:hover, fieldset[disabled] .page-content .action-links li a:hover, .page-content .action-links li fieldset[disabled] a:hover,
+.page-content .links li fieldset[disabled] a, fieldset[disabled] .field-name-field-related-scenario a, .field-name-field-related-scenario fieldset[disabled] a, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a, fieldset[disabled] .right .order a, .right .order fieldset[disabled] a, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .form-submit:hover, fieldset[disabled] .page-content .action-links li a:hover, .page-content .action-links li fieldset[disabled] a:hover,
 fieldset[disabled] .page-content .links li a:hover,
-.page-content .links li fieldset[disabled] a:hover, fieldset[disabled] .field-name-field-related-scenario a:hover, .field-name-field-related-scenario fieldset[disabled] a:hover, fieldset[disabled] .right .order a:hover, .right .order fieldset[disabled] a:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .form-submit:focus, fieldset[disabled] .page-content .action-links li a:focus, .page-content .action-links li fieldset[disabled] a:focus,
+.page-content .links li fieldset[disabled] a:hover, fieldset[disabled] .field-name-field-related-scenario a:hover, .field-name-field-related-scenario fieldset[disabled] a:hover, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a:hover, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a:hover, fieldset[disabled] .right .order a:hover, .right .order fieldset[disabled] a:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .form-submit:focus, fieldset[disabled] .page-content .action-links li a:focus, .page-content .action-links li fieldset[disabled] a:focus,
 fieldset[disabled] .page-content .links li a:focus,
-.page-content .links li fieldset[disabled] a:focus, fieldset[disabled] .field-name-field-related-scenario a:focus, .field-name-field-related-scenario fieldset[disabled] a:focus, fieldset[disabled] .right .order a:focus, .right .order fieldset[disabled] a:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .form-submit:active, fieldset[disabled] .page-content .action-links li a:active, .page-content .action-links li fieldset[disabled] a:active,
+.page-content .links li fieldset[disabled] a:focus, fieldset[disabled] .field-name-field-related-scenario a:focus, .field-name-field-related-scenario fieldset[disabled] a:focus, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a:focus, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a:focus, fieldset[disabled] .right .order a:focus, .right .order fieldset[disabled] a:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .form-submit:active, fieldset[disabled] .page-content .action-links li a:active, .page-content .action-links li fieldset[disabled] a:active,
 fieldset[disabled] .page-content .links li a:active,
-.page-content .links li fieldset[disabled] a:active, fieldset[disabled] .field-name-field-related-scenario a:active, .field-name-field-related-scenario fieldset[disabled] a:active, fieldset[disabled] .right .order a:active, .right .order fieldset[disabled] a:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .active.form-submit, fieldset[disabled] .page-content .action-links li a.active, .page-content .action-links li fieldset[disabled] a.active,
+.page-content .links li fieldset[disabled] a:active, fieldset[disabled] .field-name-field-related-scenario a:active, .field-name-field-related-scenario fieldset[disabled] a:active, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a:active, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a:active, fieldset[disabled] .right .order a:active, .right .order fieldset[disabled] a:active, fieldset[disabled] .btn-primary.active, fieldset[disabled] .active.form-submit, fieldset[disabled] .page-content .action-links li a.active, .page-content .action-links li fieldset[disabled] a.active,
 fieldset[disabled] .page-content .links li a.active,
-.page-content .links li fieldset[disabled] a.active, fieldset[disabled] .field-name-field-related-scenario a.active, .field-name-field-related-scenario fieldset[disabled] a.active, fieldset[disabled] .right .order a.active, .right .order fieldset[disabled] a.active {
+.page-content .links li fieldset[disabled] a.active, fieldset[disabled] .field-name-field-related-scenario a.active, .field-name-field-related-scenario fieldset[disabled] a.active, fieldset[disabled] .blog-inner .field-name-field-tags .field-item a.active, .blog-inner .field-name-field-tags .field-item fieldset[disabled] a.active, fieldset[disabled] .right .order a.active, .right .order fieldset[disabled] a.active {
   background-color: #428bca;
   border-color: #357ebd;
 }
 .btn-primary .badge, .form-submit .badge, .page-content .action-links li a .badge,
-.page-content .links li a .badge, .field-name-field-related-scenario a .badge, .right .order a .badge {
+.page-content .links li a .badge, .field-name-field-related-scenario a .badge, .blog-inner .field-name-field-tags .field-item a .badge, .right .order a .badge {
   color: #428bca;
   background-color: white;
 }
@@ -2704,7 +2707,7 @@ fieldset[disabled] .page-content .links li a.active,
 }
 
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .form-submit, .page-content .action-links li .btn-group-lg > a,
-.page-content .links li .btn-group-lg > a, .field-name-field-related-scenario .btn-group-lg > a, .right .order a {
+.page-content .links li .btn-group-lg > a, .field-name-field-related-scenario .btn-group-lg > a, .blog-inner .field-name-field-tags .field-item .btn-group-lg > a, .right .order a {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -2712,7 +2715,7 @@ fieldset[disabled] .page-content .links li a.active,
 }
 
 .btn-sm, .btn-group-sm > .btn, .btn-group-sm > .form-submit, .page-content .action-links li .btn-group-sm > a,
-.page-content .links li .btn-group-sm > a, .field-name-field-related-scenario .btn-group-sm > a, .right .order .btn-group-sm > a {
+.page-content .links li .btn-group-sm > a, .field-name-field-related-scenario .btn-group-sm > a, .right .order .btn-group-sm > a, .blog-inner .field-name-field-tags .field-item a {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -2720,7 +2723,7 @@ fieldset[disabled] .page-content .links li a.active,
 }
 
 .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .form-submit, .page-content .action-links li .btn-group-xs > a,
-.page-content .links li .btn-group-xs > a, .field-name-field-related-scenario .btn-group-xs > a, .right .order .btn-group-xs > a {
+.page-content .links li .btn-group-xs > a, .field-name-field-related-scenario .btn-group-xs > a, .blog-inner .field-name-field-tags .field-item .btn-group-xs > a, .right .order .btn-group-xs > a {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3739,69 +3742,75 @@ input[type="button"].btn-block {
   vertical-align: middle;
 }
 .btn-group > .btn, .btn-group > .form-submit, .page-content .action-links li .btn-group > a,
-.page-content .links li .btn-group > a, .field-name-field-related-scenario .btn-group > a, .right .order .btn-group > a,
+.page-content .links li .btn-group > a, .field-name-field-related-scenario .btn-group > a, .blog-inner .field-name-field-tags .field-item .btn-group > a, .right .order .btn-group > a,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .form-submit,
 .page-content .action-links li .btn-group-vertical > a,
 .page-content .links li .btn-group-vertical > a,
 .field-name-field-related-scenario .btn-group-vertical > a,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a,
 .right .order .btn-group-vertical > a {
   position: relative;
   float: left;
 }
 .btn-group > .btn:hover, .btn-group > .form-submit:hover, .page-content .action-links li .btn-group > a:hover,
-.page-content .links li .btn-group > a:hover, .field-name-field-related-scenario .btn-group > a:hover, .right .order .btn-group > a:hover, .btn-group > .btn:focus, .btn-group > .form-submit:focus, .page-content .action-links li .btn-group > a:focus,
-.page-content .links li .btn-group > a:focus, .field-name-field-related-scenario .btn-group > a:focus, .right .order .btn-group > a:focus, .btn-group > .btn:active, .btn-group > .form-submit:active, .page-content .action-links li .btn-group > a:active,
-.page-content .links li .btn-group > a:active, .field-name-field-related-scenario .btn-group > a:active, .right .order .btn-group > a:active, .btn-group > .btn.active, .btn-group > .active.form-submit, .page-content .action-links li .btn-group > a.active,
-.page-content .links li .btn-group > a.active, .field-name-field-related-scenario .btn-group > a.active, .right .order .btn-group > a.active,
+.page-content .links li .btn-group > a:hover, .field-name-field-related-scenario .btn-group > a:hover, .blog-inner .field-name-field-tags .field-item .btn-group > a:hover, .right .order .btn-group > a:hover, .btn-group > .btn:focus, .btn-group > .form-submit:focus, .page-content .action-links li .btn-group > a:focus,
+.page-content .links li .btn-group > a:focus, .field-name-field-related-scenario .btn-group > a:focus, .blog-inner .field-name-field-tags .field-item .btn-group > a:focus, .right .order .btn-group > a:focus, .btn-group > .btn:active, .btn-group > .form-submit:active, .page-content .action-links li .btn-group > a:active,
+.page-content .links li .btn-group > a:active, .field-name-field-related-scenario .btn-group > a:active, .blog-inner .field-name-field-tags .field-item .btn-group > a:active, .right .order .btn-group > a:active, .btn-group > .btn.active, .btn-group > .active.form-submit, .page-content .action-links li .btn-group > a.active,
+.page-content .links li .btn-group > a.active, .field-name-field-related-scenario .btn-group > a.active, .blog-inner .field-name-field-tags .field-item .btn-group > a.active, .right .order .btn-group > a.active,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .form-submit:hover,
 .page-content .action-links li .btn-group-vertical > a:hover,
 .page-content .links li .btn-group-vertical > a:hover,
 .field-name-field-related-scenario .btn-group-vertical > a:hover,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:hover,
 .right .order .btn-group-vertical > a:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .form-submit:focus,
 .page-content .action-links li .btn-group-vertical > a:focus,
 .page-content .links li .btn-group-vertical > a:focus,
 .field-name-field-related-scenario .btn-group-vertical > a:focus,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:focus,
 .right .order .btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .form-submit:active,
 .page-content .action-links li .btn-group-vertical > a:active,
 .page-content .links li .btn-group-vertical > a:active,
 .field-name-field-related-scenario .btn-group-vertical > a:active,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:active,
 .right .order .btn-group-vertical > a:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > .active.form-submit,
 .page-content .action-links li .btn-group-vertical > a.active,
 .page-content .links li .btn-group-vertical > a.active,
 .field-name-field-related-scenario .btn-group-vertical > a.active,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a.active,
 .right .order .btn-group-vertical > a.active {
   z-index: 2;
 }
 .btn-group > .btn:focus, .btn-group > .form-submit:focus, .page-content .action-links li .btn-group > a:focus,
-.page-content .links li .btn-group > a:focus, .field-name-field-related-scenario .btn-group > a:focus, .right .order .btn-group > a:focus,
+.page-content .links li .btn-group > a:focus, .field-name-field-related-scenario .btn-group > a:focus, .blog-inner .field-name-field-tags .field-item .btn-group > a:focus, .right .order .btn-group > a:focus,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .form-submit:focus,
 .page-content .action-links li .btn-group-vertical > a:focus,
 .page-content .links li .btn-group-vertical > a:focus,
 .field-name-field-related-scenario .btn-group-vertical > a:focus,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:focus,
 .right .order .btn-group-vertical > a:focus {
   outline: none;
 }
 
 .btn-group .btn + .btn, .btn-group .form-submit + .btn, .btn-group .page-content .action-links li a + .btn, .page-content .action-links li .btn-group a + .btn,
 .btn-group .page-content .links li a + .btn,
-.page-content .links li .btn-group a + .btn, .btn-group .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .btn-group a + .btn, .btn-group .right .order a + .btn, .right .order .btn-group a + .btn, .btn-group .btn + .form-submit, .btn-group .form-submit + .form-submit, .btn-group .page-content .action-links li a + .form-submit, .page-content .action-links li .btn-group a + .form-submit,
+.page-content .links li .btn-group a + .btn, .btn-group .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .btn-group a + .btn, .btn-group .blog-inner .field-name-field-tags .field-item a + .btn, .blog-inner .field-name-field-tags .field-item .btn-group a + .btn, .btn-group .right .order a + .btn, .right .order .btn-group a + .btn, .btn-group .btn + .form-submit, .btn-group .form-submit + .form-submit, .btn-group .page-content .action-links li a + .form-submit, .page-content .action-links li .btn-group a + .form-submit,
 .btn-group .page-content .links li a + .form-submit,
-.page-content .links li .btn-group a + .form-submit, .btn-group .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .btn-group a + .form-submit, .btn-group .right .order a + .form-submit, .right .order .btn-group a + .form-submit, .btn-group .page-content .action-links li .btn + a, .page-content .action-links li .btn-group .btn + a, .btn-group .page-content .action-links li .form-submit + a, .page-content .action-links li .btn-group .form-submit + a, .btn-group .page-content .action-links li a + a, .page-content .action-links li .btn-group a + a,
+.page-content .links li .btn-group a + .form-submit, .btn-group .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .btn-group a + .form-submit, .btn-group .blog-inner .field-name-field-tags .field-item a + .form-submit, .blog-inner .field-name-field-tags .field-item .btn-group a + .form-submit, .btn-group .right .order a + .form-submit, .right .order .btn-group a + .form-submit, .btn-group .page-content .action-links li .btn + a, .page-content .action-links li .btn-group .btn + a, .btn-group .page-content .action-links li .form-submit + a, .page-content .action-links li .btn-group .form-submit + a, .btn-group .page-content .action-links li a + a, .page-content .action-links li .btn-group a + a,
 .btn-group .page-content .links li .btn + a,
 .page-content .links li .btn-group .btn + a,
 .btn-group .page-content .links li .form-submit + a,
 .page-content .links li .btn-group .form-submit + a,
 .btn-group .page-content .links li a + a,
-.page-content .links li .btn-group a + a, .btn-group .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .btn-group .btn + a, .btn-group .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .btn-group .form-submit + a, .btn-group .field-name-field-related-scenario a + a, .field-name-field-related-scenario .btn-group a + a, .btn-group .right .order .btn + a, .right .order .btn-group .btn + a, .btn-group .right .order .form-submit + a, .right .order .btn-group .form-submit + a, .btn-group .right .order a + a, .right .order .btn-group a + a,
+.page-content .links li .btn-group a + a, .btn-group .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .btn-group .btn + a, .btn-group .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .btn-group .form-submit + a, .btn-group .field-name-field-related-scenario a + a, .field-name-field-related-scenario .btn-group a + a, .btn-group .blog-inner .field-name-field-tags .field-item .btn + a, .blog-inner .field-name-field-tags .field-item .btn-group .btn + a, .btn-group .blog-inner .field-name-field-tags .field-item .form-submit + a, .blog-inner .field-name-field-tags .field-item .btn-group .form-submit + a, .btn-group .blog-inner .field-name-field-tags .field-item a + a, .blog-inner .field-name-field-tags .field-item .btn-group a + a, .btn-group .right .order .btn + a, .right .order .btn-group .btn + a, .btn-group .right .order .form-submit + a, .right .order .btn-group .form-submit + a, .btn-group .right .order a + a, .right .order .btn-group a + a,
 .btn-group .btn + .btn-group,
 .btn-group .form-submit + .btn-group,
 .btn-group .page-content .action-links li a + .btn-group,
@@ -3810,6 +3819,8 @@ input[type="button"].btn-block {
 .page-content .links li .btn-group a + .btn-group,
 .btn-group .field-name-field-related-scenario a + .btn-group,
 .field-name-field-related-scenario .btn-group a + .btn-group,
+.btn-group .blog-inner .field-name-field-tags .field-item a + .btn-group,
+.blog-inner .field-name-field-tags .field-item .btn-group a + .btn-group,
 .btn-group .right .order a + .btn-group,
 .right .order .btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
@@ -3820,6 +3831,8 @@ input[type="button"].btn-block {
 .page-content .links li .btn-group .btn-group + a,
 .btn-group .field-name-field-related-scenario .btn-group + a,
 .field-name-field-related-scenario .btn-group .btn-group + a,
+.btn-group .blog-inner .field-name-field-tags .field-item .btn-group + a,
+.blog-inner .field-name-field-tags .field-item .btn-group .btn-group + a,
 .btn-group .right .order .btn-group + a,
 .right .order .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
@@ -3841,29 +3854,29 @@ input[type="button"].btn-block {
   float: left;
 }
 .btn-toolbar > .btn, .btn-toolbar > .form-submit, .page-content .action-links li .btn-toolbar > a,
-.page-content .links li .btn-toolbar > a, .field-name-field-related-scenario .btn-toolbar > a, .right .order .btn-toolbar > a,
+.page-content .links li .btn-toolbar > a, .field-name-field-related-scenario .btn-toolbar > a, .blog-inner .field-name-field-tags .field-item .btn-toolbar > a, .right .order .btn-toolbar > a,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .form-submit:not(:first-child):not(:last-child):not(.dropdown-toggle), .page-content .action-links li .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.page-content .links li .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .field-name-field-related-scenario .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .right .order .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.page-content .links li .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .field-name-field-related-scenario .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .blog-inner .field-name-field-tags .field-item .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .right .order .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 .btn-group > .btn:first-child, .btn-group > .form-submit:first-child, .page-content .action-links li .btn-group > a:first-child,
-.page-content .links li .btn-group > a:first-child, .field-name-field-related-scenario .btn-group > a:first-child, .right .order .btn-group > a:first-child {
+.page-content .links li .btn-group > a:first-child, .field-name-field-related-scenario .btn-group > a:first-child, .blog-inner .field-name-field-tags .field-item .btn-group > a:first-child, .right .order .btn-group > a:first-child {
   margin-left: 0;
 }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .form-submit:first-child:not(:last-child):not(.dropdown-toggle), .page-content .action-links li .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle),
-.page-content .links li .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .field-name-field-related-scenario .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .right .order .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
+.page-content .links li .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .field-name-field-related-scenario .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .blog-inner .field-name-field-tags .field-item .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .right .order .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 .btn-group > .btn:last-child:not(:first-child), .btn-group > .form-submit:last-child:not(:first-child), .page-content .action-links li .btn-group > a:last-child:not(:first-child),
-.page-content .links li .btn-group > a:last-child:not(:first-child), .field-name-field-related-scenario .btn-group > a:last-child:not(:first-child), .right .order .btn-group > a:last-child:not(:first-child),
+.page-content .links li .btn-group > a:last-child:not(:first-child), .field-name-field-related-scenario .btn-group > a:last-child:not(:first-child), .blog-inner .field-name-field-tags .field-item .btn-group > a:last-child:not(:first-child), .right .order .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -3874,19 +3887,19 @@ input[type="button"].btn-block {
 }
 
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .form-submit, .page-content .action-links li .btn-group > .btn-group:not(:first-child):not(:last-child) > a,
-.page-content .links li .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .field-name-field-related-scenario .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .right .order .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
+.page-content .links li .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .field-name-field-related-scenario .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .blog-inner .field-name-field-tags .field-item .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .right .order .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 .btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .form-submit:last-child, .page-content .action-links li .btn-group > .btn-group:first-child > a:last-child,
-.page-content .links li .btn-group > .btn-group:first-child > a:last-child, .field-name-field-related-scenario .btn-group > .btn-group:first-child > a:last-child, .right .order .btn-group > .btn-group:first-child > a:last-child,
+.page-content .links li .btn-group > .btn-group:first-child > a:last-child, .field-name-field-related-scenario .btn-group > .btn-group:first-child > a:last-child, .blog-inner .field-name-field-tags .field-item .btn-group > .btn-group:first-child > a:last-child, .right .order .btn-group > .btn-group:first-child > a:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 .btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .form-submit:first-child, .page-content .action-links li .btn-group > .btn-group:last-child > a:first-child,
-.page-content .links li .btn-group > .btn-group:last-child > a:first-child, .field-name-field-related-scenario .btn-group > .btn-group:last-child > a:first-child, .right .order .btn-group > .btn-group:last-child > a:first-child {
+.page-content .links li .btn-group > .btn-group:last-child > a:first-child, .field-name-field-related-scenario .btn-group > .btn-group:last-child > a:first-child, .blog-inner .field-name-field-tags .field-item .btn-group > .btn-group:last-child > a:first-child, .right .order .btn-group > .btn-group:last-child > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3897,13 +3910,13 @@ input[type="button"].btn-block {
 }
 
 .btn-group > .btn + .dropdown-toggle, .btn-group > .form-submit + .dropdown-toggle, .page-content .action-links li .btn-group > a + .dropdown-toggle,
-.page-content .links li .btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group > a + .dropdown-toggle, .right .order .btn-group > a + .dropdown-toggle {
+.page-content .links li .btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group > a + .dropdown-toggle, .blog-inner .field-name-field-tags .field-item .btn-group > a + .dropdown-toggle, .right .order .btn-group > a + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 .btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .form-submit + .dropdown-toggle, .page-content .action-links li .btn-group-lg.btn-group > a + .dropdown-toggle,
-.page-content .links li .btn-group-lg.btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group-lg.btn-group > a + .dropdown-toggle, .right .order .btn-group > a + .dropdown-toggle {
+.page-content .links li .btn-group-lg.btn-group > a + .dropdown-toggle, .field-name-field-related-scenario .btn-group-lg.btn-group > a + .dropdown-toggle, .blog-inner .field-name-field-tags .field-item .btn-group-lg.btn-group > a + .dropdown-toggle, .right .order .btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3918,30 +3931,31 @@ input[type="button"].btn-block {
 }
 
 .btn .caret, .form-submit .caret, .page-content .action-links li a .caret,
-.page-content .links li a .caret, .field-name-field-related-scenario a .caret, .right .order a .caret {
+.page-content .links li a .caret, .field-name-field-related-scenario a .caret, .blog-inner .field-name-field-tags .field-item a .caret, .right .order a .caret {
   margin-left: 0;
 }
 
 .btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .form-submit .caret, .page-content .action-links li .btn-group-lg > a .caret,
-.page-content .links li .btn-group-lg > a .caret, .field-name-field-related-scenario .btn-group-lg > a .caret, .right .order a .caret {
+.page-content .links li .btn-group-lg > a .caret, .field-name-field-related-scenario .btn-group-lg > a .caret, .blog-inner .field-name-field-tags .field-item .btn-group-lg > a .caret, .right .order a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 .dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .form-submit .caret, .dropup .page-content .action-links li .btn-group-lg > a .caret, .page-content .action-links li .dropup .btn-group-lg > a .caret,
 .dropup .page-content .links li .btn-group-lg > a .caret,
-.page-content .links li .dropup .btn-group-lg > a .caret, .dropup .field-name-field-related-scenario .btn-group-lg > a .caret, .field-name-field-related-scenario .dropup .btn-group-lg > a .caret, .dropup .right .order a .caret, .right .order .dropup a .caret {
+.page-content .links li .dropup .btn-group-lg > a .caret, .dropup .field-name-field-related-scenario .btn-group-lg > a .caret, .field-name-field-related-scenario .dropup .btn-group-lg > a .caret, .dropup .blog-inner .field-name-field-tags .field-item .btn-group-lg > a .caret, .blog-inner .field-name-field-tags .field-item .dropup .btn-group-lg > a .caret, .dropup .right .order a .caret, .right .order .dropup a .caret {
   border-width: 0 5px 5px;
 }
 
 .btn-group-vertical > .btn, .btn-group-vertical > .form-submit, .page-content .action-links li .btn-group-vertical > a,
-.page-content .links li .btn-group-vertical > a, .field-name-field-related-scenario .btn-group-vertical > a, .right .order .btn-group-vertical > a,
+.page-content .links li .btn-group-vertical > a, .field-name-field-related-scenario .btn-group-vertical > a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a, .right .order .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .form-submit,
 .page-content .action-links li .btn-group-vertical > .btn-group > a,
 .page-content .links li .btn-group-vertical > .btn-group > a,
 .field-name-field-related-scenario .btn-group-vertical > .btn-group > a,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group > a,
 .right .order .btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
@@ -3956,26 +3970,28 @@ input[type="button"].btn-block {
   clear: both;
 }
 .btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .form-submit, .page-content .action-links li .btn-group-vertical > .btn-group > a,
-.page-content .links li .btn-group-vertical > .btn-group > a, .field-name-field-related-scenario .btn-group-vertical > .btn-group > a, .right .order .btn-group-vertical > .btn-group > a {
+.page-content .links li .btn-group-vertical > .btn-group > a, .field-name-field-related-scenario .btn-group-vertical > .btn-group > a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group > a, .right .order .btn-group-vertical > .btn-group > a {
   float: none;
 }
 .btn-group-vertical > .btn + .btn, .btn-group-vertical > .form-submit + .btn, .page-content .action-links li .btn-group-vertical > a + .btn,
-.page-content .links li .btn-group-vertical > a + .btn, .field-name-field-related-scenario .btn-group-vertical > a + .btn, .right .order .btn-group-vertical > a + .btn, .btn-group-vertical > .btn + .form-submit, .btn-group-vertical > .form-submit + .form-submit, .page-content .action-links li .btn-group-vertical > a + .form-submit,
-.page-content .links li .btn-group-vertical > a + .form-submit, .field-name-field-related-scenario .btn-group-vertical > a + .form-submit, .right .order .btn-group-vertical > a + .form-submit, .page-content .action-links li .btn-group-vertical > .btn + a, .page-content .action-links li .btn-group-vertical > .form-submit + a, .page-content .action-links li .btn-group-vertical > a + a,
+.page-content .links li .btn-group-vertical > a + .btn, .field-name-field-related-scenario .btn-group-vertical > a + .btn, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a + .btn, .right .order .btn-group-vertical > a + .btn, .btn-group-vertical > .btn + .form-submit, .btn-group-vertical > .form-submit + .form-submit, .page-content .action-links li .btn-group-vertical > a + .form-submit,
+.page-content .links li .btn-group-vertical > a + .form-submit, .field-name-field-related-scenario .btn-group-vertical > a + .form-submit, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a + .form-submit, .right .order .btn-group-vertical > a + .form-submit, .page-content .action-links li .btn-group-vertical > .btn + a, .page-content .action-links li .btn-group-vertical > .form-submit + a, .page-content .action-links li .btn-group-vertical > a + a,
 .page-content .links li .btn-group-vertical > .btn + a,
 .page-content .links li .btn-group-vertical > .form-submit + a,
-.page-content .links li .btn-group-vertical > a + a, .field-name-field-related-scenario .btn-group-vertical > .btn + a, .field-name-field-related-scenario .btn-group-vertical > .form-submit + a, .field-name-field-related-scenario .btn-group-vertical > a + a, .right .order .btn-group-vertical > .btn + a, .right .order .btn-group-vertical > .form-submit + a, .right .order .btn-group-vertical > a + a,
+.page-content .links li .btn-group-vertical > a + a, .field-name-field-related-scenario .btn-group-vertical > .btn + a, .field-name-field-related-scenario .btn-group-vertical > .form-submit + a, .field-name-field-related-scenario .btn-group-vertical > a + a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn + a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .form-submit + a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a + a, .right .order .btn-group-vertical > .btn + a, .right .order .btn-group-vertical > .form-submit + a, .right .order .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .form-submit + .btn-group,
 .page-content .action-links li .btn-group-vertical > a + .btn-group,
 .page-content .links li .btn-group-vertical > a + .btn-group,
 .field-name-field-related-scenario .btn-group-vertical > a + .btn-group,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > a + .btn-group,
 .right .order .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .form-submit,
 .page-content .action-links li .btn-group-vertical > .btn-group + a,
 .page-content .links li .btn-group-vertical > .btn-group + a,
 .field-name-field-related-scenario .btn-group-vertical > .btn-group + a,
+.blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group + a,
 .right .order .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
@@ -3983,36 +3999,36 @@ input[type="button"].btn-block {
 }
 
 .btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .form-submit:not(:first-child):not(:last-child), .page-content .action-links li .btn-group-vertical > a:not(:first-child):not(:last-child),
-.page-content .links li .btn-group-vertical > a:not(:first-child):not(:last-child), .field-name-field-related-scenario .btn-group-vertical > a:not(:first-child):not(:last-child), .right .order .btn-group-vertical > a:not(:first-child):not(:last-child) {
+.page-content .links li .btn-group-vertical > a:not(:first-child):not(:last-child), .field-name-field-related-scenario .btn-group-vertical > a:not(:first-child):not(:last-child), .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:not(:first-child):not(:last-child), .right .order .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 .btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .form-submit:first-child:not(:last-child), .page-content .action-links li .btn-group-vertical > a:first-child:not(:last-child),
-.page-content .links li .btn-group-vertical > a:first-child:not(:last-child), .field-name-field-related-scenario .btn-group-vertical > a:first-child:not(:last-child), .right .order .btn-group-vertical > a:first-child:not(:last-child) {
+.page-content .links li .btn-group-vertical > a:first-child:not(:last-child), .field-name-field-related-scenario .btn-group-vertical > a:first-child:not(:last-child), .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:first-child:not(:last-child), .right .order .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .form-submit:last-child:not(:first-child), .page-content .action-links li .btn-group-vertical > a:last-child:not(:first-child),
-.page-content .links li .btn-group-vertical > a:last-child:not(:first-child), .field-name-field-related-scenario .btn-group-vertical > a:last-child:not(:first-child), .right .order .btn-group-vertical > a:last-child:not(:first-child) {
+.page-content .links li .btn-group-vertical > a:last-child:not(:first-child), .field-name-field-related-scenario .btn-group-vertical > a:last-child:not(:first-child), .blog-inner .field-name-field-tags .field-item .btn-group-vertical > a:last-child:not(:first-child), .right .order .btn-group-vertical > a:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .form-submit, .page-content .action-links li .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a,
-.page-content .links li .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .field-name-field-related-scenario .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .right .order .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
+.page-content .links li .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .field-name-field-related-scenario .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .right .order .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .form-submit:last-child, .page-content .action-links li .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
-.page-content .links li .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .field-name-field-related-scenario .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .right .order .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
+.page-content .links li .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .field-name-field-related-scenario .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .right .order .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .form-submit:first-child, .page-content .action-links li .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child,
-.page-content .links li .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .field-name-field-related-scenario .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .right .order .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
+.page-content .links li .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .field-name-field-related-scenario .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .blog-inner .field-name-field-tags .field-item .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .right .order .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4024,7 +4040,7 @@ input[type="button"].btn-block {
   border-collapse: separate;
 }
 .btn-group-justified > .btn, .btn-group-justified > .form-submit, .page-content .action-links li .btn-group-justified > a,
-.page-content .links li .btn-group-justified > a, .field-name-field-related-scenario .btn-group-justified > a, .right .order .btn-group-justified > a,
+.page-content .links li .btn-group-justified > a, .field-name-field-related-scenario .btn-group-justified > a, .blog-inner .field-name-field-tags .field-item .btn-group-justified > a, .right .order .btn-group-justified > a,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
@@ -4032,17 +4048,18 @@ input[type="button"].btn-block {
 }
 .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .form-submit, .btn-group-justified > .btn-group .page-content .action-links li a, .page-content .action-links li .btn-group-justified > .btn-group a,
 .btn-group-justified > .btn-group .page-content .links li a,
-.page-content .links li .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .field-name-field-related-scenario a, .field-name-field-related-scenario .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .right .order a, .right .order .btn-group-justified > .btn-group a {
+.page-content .links li .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .field-name-field-related-scenario a, .field-name-field-related-scenario .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .blog-inner .field-name-field-tags .field-item a, .blog-inner .field-name-field-tags .field-item .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .right .order a, .right .order .btn-group-justified > .btn-group a {
   width: 100%;
 }
 
 [data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .form-submit > input[type="radio"], .page-content .action-links li [data-toggle="buttons"] > a > input[type="radio"],
-.page-content .links li [data-toggle="buttons"] > a > input[type="radio"], .field-name-field-related-scenario [data-toggle="buttons"] > a > input[type="radio"], .right .order [data-toggle="buttons"] > a > input[type="radio"],
+.page-content .links li [data-toggle="buttons"] > a > input[type="radio"], .field-name-field-related-scenario [data-toggle="buttons"] > a > input[type="radio"], .blog-inner .field-name-field-tags .field-item [data-toggle="buttons"] > a > input[type="radio"], .right .order [data-toggle="buttons"] > a > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
 [data-toggle="buttons"] > .form-submit > input[type="checkbox"],
 .page-content .action-links li [data-toggle="buttons"] > a > input[type="checkbox"],
 .page-content .links li [data-toggle="buttons"] > a > input[type="checkbox"],
 .field-name-field-related-scenario [data-toggle="buttons"] > a > input[type="checkbox"],
+.blog-inner .field-name-field-tags .field-item [data-toggle="buttons"] > a > input[type="checkbox"],
 .right .order [data-toggle="buttons"] > a > input[type="checkbox"] {
   display: none;
 }
@@ -4108,6 +4125,7 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .page-content .action-links li .input-group-sm > .input-group-btn > a.input-group-addon,
 .page-content .links li .input-group-sm > .input-group-btn > a.input-group-addon,
+.blog-inner .field-name-field-tags .field-item .input-group-sm > .input-group-btn > a.input-group-addon,
 .right .order .input-group-sm > .input-group-btn > a.input-group-addon {
   padding: 5px 10px;
   font-size: 12px;
@@ -4118,6 +4136,7 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .page-content .action-links li .input-group-lg > .input-group-btn > a.input-group-addon,
 .page-content .links li .input-group-lg > .input-group-btn > a.input-group-addon,
+.blog-inner .field-name-field-tags .field-item .input-group-lg > .input-group-btn > a.input-group-addon,
 .right .order .input-group-lg > .input-group-btn > a.input-group-addon {
   padding: 10px 16px;
   font-size: 18px;
@@ -4136,12 +4155,14 @@ input[type="button"].btn-block {
 .page-content .action-links li .input-group-btn:first-child > a,
 .page-content .links li .input-group-btn:first-child > a,
 .field-name-field-related-scenario .input-group-btn:first-child > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:first-child > a,
 .right .order .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > .form-submit,
 .page-content .action-links li .input-group-btn:first-child > .btn-group > a,
 .page-content .links li .input-group-btn:first-child > .btn-group > a,
 .field-name-field-related-scenario .input-group-btn:first-child > .btn-group > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:first-child > .btn-group > a,
 .right .order .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
@@ -4149,12 +4170,14 @@ input[type="button"].btn-block {
 .page-content .action-links li .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .page-content .links li .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .field-name-field-related-scenario .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
+.blog-inner .field-name-field-tags .field-item .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .right .order .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .form-submit,
 .page-content .action-links li .input-group-btn:last-child > .btn-group:not(:last-child) > a,
 .page-content .links li .input-group-btn:last-child > .btn-group:not(:last-child) > a,
 .field-name-field-related-scenario .input-group-btn:last-child > .btn-group:not(:last-child) > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:last-child > .btn-group:not(:last-child) > a,
 .right .order .input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -4172,12 +4195,14 @@ input[type="button"].btn-block {
 .page-content .action-links li .input-group-btn:last-child > a,
 .page-content .links li .input-group-btn:last-child > a,
 .field-name-field-related-scenario .input-group-btn:last-child > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:last-child > a,
 .right .order .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > .form-submit,
 .page-content .action-links li .input-group-btn:last-child > .btn-group > a,
 .page-content .links li .input-group-btn:last-child > .btn-group > a,
 .field-name-field-related-scenario .input-group-btn:last-child > .btn-group > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:last-child > .btn-group > a,
 .right .order .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
@@ -4185,12 +4210,14 @@ input[type="button"].btn-block {
 .page-content .action-links li .input-group-btn:first-child > a:not(:first-child),
 .page-content .links li .input-group-btn:first-child > a:not(:first-child),
 .field-name-field-related-scenario .input-group-btn:first-child > a:not(:first-child),
+.blog-inner .field-name-field-tags .field-item .input-group-btn:first-child > a:not(:first-child),
 .right .order .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .form-submit,
 .page-content .action-links li .input-group-btn:first-child > .btn-group:not(:first-child) > a,
 .page-content .links li .input-group-btn:first-child > .btn-group:not(:first-child) > a,
 .field-name-field-related-scenario .input-group-btn:first-child > .btn-group:not(:first-child) > a,
+.blog-inner .field-name-field-tags .field-item .input-group-btn:first-child > .btn-group:not(:first-child) > a,
 .right .order .input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4206,30 +4233,30 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 .input-group-btn > .btn, .input-group-btn > .form-submit, .page-content .action-links li .input-group-btn > a,
-.page-content .links li .input-group-btn > a, .field-name-field-related-scenario .input-group-btn > a, .right .order .input-group-btn > a {
+.page-content .links li .input-group-btn > a, .field-name-field-related-scenario .input-group-btn > a, .blog-inner .field-name-field-tags .field-item .input-group-btn > a, .right .order .input-group-btn > a {
   position: relative;
 }
 .input-group-btn > .btn + .btn, .input-group-btn > .form-submit + .btn, .page-content .action-links li .input-group-btn > a + .btn,
-.page-content .links li .input-group-btn > a + .btn, .field-name-field-related-scenario .input-group-btn > a + .btn, .right .order .input-group-btn > a + .btn, .input-group-btn > .btn + .form-submit, .input-group-btn > .form-submit + .form-submit, .page-content .action-links li .input-group-btn > a + .form-submit,
-.page-content .links li .input-group-btn > a + .form-submit, .field-name-field-related-scenario .input-group-btn > a + .form-submit, .right .order .input-group-btn > a + .form-submit, .page-content .action-links li .input-group-btn > .btn + a, .page-content .action-links li .input-group-btn > .form-submit + a, .page-content .action-links li .input-group-btn > a + a,
+.page-content .links li .input-group-btn > a + .btn, .field-name-field-related-scenario .input-group-btn > a + .btn, .blog-inner .field-name-field-tags .field-item .input-group-btn > a + .btn, .right .order .input-group-btn > a + .btn, .input-group-btn > .btn + .form-submit, .input-group-btn > .form-submit + .form-submit, .page-content .action-links li .input-group-btn > a + .form-submit,
+.page-content .links li .input-group-btn > a + .form-submit, .field-name-field-related-scenario .input-group-btn > a + .form-submit, .blog-inner .field-name-field-tags .field-item .input-group-btn > a + .form-submit, .right .order .input-group-btn > a + .form-submit, .page-content .action-links li .input-group-btn > .btn + a, .page-content .action-links li .input-group-btn > .form-submit + a, .page-content .action-links li .input-group-btn > a + a,
 .page-content .links li .input-group-btn > .btn + a,
 .page-content .links li .input-group-btn > .form-submit + a,
-.page-content .links li .input-group-btn > a + a, .field-name-field-related-scenario .input-group-btn > .btn + a, .field-name-field-related-scenario .input-group-btn > .form-submit + a, .field-name-field-related-scenario .input-group-btn > a + a, .right .order .input-group-btn > .btn + a, .right .order .input-group-btn > .form-submit + a, .right .order .input-group-btn > a + a {
+.page-content .links li .input-group-btn > a + a, .field-name-field-related-scenario .input-group-btn > .btn + a, .field-name-field-related-scenario .input-group-btn > .form-submit + a, .field-name-field-related-scenario .input-group-btn > a + a, .blog-inner .field-name-field-tags .field-item .input-group-btn > .btn + a, .blog-inner .field-name-field-tags .field-item .input-group-btn > .form-submit + a, .blog-inner .field-name-field-tags .field-item .input-group-btn > a + a, .right .order .input-group-btn > .btn + a, .right .order .input-group-btn > .form-submit + a, .right .order .input-group-btn > a + a {
   margin-left: -1px;
 }
 .input-group-btn > .btn:hover, .input-group-btn > .form-submit:hover, .page-content .action-links li .input-group-btn > a:hover,
-.page-content .links li .input-group-btn > a:hover, .field-name-field-related-scenario .input-group-btn > a:hover, .right .order .input-group-btn > a:hover, .input-group-btn > .btn:focus, .input-group-btn > .form-submit:focus, .page-content .action-links li .input-group-btn > a:focus,
-.page-content .links li .input-group-btn > a:focus, .field-name-field-related-scenario .input-group-btn > a:focus, .right .order .input-group-btn > a:focus, .input-group-btn > .btn:active, .input-group-btn > .form-submit:active, .page-content .action-links li .input-group-btn > a:active,
-.page-content .links li .input-group-btn > a:active, .field-name-field-related-scenario .input-group-btn > a:active, .right .order .input-group-btn > a:active {
+.page-content .links li .input-group-btn > a:hover, .field-name-field-related-scenario .input-group-btn > a:hover, .blog-inner .field-name-field-tags .field-item .input-group-btn > a:hover, .right .order .input-group-btn > a:hover, .input-group-btn > .btn:focus, .input-group-btn > .form-submit:focus, .page-content .action-links li .input-group-btn > a:focus,
+.page-content .links li .input-group-btn > a:focus, .field-name-field-related-scenario .input-group-btn > a:focus, .blog-inner .field-name-field-tags .field-item .input-group-btn > a:focus, .right .order .input-group-btn > a:focus, .input-group-btn > .btn:active, .input-group-btn > .form-submit:active, .page-content .action-links li .input-group-btn > a:active,
+.page-content .links li .input-group-btn > a:active, .field-name-field-related-scenario .input-group-btn > a:active, .blog-inner .field-name-field-tags .field-item .input-group-btn > a:active, .right .order .input-group-btn > a:active {
   z-index: 2;
 }
 .input-group-btn:first-child > .btn, .input-group-btn:first-child > .form-submit, .page-content .action-links li .input-group-btn:first-child > a,
-.page-content .links li .input-group-btn:first-child > a, .field-name-field-related-scenario .input-group-btn:first-child > a, .right .order .input-group-btn:first-child > a,
+.page-content .links li .input-group-btn:first-child > a, .field-name-field-related-scenario .input-group-btn:first-child > a, .blog-inner .field-name-field-tags .field-item .input-group-btn:first-child > a, .right .order .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .form-submit, .page-content .action-links li .input-group-btn:last-child > a,
-.page-content .links li .input-group-btn:last-child > a, .field-name-field-related-scenario .input-group-btn:last-child > a, .right .order .input-group-btn:last-child > a,
+.page-content .links li .input-group-btn:last-child > a, .field-name-field-related-scenario .input-group-btn:last-child > a, .blog-inner .field-name-field-tags .field-item .input-group-btn:last-child > a, .right .order .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -4666,12 +4693,12 @@ input[type="button"].btn-block {
   margin-bottom: 8px;
 }
 .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.form-submit, .page-content .action-links li .btn-group-sm > a.navbar-btn,
-.page-content .links li .btn-group-sm > a.navbar-btn, .field-name-field-related-scenario .btn-group-sm > a.navbar-btn, .right .order .btn-group-sm > a.navbar-btn {
+.page-content .links li .btn-group-sm > a.navbar-btn, .field-name-field-related-scenario .btn-group-sm > a.navbar-btn, .right .order .btn-group-sm > a.navbar-btn, .blog-inner .field-name-field-tags .field-item a.navbar-btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.form-submit, .page-content .action-links li .btn-group-xs > a.navbar-btn,
-.page-content .links li .btn-group-xs > a.navbar-btn, .field-name-field-related-scenario .btn-group-xs > a.navbar-btn, .right .order .btn-group-xs > a.navbar-btn {
+.page-content .links li .btn-group-xs > a.navbar-btn, .field-name-field-related-scenario .btn-group-xs > a.navbar-btn, .blog-inner .field-name-field-tags .field-item .btn-group-xs > a.navbar-btn, .right .order .btn-group-xs > a.navbar-btn {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -5016,7 +5043,7 @@ input[type="button"].btn-block {
   display: none;
 }
 .btn .label, .form-submit .label, .page-content .action-links li a .label,
-.page-content .links li a .label, .field-name-field-related-scenario a .label, .right .order a .label {
+.page-content .links li a .label, .field-name-field-related-scenario a .label, .blog-inner .field-name-field-tags .field-item a .label, .right .order a .label {
   position: relative;
   top: -1px;
 }
@@ -5081,12 +5108,12 @@ input[type="button"].btn-block {
   display: none;
 }
 .btn .badge, .form-submit .badge, .page-content .action-links li a .badge,
-.page-content .links li a .badge, .field-name-field-related-scenario a .badge, .right .order a .badge {
+.page-content .links li a .badge, .field-name-field-related-scenario a .badge, .blog-inner .field-name-field-tags .field-item a .badge, .right .order a .badge {
   position: relative;
   top: -1px;
 }
 .btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .form-submit .badge, .page-content .action-links li .btn-group-xs > a .badge,
-.page-content .links li .btn-group-xs > a .badge, .field-name-field-related-scenario .btn-group-xs > a .badge, .right .order .btn-group-xs > a .badge {
+.page-content .links li .btn-group-xs > a .badge, .field-name-field-related-scenario .btn-group-xs > a .badge, .blog-inner .field-name-field-tags .field-item .btn-group-xs > a .badge, .right .order .btn-group-xs > a .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -5978,29 +6005,29 @@ button.close {
 }
 .modal-footer .btn + .btn, .modal-footer .form-submit + .btn, .modal-footer .page-content .action-links li a + .btn, .page-content .action-links li .modal-footer a + .btn,
 .modal-footer .page-content .links li a + .btn,
-.page-content .links li .modal-footer a + .btn, .modal-footer .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .modal-footer a + .btn, .modal-footer .right .order a + .btn, .right .order .modal-footer a + .btn, .modal-footer .btn + .form-submit, .modal-footer .form-submit + .form-submit, .modal-footer .page-content .action-links li a + .form-submit, .page-content .action-links li .modal-footer a + .form-submit,
+.page-content .links li .modal-footer a + .btn, .modal-footer .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .modal-footer a + .btn, .modal-footer .blog-inner .field-name-field-tags .field-item a + .btn, .blog-inner .field-name-field-tags .field-item .modal-footer a + .btn, .modal-footer .right .order a + .btn, .right .order .modal-footer a + .btn, .modal-footer .btn + .form-submit, .modal-footer .form-submit + .form-submit, .modal-footer .page-content .action-links li a + .form-submit, .page-content .action-links li .modal-footer a + .form-submit,
 .modal-footer .page-content .links li a + .form-submit,
-.page-content .links li .modal-footer a + .form-submit, .modal-footer .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .modal-footer a + .form-submit, .modal-footer .right .order a + .form-submit, .right .order .modal-footer a + .form-submit, .modal-footer .page-content .action-links li .btn + a, .page-content .action-links li .modal-footer .btn + a, .modal-footer .page-content .action-links li .form-submit + a, .page-content .action-links li .modal-footer .form-submit + a, .modal-footer .page-content .action-links li a + a, .page-content .action-links li .modal-footer a + a,
+.page-content .links li .modal-footer a + .form-submit, .modal-footer .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .modal-footer a + .form-submit, .modal-footer .blog-inner .field-name-field-tags .field-item a + .form-submit, .blog-inner .field-name-field-tags .field-item .modal-footer a + .form-submit, .modal-footer .right .order a + .form-submit, .right .order .modal-footer a + .form-submit, .modal-footer .page-content .action-links li .btn + a, .page-content .action-links li .modal-footer .btn + a, .modal-footer .page-content .action-links li .form-submit + a, .page-content .action-links li .modal-footer .form-submit + a, .modal-footer .page-content .action-links li a + a, .page-content .action-links li .modal-footer a + a,
 .modal-footer .page-content .links li .btn + a,
 .page-content .links li .modal-footer .btn + a,
 .modal-footer .page-content .links li .form-submit + a,
 .page-content .links li .modal-footer .form-submit + a,
 .modal-footer .page-content .links li a + a,
-.page-content .links li .modal-footer a + a, .modal-footer .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .modal-footer .btn + a, .modal-footer .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .modal-footer .form-submit + a, .modal-footer .field-name-field-related-scenario a + a, .field-name-field-related-scenario .modal-footer a + a, .modal-footer .right .order .btn + a, .right .order .modal-footer .btn + a, .modal-footer .right .order .form-submit + a, .right .order .modal-footer .form-submit + a, .modal-footer .right .order a + a, .right .order .modal-footer a + a {
+.page-content .links li .modal-footer a + a, .modal-footer .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .modal-footer .btn + a, .modal-footer .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .modal-footer .form-submit + a, .modal-footer .field-name-field-related-scenario a + a, .field-name-field-related-scenario .modal-footer a + a, .modal-footer .blog-inner .field-name-field-tags .field-item .btn + a, .blog-inner .field-name-field-tags .field-item .modal-footer .btn + a, .modal-footer .blog-inner .field-name-field-tags .field-item .form-submit + a, .blog-inner .field-name-field-tags .field-item .modal-footer .form-submit + a, .modal-footer .blog-inner .field-name-field-tags .field-item a + a, .blog-inner .field-name-field-tags .field-item .modal-footer a + a, .modal-footer .right .order .btn + a, .right .order .modal-footer .btn + a, .modal-footer .right .order .form-submit + a, .right .order .modal-footer .form-submit + a, .modal-footer .right .order a + a, .right .order .modal-footer a + a {
   margin-left: 5px;
   margin-bottom: 0;
 }
 .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .form-submit + .btn, .modal-footer .btn-group .page-content .action-links li a + .btn, .page-content .action-links li .modal-footer .btn-group a + .btn,
 .modal-footer .btn-group .page-content .links li a + .btn,
-.page-content .links li .modal-footer .btn-group a + .btn, .modal-footer .btn-group .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .modal-footer .btn-group a + .btn, .modal-footer .btn-group .right .order a + .btn, .right .order .modal-footer .btn-group a + .btn, .modal-footer .btn-group .btn + .form-submit, .modal-footer .btn-group .form-submit + .form-submit, .modal-footer .btn-group .page-content .action-links li a + .form-submit, .page-content .action-links li .modal-footer .btn-group a + .form-submit,
+.page-content .links li .modal-footer .btn-group a + .btn, .modal-footer .btn-group .field-name-field-related-scenario a + .btn, .field-name-field-related-scenario .modal-footer .btn-group a + .btn, .modal-footer .btn-group .blog-inner .field-name-field-tags .field-item a + .btn, .blog-inner .field-name-field-tags .field-item .modal-footer .btn-group a + .btn, .modal-footer .btn-group .right .order a + .btn, .right .order .modal-footer .btn-group a + .btn, .modal-footer .btn-group .btn + .form-submit, .modal-footer .btn-group .form-submit + .form-submit, .modal-footer .btn-group .page-content .action-links li a + .form-submit, .page-content .action-links li .modal-footer .btn-group a + .form-submit,
 .modal-footer .btn-group .page-content .links li a + .form-submit,
-.page-content .links li .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .right .order a + .form-submit, .right .order .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .page-content .action-links li .btn + a, .page-content .action-links li .modal-footer .btn-group .btn + a, .modal-footer .btn-group .page-content .action-links li .form-submit + a, .page-content .action-links li .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .page-content .action-links li a + a, .page-content .action-links li .modal-footer .btn-group a + a,
+.page-content .links li .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .field-name-field-related-scenario a + .form-submit, .field-name-field-related-scenario .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .blog-inner .field-name-field-tags .field-item a + .form-submit, .blog-inner .field-name-field-tags .field-item .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .right .order a + .form-submit, .right .order .modal-footer .btn-group a + .form-submit, .modal-footer .btn-group .page-content .action-links li .btn + a, .page-content .action-links li .modal-footer .btn-group .btn + a, .modal-footer .btn-group .page-content .action-links li .form-submit + a, .page-content .action-links li .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .page-content .action-links li a + a, .page-content .action-links li .modal-footer .btn-group a + a,
 .modal-footer .btn-group .page-content .links li .btn + a,
 .page-content .links li .modal-footer .btn-group .btn + a,
 .modal-footer .btn-group .page-content .links li .form-submit + a,
 .page-content .links li .modal-footer .btn-group .form-submit + a,
 .modal-footer .btn-group .page-content .links li a + a,
-.page-content .links li .modal-footer .btn-group a + a, .modal-footer .btn-group .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .modal-footer .btn-group .btn + a, .modal-footer .btn-group .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .field-name-field-related-scenario a + a, .field-name-field-related-scenario .modal-footer .btn-group a + a, .modal-footer .btn-group .right .order .btn + a, .right .order .modal-footer .btn-group .btn + a, .modal-footer .btn-group .right .order .form-submit + a, .right .order .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .right .order a + a, .right .order .modal-footer .btn-group a + a {
+.page-content .links li .modal-footer .btn-group a + a, .modal-footer .btn-group .field-name-field-related-scenario .btn + a, .field-name-field-related-scenario .modal-footer .btn-group .btn + a, .modal-footer .btn-group .field-name-field-related-scenario .form-submit + a, .field-name-field-related-scenario .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .field-name-field-related-scenario a + a, .field-name-field-related-scenario .modal-footer .btn-group a + a, .modal-footer .btn-group .blog-inner .field-name-field-tags .field-item .btn + a, .blog-inner .field-name-field-tags .field-item .modal-footer .btn-group .btn + a, .modal-footer .btn-group .blog-inner .field-name-field-tags .field-item .form-submit + a, .blog-inner .field-name-field-tags .field-item .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .blog-inner .field-name-field-tags .field-item a + a, .blog-inner .field-name-field-tags .field-item .modal-footer .btn-group a + a, .modal-footer .btn-group .right .order .btn + a, .right .order .modal-footer .btn-group .btn + a, .modal-footer .btn-group .right .order .form-submit + a, .right .order .modal-footer .btn-group .form-submit + a, .modal-footer .btn-group .right .order a + a, .right .order .modal-footer .btn-group a + a {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -6417,7 +6444,7 @@ button.close {
 }
 .carousel-caption .btn, .carousel-caption .form-submit, .carousel-caption .page-content .action-links li a, .page-content .action-links li .carousel-caption a,
 .carousel-caption .page-content .links li a,
-.page-content .links li .carousel-caption a, .carousel-caption .field-name-field-related-scenario a, .field-name-field-related-scenario .carousel-caption a, .carousel-caption .right .order a, .right .order .carousel-caption a {
+.page-content .links li .carousel-caption a, .carousel-caption .field-name-field-related-scenario a, .field-name-field-related-scenario .carousel-caption a, .carousel-caption .blog-inner .field-name-field-tags .field-item a, .blog-inner .field-name-field-tags .field-item .carousel-caption a, .carousel-caption .right .order a, .right .order .carousel-caption a {
   text-shadow: none;
 }
 
@@ -6927,6 +6954,10 @@ blockquote p {
   font-weight: 400;
 }
 
+.element-invisible {
+  display: none;
+}
+
 img {
   display: block;
   height: auto;
@@ -6940,6 +6971,10 @@ textarea {
 
 .grippie {
   display: none;
+}
+
+.locale-untranslated {
+  text-decoration: none;
 }
 
 .page-blog .page-content .action-links li, .page-blog
@@ -7060,9 +7095,12 @@ div.messages.warning a {
 /* Header */
 .page-header {
   background: transparent;
-  padding: 15px 0 0;
+  padding: 15px 0;
   margin: 0;
   border: none;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
 }
 .page-header h2 {
   margin: 0;
@@ -7076,7 +7114,7 @@ div.messages.warning a {
 .page-header .block-locale {
   float: right;
   width: 100%;
-  max-width: 186px;
+  max-width: 210px;
   text-align: center;
 }
 .page-header .block-locale li {
@@ -7088,12 +7126,11 @@ div.messages.warning a {
 }
 .page-header .block-locale li a {
   overflow: hidden;
-  display: block;
 }
 .page-header .site-phone {
   float: right;
   text-align: center;
-  min-width: 186px;
+  min-width: 210px;
   clear: right;
 }
 .page-header .site-phone span {
@@ -7120,7 +7157,6 @@ div.messages.warning a {
   .page-header .sf-menu a {
     text-transform: uppercase;
     text-decoration: none;
-    padding-bottom: 42px;
   }
   .page-header .sf-menu a:hover, .page-header .sf-menu a.active {
     color: #000;
@@ -7174,7 +7210,7 @@ div.messages.warning a {
   max-width: 100%;
 }
 .page-wrapper .main-wrapper {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .slider-wrapper {
@@ -7191,37 +7227,74 @@ div.messages.warning a {
   width: 100%;
 }
 
+.carousel .container {
+  position: absolute;
+  left: 120px;
+  bottom: 0;
+  display: table;
+  max-width: 600px;
+}
+@media (max-width: 999px) {
+  .carousel .container {
+    left: 0;
+    max-width: 100%;
+    padding: 0 110px;
+  }
+}
+.carousel .carousel-caption {
+  background: transparent;
+  position: static;
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+.carousel:hover .carousel-caption {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
 .left.carousel-control,
 .right.carousel-control {
   position: absolute;
-  top: 40%;
-  width: 40px;
+  width: 110px;
+  height: 100%;
   font-weight: 100;
   line-height: 30px;
   color: #ffffff;
   text-align: center;
   opacity: 0.5;
   filter: alpha(opacity=50);
-  height: 80px;
   margin-top: 0;
   font-size: 120px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  background: transparent;
   border: 0;
   z-index: 10;
+  top: auto;
+  bottom: 0;
+  margin: 0;
 }
 .left.carousel-control:hover,
 .right.carousel-control:hover {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+.left.carousel-control span,
+.right.carousel-control span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  line-height: 1;
+  margin: -70px 0 0 -18px;
+  left: 50%;
+}
 
 .left.carousel-control {
-  left: 15px;
+  left: 0;
 }
 
 .right.carousel-control {
-  right: 15px;
+  right: 0;
 }
 
 .slider-navigation {
@@ -7255,36 +7328,6 @@ div.messages.warning a {
 }
 .slider-navigation .slider-pager a.selected {
   background-position: -45px 2px;
-}
-
-.field-name-field-image-list {
-  position: relative;
-}
-.field-name-field-image-list .carousel-navigation {
-  display: none;
-}
-.field-name-field-image-list .carousel-navigation .nav-left,
-.field-name-field-image-list .carousel-navigation .nav-right {
-  background: url("../images/slider-controls-dark.png") no-repeat -135px center;
-  width: 20px;
-  height: 100%;
-  cursor: pointer;
-  margin: 0 5px;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  width: 25px;
-  z-index: 1;
-}
-.field-name-field-image-list .carousel-navigation .nav-left {
-  background-position: 6px center;
-  left: 5px;
-}
-.field-name-field-image-list .carousel-navigation .nav-right {
-  right: 5px;
-}
-.field-name-field-image-list:hover .carousel-navigation {
-  display: block;
 }
 
 .front-three-col-block {
@@ -7662,22 +7705,6 @@ div.messages.warning a {
   -ms-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
-.node-scenario .field-name-field-image-list {
-  position: relative;
-  margin: 5px -5px 0;
-}
-.node-scenario .field-name-field-image-list .field-item {
-  float: left;
-  max-width: 230px;
-}
-.node-scenario .field-name-field-image-list a {
-  display: block;
-  margin: 5px;
-  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  -ms-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-}
 .node-scenario .right > h2 {
   margin: -7px 15px 10px 0;
 }
@@ -7698,7 +7725,7 @@ div.messages.warning a {
 
 .blog-inner .left {
   float: left;
-  padding: 0 15px 5px 0;
+  margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   .blog-inner .left {
@@ -7708,14 +7735,46 @@ div.messages.warning a {
 .blog-inner .left img {
   max-width: 370px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .blog-inner .left img {
     max-width: 100%;
   }
 }
 .blog-inner .right {
-  display: inline;
-  float: none;
+  overflow: hidden;
+}
+.blog-inner .right .submitted {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.blog-inner .field-name-field-tags {
+  float: left;
+  padding-top: 5px;
+}
+.blog-inner .field-name-field-tags .field-item {
+  float: left;
+  margin-right: 10px;
+}
+.blog-inner .field-name-field-tags .field-item a {
+  padding: 0px 8px;
+}
+.blog-inner .field-name-field-related-scenario {
+  float: right;
+  margin-bottom: 20px;
+}
+.blog-inner .field-name-body {
+  clear: right;
+}
+@media (min-width: 797px) {
+  .blog-inner .right {
+    display: inline;
+    float: none;
+  }
+  .blog-inner .field-name-body,
+  .blog-inner .field-name-field-image-list {
+    padding: 0 15px;
+  }
 }
 
 .page-content {
@@ -7904,4 +7963,86 @@ div.messages.warning a {
 
 .content-phone {
   font-size: 24px;
+}
+
+header h2 {
+  margin-top: 0;
+}
+
+.col-second .panel-pane {
+  background: #f9f9f9;
+  box-shadow: 0px 1px 3px 0 rgba(53, 126, 189, 0.4);
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.col-second .panel-pane h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #3276b1;
+  padding: 10px;
+  border-bottom: 1px solid rgba(53, 126, 189, 0.2);
+}
+.col-second .panel-pane .pane-content {
+  padding: 5px 0 8px;
+}
+.col-second .panel-pane .item-list li {
+  padding: 5px 10px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.field-name-field-image-list {
+  margin-top: 20px;
+}
+.field-name-field-image-list .field-item {
+  display: inline-block;
+  cursor: pointer;
+  height: auto;
+  margin: 0 2% 15px 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+@media (min-width: 900px) {
+  .field-name-field-image-list .field-item {
+    width: 23.5%;
+  }
+  .field-name-field-image-list .field-item:nth-child(3n+4) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 641px) and (max-width: 899px) {
+  .field-name-field-image-list .field-item {
+    width: 32%;
+    margin-right: 2%;
+  }
+  .field-name-field-image-list .field-item:nth-child(3n+3) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 640px) {
+  .field-name-field-image-list .field-item {
+    width: 48%;
+    margin-right: 4%;
+  }
+  .field-name-field-image-list .field-item:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+.field-name-field-image-list .field-item:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.field-name-field-image-list .field-item img {
+  width: 100%;
 }
