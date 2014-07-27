@@ -184,6 +184,14 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
   hide($form['title']);
 
   if (arg(0) == 'order' && $nid) {
+    // Unset some values from the form.
+    unset($form['field_number_of_children']['und']['#options']['_none']);
+    hide($form['actions']['preview']);
+
+    // Chnage value for submit button.
+    $form['actions']['submit']['#value'] = t('Order');
+
+    if ($nid == 'callback') return;
     // Load the parent node from the argument.
     $scenario_node = node_load($nid);
     // Set default title and disable field.
@@ -192,12 +200,6 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
 
     $form['field_character_name']['und']['#default_value'] = $scenario_node->field_character_name['und'][0]['tid'];
 
-    // Unset some values from the form.
-    unset($form['field_number_of_children']['und']['#options']['_none']);
-    hide($form['actions']['preview']);
-
-    // Chnage value for submit button.
-    $form['actions']['submit']['#value'] = t('Order');
   }
 }
 
@@ -330,7 +332,7 @@ function _uhappy_block_view() {
       ->execute()
       ->fetchAssoc();
     // Create a path for the url that is like our hook_menu() declaration above.
-    $href = 'order/nojs/' . $result['nid'];
+    $href = 'order/nojs/callback';
     $text .= '<div class="order">' . ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style') . '</div>';
   }
 
