@@ -163,7 +163,7 @@ function uhappy_ct_field_default_field_instances() {
           'colorbox_gallery_custom' => '',
           'colorbox_image_style' => '',
           'colorbox_multivalue_index' => NULL,
-          'colorbox_node_style' => 'medium',
+          'colorbox_node_style' => 'gallery',
         ),
         'type' => 'colorbox',
         'weight' => 5,
@@ -1155,6 +1155,52 @@ function uhappy_ct_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-slider-field_custom_html'
+  $field_instances['node-slider-field_custom_html'] = array(
+    'bundle' => 'slider',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'related_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_html',
+    'label' => 'Custom html',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => -2,
+    ),
+  );
+
   // Exported field_instance: 'node-slider-field_images'
   $field_instances['node-slider-field_images'] = array(
     'bundle' => 'slider',
@@ -1208,6 +1254,55 @@ function uhappy_ct_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-slider-field_youtube_video'
+  $field_instances['node-slider-field_youtube_video'] = array(
+    'bundle' => 'slider',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 1,
+      ),
+      'related_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_youtube_video',
+    'label' => 'Youtube video',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'description_length' => 128,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
+      'weight' => -2,
     ),
   );
 
