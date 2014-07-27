@@ -6987,6 +6987,10 @@ textarea {
   margin-bottom: 20px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .form-type-select,
 .form-type-textfield,
 .form-type-textarea,

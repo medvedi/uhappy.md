@@ -193,9 +193,29 @@
     }
   };
 
-  Drupal.behaviors.sliderCheck = {
+  Drupal.behaviors.bodyModalClass = {
     attach: function () {
+//      $('.ctools-use-modal').click(function(){
+//        $('body').addClass('with-modal');
+//      });
+//      $('.ctools-modal-content .modal-header .close').click(function(){
+//        $('body').removeClass('with-modal');
+//      });
+//
+//
 
+      // beahvior: modalAddBodyClass
+      $('a.ctools-use-modal').click(function(e){
+        $('body').addClass('no-scroll');
+      });
+      $(window).keyup(function(e) {
+        if( e.keyCode == 27 && $('body').hasClass('no-scroll') ) {
+          $('body').removeClass('no-scroll');
+        }
+      });
+      $('.ctools-modal-content .modal-header .close').click(function(){
+        $('body').removeClass('no-scroll');
+      });
     }
   };
 
