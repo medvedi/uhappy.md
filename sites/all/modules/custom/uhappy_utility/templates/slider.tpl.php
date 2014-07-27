@@ -31,6 +31,6 @@
       </div>
     </div>
   </div>
-  <a class="left carousel-control" href="#uhappyCarousel" data-slide="prev">‹</a>
-  <a class="right carousel-control" href="#uhappyCarousel" data-slide="next">›</a>
+  <a class="left carousel-control" href="#uhappyCarousel" data-slide="prev"><span>‹</span></a>
+  <a class="right carousel-control" href="#uhappyCarousel" data-slide="next"><span>›</span></a>
 </div>

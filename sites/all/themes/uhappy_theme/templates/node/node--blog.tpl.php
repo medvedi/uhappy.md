@@ -83,12 +83,11 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> base-two-col-nodes blog-inner clearfix"<?php print $attributes; ?>>
 
   <div class="row">
-    <div class="col-sm-12 col-xs-12">
 
-      <div class="left">
+      <div class="left col-sm-4 col-xs-12">
         <?php print render($content['field_image']); ?>
       </div>
-      <div class="right">
+      <div class="right col-sm-12">
         <?php if ($title): ?>
           <header>
             <?php print render($title_prefix); ?>
@@ -108,7 +107,6 @@
         ?>
         <?php hide($content['links']); ?>
       </div>
-    </div>
   </div>
 
   <?php print render($content['comments']); ?>
