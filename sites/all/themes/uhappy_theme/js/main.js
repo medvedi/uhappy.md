@@ -19,15 +19,12 @@
     }
   };
 
-
-
   var topCarouselPosition = function(){
     if($('#uhappyCarousel').length != 0){
       var $sliderHeight = $('.slider-wrapper').height();
       $('.carousel .container').css('height', $sliderHeight)
     }
   };
-
 
   Drupal.behaviors.sliderVideosAdd = {
     attach: function (context) {
@@ -48,7 +45,6 @@
 
   Drupal.behaviors.carousel = {
     attach: function (context) {
-      // Using custom configuration
 
       $('#uhappyCarousel').imagesLoaded( function() {
         $('#uhappyCarousel', context).carousel({
@@ -57,8 +53,6 @@
       });
 
       var $elementCarousel = $('.node-type-scenario .field-name-field-image-list .field-items');
-//      var $elementSlider = $('.slider-wrapper ul, .slider');
-
       if($elementCarousel.length !== 0){
         $elementCarousel.imagesLoaded( function() {
           $elementCarousel.carouFredSel({
@@ -98,48 +92,13 @@
           });
         });
       }
-
-//      if($elementSlider.length !== 0){
-//        $elementSlider.imagesLoaded( function() {
-//          $elementSlider.carouFredSel({
-//            direction           : "left",
-//            responsive          : true,
-//            width: '100%',
-//            height: 'variable',
-//            items: {
-//              height: 'variable',
-//              visible: 1
-//            },
-//            pagination: ".slider-pager",
-//            prev                : "#slider-left",
-//            next                : "#slider-right",
-//            scroll : {
-//              items           : 1,
-//              fx          : "fade",
-//              duration        : 1000,
-//              pauseOnHover    : false
-//            }
-//          });
-//        });
-//      }
-
     }
   }
 
   Drupal.behaviors.chosenInit = {
     attach: function () {
       var $chosenElements = $(".ctools-modal-content select");
-
       $chosenElements.chosen();
-
-//      $(".block-superfish select").chosen();
-//      $(window).resize(function(){
-//        if ($(".block-superfish select").length != 0 ){
-//          $(".block-superfish select").chosen();
-//          console.log(11);
-//        }
-//      });
-
     }
   };
 
@@ -195,15 +154,6 @@
 
   Drupal.behaviors.bodyModalClass = {
     attach: function () {
-//      $('.ctools-use-modal').click(function(){
-//        $('body').addClass('with-modal');
-//      });
-//      $('.ctools-modal-content .modal-header .close').click(function(){
-//        $('body').removeClass('with-modal');
-//      });
-//
-//
-
       // beahvior: modalAddBodyClass
       $('a.ctools-use-modal').click(function(e){
         $('body').addClass('no-scroll');

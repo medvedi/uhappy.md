@@ -300,13 +300,6 @@ div.messages {
     }
   }
 }
-//
-//.withSlider .header-right{
-//  a{
-//
-//    color: #333;
-//  }
-//}
 
 .footer{
   background: #495054;
@@ -460,54 +453,7 @@ div.messages {
       }
     }
   }
-//  .nav-left,
-//  .nav-right{
-//    position: absolute;
-//    top: 0;
-//    height: 100%;
-//    width: 15%;
-//    max-width: 135px;
-//    margin: 0;
-//    cursor: pointer;
-//    &:hover{
-//      background-color: rgba(0,0,0,0.2);
-//    }
-//    &:after{
-//      content: '';
-//      width: 54px;
-//      height: 102px;
-//      background: url('../images/slider-arrows.png') no-repeat 0 0;
-//      position: absolute;
-//      top: 50%;
-//      left: 50%;
-//      margin: -51px 0 0 -32px;
-//    }
-//  }
-//  .nav-left{
-//    left: 0;
-//    &:after{
-//      background-position: 0 0;
-//    }
-//    &:hover{
-//      &:after{
-//        background-position: -135px 0;
-//      }
-//    }
-//  }
-//  .nav-right{
-//    right: 0;
-//    &:after{
-//      background-position: -69px 0;
-//    }
-//    &:hover{
-//      &:after{
-//        background-position: -202px 0;
-//      }
-//    }
-//  }
 }
-
-
 
 .front-three-col-block{
   margin-bottom: 20px;
@@ -952,10 +898,6 @@ div.messages {
     }
   }
 
-
-
-
-
   .right{
     & > h2{
       margin: -7px 15px 10px 0;
@@ -1048,8 +990,6 @@ div.messages {
     }
   }
 }
-
-
 
 .region-content .pager{
   li{
