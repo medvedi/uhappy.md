@@ -10,12 +10,6 @@ $plugin = array(
   'category' => array('Uhappy', -10),
   'single' => TRUE,
   'key' => 'price_table',
-  // 'defaults' => array(
-  //   'header_title' => '',
-  //   'description' => '',
-  //   'back_link_name' => '',
-  //   'back_link_url' => ''
-  // ),
   'edit form' => 'price_table_content_type_edit_form',
   'render callback' => 'price_table_content_type_render',
   'all contexts' => TRUE,
@@ -41,36 +35,21 @@ function price_table_content_type_render($subtype, $conf, $args, $contexts) {
     $content['price_for_2'] = $node->field_price_for_2_person['und'][0]['value'];
   }
 
-
-
-
-
-
-
-// Include the CTools tools that we need.
-    ctools_include('ajax');
-    ctools_include('modal');
-    // The view has two fields, title (not linked and no styles added), and NID (again,
-    // no style added. They are available here as $vars['fields']->title and
-    // $vars['fields']->nid.
-    $name = $node->title;
-    // Create a path for the url that is like our hook_menu() declaration above.
-    $href = 'order/nojs/' . $node->nid;
-    // Here's the ctools function that generates the trigger inside the link
-    // ctools_modal_text_button($text, $dest, $alt, $class = '')
-    // http://api.drupalize.me/api/drupal/function/ctools_modal_text_button/7
-    // IMPORTANT: Include ctools-modal-[your declared style name] as a class so
-    // Ctools knows what Javascript settings to use in generating the modal:
-    $content['ctools_link'] = ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style');
-
-
-
-
-
-
-
-
-
+  // Include the CTools tools that we need.
+  ctools_include('ajax');
+  ctools_include('modal');
+  // The view has two fields, title (not linked and no styles added), and NID (again,
+  // no style added. They are available here as $vars['fields']->title and
+  // $vars['fields']->nid.
+  $name = $node->title;
+  // Create a path for the url that is like our hook_menu() declaration above.
+  $href = 'order/nojs/' . $node->nid;
+  // Here's the ctools function that generates the trigger inside the link
+  // ctools_modal_text_button($text, $dest, $alt, $class = '')
+  // http://api.drupalize.me/api/drupal/function/ctools_modal_text_button/7
+  // IMPORTANT: Include ctools-modal-[your declared style name] as a class so
+  // Ctools knows what Javascript settings to use in generating the modal:
+  $content['ctools_link'] = ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style');
 
   $block->content = theme('price_table', $content);
 
@@ -85,10 +64,6 @@ function price_table_type_admin_info($subtype, $conf) {
   $block = new stdClass();
   $block->title   = check_plain($conf['pane_header_title']) ? check_plain($conf['pane_header_title']) : '';
   $block->content = '';
-
-  // if ($conf['pane_header_description']) {
-  //   $block->content = t('Description') . ': ' . $conf['pane_header_description'];
-  // }
 
   return $block;
 }
@@ -112,43 +87,6 @@ function price_table_content_type_admin_title($subtype, $conf) {
  */
 function price_table_content_type_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
-
-  // $form['fieldset'] = array(
-  //   '#type' => 'fieldset',
-  //   '#title' => t('Header Pane settings'),
-  //   '#weight' => 1,
-  //   '#collapsed' => FALSE,
-  // );
-  // $form['fieldset']['pane_header_title'] = array(
-  //   '#type' => 'textfield',
-  //   '#default_value' => isset($conf['pane_header_title']) ? $conf['pane_header_title'] : '',
-  //   '#title' => t('Pane Header title'),
-  // );
-  // $form['fieldset']['pane_header_description'] = array(
-  //   '#type' => 'text_format',
-  //   '#title' => t('Pane header description'),
-  //   '#default_value' => isset($conf['pane_header_description']) ? $conf['pane_header_description']['value'] : '',
-  //   '#rows' => 10,
-  //   '#base_type' => 'textarea',
-  //   '#format' => 'plain_text'
-  // );
-  // $form['back_link_fieldset'] = array(
-  //   '#type' => 'fieldset',
-  //   '#title' => t('Back Link'),
-  //   '#weight' => 1,
-  //   '#collapsed' => TRUE,
-  //   '#collapsible' => TRUE
-  // );
-  // $form['back_link_fieldset']['back_link_name'] = array(
-  //   '#type' => 'textfield',
-  //   '#default_value' => isset($conf['back_link_name']) ? $conf['back_link_name'] : '',
-  //   '#title' => t('Back link name'),
-  // );
-  // $form['back_link_fieldset']['back_link_url'] = array(
-  //   '#type' => 'textfield',
-  //   '#default_value' => isset($conf['back_link_url']) ? $conf['back_link_url'] : '',
-  //   '#title' => t('Back link URL'),
-  // );
 
   return $form;
 }

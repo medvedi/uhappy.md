@@ -14,24 +14,18 @@ include_once 'helpers/smsc.php';
 function uhappy_utility_init() {
   if (arg(0) == 'node') {
     // Add custom js for price tables.
-    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/jquery-1.10.2.js', 'file');
     drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/scrollReveal.js', 'file');
     drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/scripts/pricing.js', 'file');
-    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/respond.min.js', 'file');
-    // drupal_add_js(drupal_get_path('module', 'uhappy_utility') .'/assets/js/html5shiv.js', 'file');
     drupal_add_js('window.scrollReveal = new scrollReveal();', array('type' => 'inline', 'scope' => 'footer', 'weight' => 5));
-    // Add custom css for price tables.
-    // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/bootstrap/bootstrap.min.css');
-    // drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/main.css');
     drupal_add_css(drupal_get_path('module', 'uhappy_utility') . '/assets/css/styles/blue.css');
 
   }
 }
 
 /**
-* Implements hook_field_group_build_pre_render_alter().
-* @param Array $elements by address.
-*/
+ * Implements hook_field_group_build_pre_render_alter().
+ * @param Array $elements by address.
+ */
 function uhappy_utility_field_group_build_pre_render_alter(&$element) {
   // $element['group_children_settings'] += array(
   //   '#states' => array(
@@ -145,16 +139,6 @@ function order_modal_page($js = NULL, $nid = NULL) {
     $output = array();
     // Close the modal
     $output[] = ctools_modal_command_dismiss();
-
-    // $confirm_message = array("#markup" => '<div> '
-    //   . t('FUCK.')
-    //   . '</div>');
-    // $confirmation['#markup'] = '<div class="popups-confirmation-wrapper">' . drupal_render($confirm_message) . '</div>';
-    // // Recreate output
-    // $output = array();
-    // // Overwrite the form output if it was successful.
-    // $output[] = ctools_modal_command_display(t('Tak for din henvendelse'), $confirmation);
-
   }
 
   print ajax_render($output);
@@ -184,6 +168,14 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
   hide($form['title']);
 
   if (arg(0) == 'order' && $nid) {
+    // Unset some values from the form.
+    unset($form['field_number_of_children']['und']['#options']['_none']);
+    hide($form['actions']['preview']);
+
+    // Chnage value for submit button.
+    $form['actions']['submit']['#value'] = t('Order');
+
+    if ($nid == 'callback') return;
     // Load the parent node from the argument.
     $scenario_node = node_load($nid);
     // Set default title and disable field.
@@ -192,12 +184,6 @@ function uhappy_utility_form_order_node_form_alter(&$form, &$form_state) {
 
     $form['field_character_name']['und']['#default_value'] = $scenario_node->field_character_name['und'][0]['tid'];
 
-    // Unset some values from the form.
-    unset($form['field_number_of_children']['und']['#options']['_none']);
-    hide($form['actions']['preview']);
-
-    // Chnage value for submit button.
-    $form['actions']['submit']['#value'] = t('Order');
   }
 }
 
@@ -323,14 +309,8 @@ function _uhappy_block_view() {
     ctools_modal_add_js();
     // Set title.
     $name = t('Order');
-    // Get nid.
-    $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->condition('type', 'order')
-      ->execute()
-      ->fetchAssoc();
     // Create a path for the url that is like our hook_menu() declaration above.
-    $href = 'order/nojs/' . $result['nid'];
+    $href = 'order/nojs/callback';
     $text .= '<div class="order">' . ctools_modal_text_button($name, $href, t('View node content for @name', array('@name' => $name)), 'ctools-modal-uhappy-modal-style') . '</div>';
   }
 
